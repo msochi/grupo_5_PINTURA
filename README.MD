@@ -5,10 +5,13 @@ Como todo Argentino, si bien buscan calidad, sus drivers de elección se basan i
 Producto de la pandemia, nuestro público ha adoptado fácilmente a los canales digitales para inciar su proceso de compra investigando, comparando y analizando los distintos atributos que facilitan su decisión de compra.
 
 
-Quienes somos:
-Marcelo Sochi: Hola!!! Para quienes me conocen soy Chelo o Sochi. Tengo 42 años y llevo 20 años trabajando con foco en Marketing. Cuento con una amplia experiencia que incluye Administración General, Brand Building, Brand Strategy & Brand Positioning, Estrategia Portfolio, Offline y Online Marketing, Trade Marketing, Planificación y Análisis, Innovación y Marketing Interactivo. Apasionado por las marcas y los negocios.
-Naty Ca: 
-Nicolás Fernandez: 
+**Quienes somos:** <br/>
+
+**Marcelo Sochi:** Hola!!! Para quienes me conocen soy Chelo o Sochi. Tengo 42 años y llevo 20 años trabajando con foco en Marketing. Cuento con una amplia experiencia que incluye Administración General, Brand Building, Brand Strategy & Brand Positioning, Estrategia Portfolio, Offline y Online Marketing, Trade Marketing, Planificación y Análisis, Innovación y Marketing Interactivo. Apasionado por las marcas y los negocios. <br/>
+
+**Naty Ca:** <br/>
+
+**Nicolás Fernandez:** Hola!!! Mis amigos me dicen Niclas. Tengo 30 años y llevo 3 años trabajando en el mundo e-commerce. Soy Ingeniero Electrónico egresado de la Universidad de La Matanza. Actualmente trabajo en el equipo de Integraciones de MercadoPago. Ayudamos a los desarrolladores a integrarse con todas las APIs públicas y desarrollamos proyectos para hacerles la vida más fácil. Soy un gran aficionado de los videojuegos y un big-fan de Nintendo. <br/> 
 
 INSPIRACIÓN:
 https://www.acehardware.com/thepaintstudio
