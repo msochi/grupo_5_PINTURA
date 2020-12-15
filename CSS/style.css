@@ -16,7 +16,13 @@ justify-items: center;
 width: 100%;
 height: auto;
 overflow: hidden;
+position: fixed;
+z-index: 10;
+}
 
+.firstMenu {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header img{
@@ -24,14 +30,16 @@ header img{
     margin-left: 25%;
 }
 header div {
-    display: inline-block;
-    width: 50%;
+    display: flex;
+    width: 100%;
     justify-items: center;
-    margin-left: 10%;
+    align-items: center;
+    justify-content: center;
     }
  header .busqueda{
      width: 80%;
      height: 30px;
+     min-width: 180px;
      border-radius: 6px;
      border-color: gray;
      background: whitesmoke;
@@ -78,11 +86,16 @@ header div button a::after {
     border-color: transparent;
     outline-style: none;    
     }
-   
+
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+    
 .Header ul{
     margin-right: 20px;
     display: flex;
-    flex-wrap: wrap;
   }
 .Header ul li {
     margin: 20px;
@@ -110,6 +123,13 @@ header div button a::after {
     MENU
  ==========*/
 
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 112px;
+
+}
 
 .MenuHorizontal{
     background: #B5179E;   
@@ -118,9 +138,7 @@ header div button a::after {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    width: 100%;    
-    
-    
+    width: 100%;        
 }
  
  .MenuHorizontal a{
@@ -136,6 +154,7 @@ header div button a::after {
  .MenuHorizontal a:hover{
     background-color: #F72585;
     transform: scale(1.1);
+
 }
 
  /*========
@@ -147,8 +166,8 @@ div.Vitrina{
     flex-wrap: wrap;
     width: 100%;
     height: 200px;
-    align-items: flex-end;
-   
+    align-items: flex-end;  
+    padding-top: 19px;
 }
 
 div.Vitrina .InteriorVitrina{
