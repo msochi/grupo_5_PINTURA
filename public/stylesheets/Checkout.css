@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    --colorboton: #7209B7;
+   
+}
+
+header {
+background: #F72585;   
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+height: 70px;
+width: 100%;
+
+}
+
+header img{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+/*=============
+DATOS CLIENTE
+===========*/
+
+.DatosCliente h2{
+    color: #F72585;
+    margin-bottom: 4px;
+}
+
+
+}
+.DatosCliente label{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DatosCliente input{
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.DatosCliente input:hover{
+    background-color: rgb(116, 189, 221);
+    color: #f72585;
+
+}
