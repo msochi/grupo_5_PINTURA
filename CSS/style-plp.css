@@ -2,38 +2,52 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;     
+    font-family: 'Roboto', sans-serif;  
 }
 
-
 header {
-    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
 }
 
 .menuSuperior {
-    background-color: #F72585;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    justify-items: center;
-    padding: 10px 10px;
+    text-align: center;
     width: 100%;
-    height: 60px;
+    background-color: #F72585;
+    padding: 10px 10px;
+    height: 100%;
     
+}
+
+.menuSuperior a logo {
+    align-items: center;
 }
 
 .menuSuperior a img {
     width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .menuSuperior .busqueda {
-    width: 70%;
+    width: 60%;
     height: 60%;
     border-radius: 6px;
     border-color: gray;
     background: whitesmoke;
     box-shadow: 0px 4px 4px rgba(61, 60, 60, 0.733);
+    min-width: 100%;
+    min-height: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -57,10 +71,13 @@ header div button {
     display: flex;
     height: 100%;
     width: 25%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-items: center;
     justify-content: space-around;
+    min-width: 240px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 }
 
@@ -83,8 +100,6 @@ header div button {
 }
 
 .menuInferior {
-    position: fixed;
-    z-index: 10;
     background: #B5179E;   
     display: flex;
     flex-wrap: wrap;
@@ -99,118 +114,34 @@ header div button {
 color: white;
 }
 
-@media (max-width: 1150px) {
-    .menuSuperior .mainIcons ul {
-        list-style: none;
-        display: inline;
-        align-items: center;
-        justify-items: center;
-        justify-content: space-between;
-        width: 60%;
-    }
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-top: 216px;
+
 }
 
-@media (max-width: 850px) {
+.banner img {
+    width: 100%
+}
 
-    .menuSuperior {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        background-color: #F72585;
-        padding: 10px 10px;
-        height: 100%;
-        
-    }
+.menuMasTachos {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: center;
+}
 
-    .menuSuperior a logo {
-        align-items: center;
-    }
+.menuMasTachos section h1 {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
 
-    .menuSuperior a img {
-        width: 80%;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .menuSuperior .busqueda {
-        width: 60%;
-        height: 60%;
-        border-radius: 6px;
-        border-color: gray;
-        background: whitesmoke;
-        box-shadow: 0px 4px 4px rgba(61, 60, 60, 0.733);
-        min-width: 100%;
-        min-height: 25px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-    }
-
-    header div button {        
-        height: 30px;
-        width: 25px;
-        margin-left: -30px;
-        margin-top: 2px;
-        border-color: none;
-        border: none;
-        background-color: transparent;
-    }
-
-    #Lupa{
-        color: #F72585;
-        height: 20px;
-        width: 25px;
-    }
-
-    .menuSuperior .mainIcons {
-        display: flex;
-        height: 100%;
-        width: 25%;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-items: center;
-        justify-content: space-around;
-        min-width: 240px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
-    }
-
-    .menuSuperior .mainIcons ul {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        justify-content: space-between;
-        width: 75%;
-    }
-
-    .menuSuperior .mainIcons ul li a {
-        display: inline-block;
-        list-style: none;
-        align-items: center;
-        color: white;
-        justify-content: space-between;
-        text-decoration: none;
-    }
-
-    .menuInferior {
-        position: fixed;
-        z-index: 10;
-        background: #B5179E;   
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        padding: 5px 0px;
-    }
-
-    .menuInferior a {
-    color: white;
-    }
+.menuMasTachos aside {
+    /* display: flex;
+    align-content: flex-start; 
+    align-items: flex-start; */
 }
