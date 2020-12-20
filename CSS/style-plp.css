@@ -126,22 +126,156 @@ main {
     width: 100%
 }
 
+h1 {
+    text-align: center;
+    color: #7209B7;
+    padding-bottom: 20px;
+}
+
 .menuMasTachos {
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: row;
     align-items: flex-start;
     align-content: center;
+    justify-content: space-around;
 }
 
-.menuMasTachos section h1 {
+.menuMasTachos section {
+    width: 80%;
     display: flex;
-    align-content: center;
+    flex-wrap: wrap;
+    align-content: space-between;
     align-items: center;
+    justify-content: space-around;
+}
+
+.marcoFoto {
+    margin-top: 20px;
+    border: gray solid 2px; 
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.menuMasTachos section img {
+    width:300px;
 }
 
 .menuMasTachos aside {
-    /* display: flex;
-    align-content: flex-start; 
-    align-items: flex-start; */
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menuMasTachos aside h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.estrellas {
+    min-width: 220px;
+}
+
+.estrellas li {
+    list-style: none;
+    display: inline-block;
+}
+
+.estrellas i{
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-size: 30px;
+    margin-left: 5px;
+}
+
+.estrellas i:hover {
+    color: #f72585;
+    text-decoration: #F72585;
+    transform: scale(1.2);
+} 
+
+
+.volver {
+    float:right;
+    margin-right: 10%;
+    background-color:#7209B7;
+    color: white;
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size: medium ;
+    text-decoration: none;
+}   
+
+.volver:hover {
+    transform: scale(1.2);
+}
+
+/*=========
+FOOTER
+=========*/
+
+footer.footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #292525;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+   }
+footer.credenciales{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F72585;
+    width: 350px;
+    
+   
+}
+footer ul li {
+    color: #F72585;
+    list-style-type: none;
+    margin-top: 10%;
+    font-size: 14px;
+    font-weight: normal;
+    
+   
+}
+footer a{
+    text-decoration: none;
+    color: #F72585;
+    width: 350px;
+}
+
+footer ul li:hover{
+    transform: scale(1.1);
+}
+
+footer.logo-footer img{
+    color: #F72585;
+    width: 70%;
+
+    
+}
+footer.redesSociales{
+    color: #F72585;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+footer.redesSociales a{
+   
+    font-size: 40px;
+}
+
+ .fa-youtube, .fa-instagram-square{
+    font-size: 40px;
+    margin-right: 40px;
+}
+.fa-facebook-square {
+    font-size: 40px;
 }
