@@ -20,6 +20,7 @@ position: fixed;
 z-index: 1020;
 text-align: center;
 
+
 }
 
 .cabecera img{
@@ -143,9 +144,15 @@ text-align: center;
     background-color: #F72585;
     transform: scale(1.1);
 }
+
 /*==============
 CONTENEDOR PRODUCTO
 ==============*/
+.general{
+display: block;
+
+
+}
 .ContenedorProducto{
     display: flex;
     flex-wrap: wrap;
@@ -481,4 +488,90 @@ footer.redesSociales a{
 }
 .fa-facebook-square {
     font-size: 40px;
+}
+@media (max-width: 426px){
+    .general{
+        display: block;
+        flex-direction: column;
+        
+        }
+        .ContenedorProducto{
+            display: block;
+            flex-wrap: wrap;
+            margin-top: 100px;
+            padding-top: 2px;
+            justify-content: space-around;
+            
+            position: relative;
+            width: 100%;            
+        }
+        .FotoDetalle {
+            width: 100%;
+            height: 50vh;
+            align-items: center;
+            border: gray solid 2px; 
+            justify-content: space-around;
+            display: flex;
+            border-radius: 6px;
+            box-shadow: 2px 2px 2px gray;
+        }
+        .FotoDetalle img {
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+            max-width: 50%;
+            max-height: 50%;
+            background-size: cover;
+        }
+
+        .DescripcionProducto {
+            display: block;
+            flex-wrap: wrap;
+            border: black;
+            padding-left: 10%;
+            width: 100%;
+        
+        }
+
+        .QAClientes {
+            width: 50%;
+            }     
+            
+            .preguntas {
+               width: 320px;
+               height: 100px;
+             
+    footer ul li {
+        color: #F72585;
+        list-style-type: none;
+        margin-top: 10%;
+        font-size: 10px;
+        font-weight: normal;
+             
+    }
+    .logo-footer{
+        width: 33%;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+       
+    }
+    .logo-footer img{
+        color: #F72585;
+        width: 50%;
+       
+    }
+    .redesSociales{
+        color: #F72585;
+        display: inline-block;
+        flex-wrap: wrap;
+        width: 33%;
+    }
+    .fa-youtube, .fa-instagram-square{
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    .fa-facebook-square {
+        font-size: 20px;
+    }
 }
