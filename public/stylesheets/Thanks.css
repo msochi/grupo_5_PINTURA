@@ -20,7 +20,6 @@ position: fixed;
 z-index: 1020;
 text-align: center;
 
-
 }
 
 .cabecera img{
@@ -146,118 +145,33 @@ text-align: center;
 }
 
 /*==============
-CONTENEDOR PRODUCTO
-==============*/
-.general{
-display: block;
+CUERPO
+=============*/
 
+section {
 
-}
-.ContenedorProducto{
+    width: 100%;
+    
+    padding: 200px 20px;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 10%;
     justify-content: space-around;
-    margin: 2px 2%;
-    position: relative;
-    
 }
-.FotoDetalle {
-    width: 50%;
-    height: 70%;
-    align-items: center;
-    border: gray solid 2px; 
+
+.interior{
+    width: 70%;
     justify-content: space-around;
-    display: flex;
-    border-radius: 6px;
-    box-shadow: 2px 2px 2px gray;
-}
-.FotoDetalle img {
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    max-width: 50%;
-    max-height: 50%;
-    background-size: cover;
-}
-
-.DescripcionProducto {
-    display: block;
-    flex-wrap: wrap;
-    border: black;
-    padding-left: 10%;
-    width: 50%;
+    text-align: center;
+    padding-top: 20px;
 
 }
 
-.eleccionColor{
-    background-color: #7209B7;
-    color: white;
-    border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    cursor: pointer;
-    font-size: x-small;
-
-}
-.eleccionColor:hover {
-    transform: scale(1.1);
-}
-
-.tarjetasPdp li {
-    list-style: none;
-    display: block;
-    flex-direction: row;
-    display:inline;
-    justify-content:stretch;
-    margin-left: 5px;
-    border-color: gray;
-}
-.tarjetasPdp img {
-    width: 10%;
-    display: inline;
-}
-
-.tarjetasPdp img:hover {
-   transform: scale(1.2);
+.interior h1{
+    text-align: center;
 }
 
 
 
-.Comprar {
-    float:right;
-    margin-right: 20%;
-    background-color: #F72585;
-    color: white;
-    border-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    cursor: pointer;
-    font-size: large  ;
-    
-}
-.Comprar:hover {
-    transform: scale(1.1);
-}
-
-.Agregar {
-background-color:white;
-border-radius: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-    border: none;
-    }
-
-.Agregar:hover {
-        transform: scale(1.1);
-}
 .estrellas li {
     list-style: none;
     display: inline-block
@@ -267,7 +181,7 @@ border-radius: 5px;
     color: transparent;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
-    font-size: 30px;
+    font-size: 40px;
     margin-left: 5px;
 }
 
@@ -278,153 +192,43 @@ border-radius: 5px;
     transform: scale(1.2);
 }   
 
- 
-/*=============
-FICHA TECNICA
-============*/
-
-.fichaTecnica article {
-    margin:5px 30px;
-   
-
-}     
-
-.fichaTecnica h2 {
-
-   text-decoration: underline;
-
-}    
-
-.fichaTecnica h5 {
-
-    text-align:justify;
-    text-anchor: middle;
-    text-justify: distribute;
-    line-height: 1.5em;
-}    
-
-
-table{
-    margin-left: 2%;
-   
-} 
-
-
-.tabla{
-    width: 300px;
-    border-style:none;
-   
-} 
-
-.tabla td{
-    width: 300px;
-    border-style:none;
-    padding: 5px 20px;
-    margin-left: 1%;
-} 
-
-.tabla tr:nth-child(odd) {
-background-color: rgb(218, 218, 218);
-border-color: none;
-width: 320px;
-padding: 5px 12px;
-
-} 
-
-.tabla tr:nth-child(even) {
-background-color: none;
-width: 320px;
-padding: 5px 12px;
-
-}   
-
-.volver {
-    float:right;
-    margin-right: 10%;
-    background-color:#7209B7;
+.enviar{
     color: white;
+    background-color: #7209B7;
     border-radius: 5px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-left: 15px;
     padding-right: 15px;
-    cursor: pointer;
-    font-size: medium ;
-    text-decoration: none;
-}   
-
-.volver:hover {
+    border: none;
+    font-size: 16px;
+}
+.enviar:hover{
     transform: scale(1.2);
-}  
-.Consultas {
-    margin-left: 2%;
-    display: flex;
-    flex-wrap: wrap;
-    
-
-
-}     
-
-.Consultas h2 {
+    cursor: pointer;
+}
+.SeguirComprando{
     margin-top: 20px;
-    text-decoration: underline;
+    color: white;
+    background-color: #F72585;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    font-size: 24px;
+    text-decoration: none;
     
- 
-}  
-.QAClientes {
-width: 50%;
-}     
-
-.preguntas {
-   width: 600px;
-   height: 100px;
- 
-}  
-.enviarpregunta {
-margin-left: 540px;
-display: flex;
-background-color:#7209B7;
-color: white;
-border-radius: 5px;
-padding-top: 2px;
-padding-bottom: 2px;
-padding-left: 10px;
-padding-right: 10px;
-cursor: pointer;
-font-size: small  ;
-} 
-
-.QAClientes h5 {
-    font-weight: bold;
-    }   
-
-.Respuestas {
-        font-weight: bold;
-        color: rgb(109, 105, 105);
-        margin-left: 4%;
-    }   
-    .RespuestaPintame {
-        font-style: italic;
-        color: rgb(109, 105, 105);
-        margin-left: 5%;
-    }   
-
+}
+.SeguirComprando:hover {
+    transform: scale(1.2);
     
-.bannerPDP  {   
-   display: flex;
-   justify-content: space-around;
-   justify-items: center;
-   width: 50%;
-   align-items: center;
-      
-    }  
-    
- .bannerPDP img {   
-     min-width: 50%;;
-    
-    
+}
 
-} 
+
+
+
 
 /*=========
 FOOTER
@@ -490,57 +294,41 @@ footer.redesSociales a{
     font-size: 40px;
 }
 @media (max-width: 426px){
-    .general{
-        display: block;
-        flex-direction: column;
+    
+    header {
+        background: #F72585;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 50px;
+        width: 100%;
         
         }
-        .ContenedorProducto{
-            display: block;
-            flex-wrap: wrap;
-            margin-top: 100px;
-            padding-top: 2px;
-            justify-content: space-around;
-            
-            position: relative;
-            width: 100%;            
-        }
-        .FotoDetalle {
-            width: 100%;
-            height: 50vh;
+        header img{
+            display: flex;
             align-items: center;
-            border: gray solid 2px; 
-            justify-content: space-around;
+            justify-content: center;
+            width: 60%;
+           
+        }    
+        header a {
             display: flex;
-            border-radius: 6px;
-            box-shadow: 2px 2px 2px gray;
-        }
-        .FotoDetalle img {
-            display: flex;
-            justify-content: space-around;
-            justify-items: center;
-            max-width: 50%;
-            max-height: 50%;
-            background-size: cover;
-        }
+            align-items: center;
+            justify-content: center;
+           
+        }    
 
-        .DescripcionProducto {
-            display: block;
-            flex-wrap: wrap;
-            border: black;
-            padding-left: 10%;
-            width: 100%;
-        
-        }
+    section {
+        display: block;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-around;
+        align-items: center;
+       
+    }
 
-        .QAClientes {
-            width: 50%;
-            }     
-            
-            .preguntas {
-               width: 320px;
-               height: 100px;
-             
+     
     footer ul li {
         color: #F72585;
         list-style-type: none;

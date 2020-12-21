@@ -18,38 +18,54 @@
     </header>
     <section>
     <div class="DatosCliente">
-        <h2>PAGAR</h2>
         <form action="login" method="POST">
-            <label for="Nombre">Nombre</label><br>
-            <input type="text" name="Nombre" value="" placeholder="Ingresa tu nombre"> <br>
-            <label for="Apellido">Apellido</label><br>
-            <input type="text" name="pass" value="" placeholder="Tú Apellido"> <br>
+            <h2>PAGAR</h2>
+             <label for="Nombre">Nombre</label><br>
+             <input type="text" name="Nombre" value="" placeholder=" Ingresa tu nombre"> <br>
+             <label for="Apellido">Apellido</label><br>
+            <input type="text" name="pass" value="" placeholder=" Tú Apellido"> <br>
             <label for="DNI">DNI</label><br>
-            <input type="number" name="DNI" value="" placeholder="Tú DNI"> <br>
+            <input type="text" name="DNI" value="" placeholder=" Tú DNI"> <br>
             <label for="Domicilio">Domicilio</label><br>
-            <input type="text" name="Domicilio" value="" placeholder="Tú Domicilio"> <br>
+            <input type="text" name="Domicilio" value="" placeholder=" Tú Domicilio"> <br>
             <label for="Localidad">Localidad</label><br>
-            <input type="text" name="Localidad" value="" placeholder="Localidad donde  vivis"> <br>
-            <label for="Cod.Postal">Código Postal</label><br>
-            <input type="number" name="Cod.Postal" value="" placeholder="Tú Código Postal"> <br>
-            <label for="Provincia">Provincia</label><br>
-            <input type="text" name="Provincia" value="" placeholder="Provincia donde vivís"> <br>
-            <label for="Telefono">Teléfono</label><br>
-            <input type="number" name="Telefono" value="" placeholder="Tú número de Teléfono"> <br>
+            <input type="text" name="Localidad" value="" placeholder=" Localidad donde  vivis"> <br>
+            <section class="CamposSeleccionados">
+                <div>
+                    <label for="Cod.Postal">Código Postal</label><br>
+                    <input type="text" name="Cod.Postal" class="campoChico" value="" placeholder=" Tú Código Postal"> <br>
+                </div>
+                <div>
+                    <label for="Provincia">Provincia</label><br>
+                    <input type="text" name="Provincia" class="campoChico" value="" placeholder=" Donde vivís"> <br>
+                </div>  
+                <div>
+                    <label for="Telefono">Teléfono</label><br>
+                    <input type="text" name="Telefono" class="campoChico" value="" placeholder=" Tú Teléfono"> <br>
+                </div>
+            </section>    
     </div>    
     <div class="Pago">
-        <form action="login" method="POST">
-            <label for="NumeroTarjeta">NUMERO DE TARJETA</label><br>
-            <input type="number" name="NumeroTarjeta" value="" placeholder="Ingresa el número de tu tarjeta"> <br>
-            <label for="NombreyApellidoTitular">NOMBRE Y APELLIDO DEL TITULAR DE LA TARJETA</label><br>
-            <input type="text" name="NombreyApellidoTitular" value="" placeholder="xxxx-xxxx-xxxxxx"> <br>
-            <label for="FechaDeVencimiento">FECHA DE VENCIMIENTO</label><br>
-            <input type="date" name="FechaDeVencimiento" value="" placeholder="Vencimiento"> <br>
-            <label for="Cod.Seguridad">COD. DE SEGURIDAD</label><br>
-            <input type="date" name="Cod.Seguridad" value="" placeholder="3 números"> <br>
-
-
-    </div>
+        <div class="camposTarjeta">
+            <form action="login" method="POST">
+                <label for="NumeroTarjeta">NUMERO DE TARJETA</label><br>
+                 <input type="text" name="NumeroTarjeta" value="" placeholder=" Ingresa el número de tu tarjeta"> <br>
+                <label for="NombreyApellidoTitular">NOMBRE Y APELLIDO DEL TITULAR DE LA TARJETA</label><br>
+                <input type="text" name="NombreyApellidoTitular" value="" placeholder=" xxxx-xxxx-xxxxxx"> <br>
+                <div class="CamposSeleccionados">  
+                    <div>
+                        <label for="FechaDeVencimiento">FECHA DE VENCIMIENTO</label><br>
+                        <input type="month" name="FechaDeVencimiento" value="2020-12" min="2020-12"placeholder=" Vencimiento"> <br>
+                    </div>
+                    <div>    
+                        <label for="Cod.Seguridad">COD. DE SEGURIDAD</label><br>
+                        <input type="text" name=" Cod.Seguridad" value="" placeholder=" 3 números"> <br>
+                    </div>    
+                </div>    
+                <button type="submit" class="Pagar" name="Comprar">PAGAR</button>
+        </div>    
+    </div><br>
+    <a href="./index.html" class="volver">Volver</a> 
 </section>
     <footer class="footer">
         <div class="credenciales">
