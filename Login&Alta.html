@@ -13,42 +13,44 @@
 </head>
 <body>
     <header class="cabecera">
-        <a href="#" class="logo"><img src="./imagenes/logos/Pintame v2.png" alt="" ></a> 
+        <a href="./index.html" class="logo"><img src="./imagenes/logos/Pintame v2.png" alt="" ></a> 
     </header>
 
     <section class="contenedor">
         <div class="ingreso">
-            <h2>Ingresar a mi  cuenta</h2> <hr class="hrcolor">
-            <h4>Ya estoy registrado</h4>
-            <h6>Ingresá tu dirección de email y contraseña para iniciar sesión.</h6>
+            <h2>Registrate :)</h2> <hr class="hrcolor">
+            <h4>Datos para iniciar sesión</h4>
+            <h6>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h6>
             <form action="login" method="POST">
                 <label for="email">Correo electronico</label><br>
                 <input type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
                 <label for="pass">Contraseña</label><br>
                 <input type="password" name="pass" value="" placeholder="Tú clave"> <br>
-                
-                <a href="#" class="recupero">Recuperar Contraseña</a> <br>
-
-                <button type="submit" name="entrar" class="enviar">Enviar</button>
             </form>
         </div>
 
-        <div class="regristrarse">
-            <h2>  </h2>
+        <div class="ingreso2">
             <hr class="hrcolor">
-            <h4>No estoy registrado</h4>
-            <h6>Crear tu cuenta  y obtene increibles beneficios.</h6>
-            <ul>
-                <li>- Hace tus compras más rápidas y eficientes.</li>
-                <li>- Guarda tus productos favoritos.</li>
-                <li>- Tenes disponbile productos guardados en tu carrito y un historial de tus productos comprados.</li>
-                <li>- Guarda tu dirección y hace seguimiento de tus pedidos.</li>
-                <li>- Enterate de increibles promos, tendencias y novedades.</li>
-            </ul><br>
-            <h6>
-                Solo te pediremos la información necesaria para mejorar tu experiencia y agilizar tu proceso de compra.</h6>
-
-                <button type="submit" name="crearCuenta" class="crearCuenta"  >Crear Cuenta</button>    
+            <h4>Datos personales</h4>
+            <form action="create" method="POST">
+                <label for="name">Nombre*</label><br>
+                <input type="text" name="name" value="" placeholder="Ingresa tu nombre"> <br>
+                <label for="last_name">Apellido*</label><br>
+                <input type="text" name="name" value="" placeholder="Ingresa tu apellido"> <br>
+                <label for="dni">DNI*</label><br>
+                <input type="number" name="DNI" value="" placeholder="Ingresa tu DNI"> <br>
+                <label for="street">Dirección*</label><br>
+                <input type="text" name="street" value="" placeholder="Ingresa tu dirección"> <br>
+                <label for="location">Localidad*</label><br>
+                <input type="text" name="location" value="" placeholder="Ingresa tu localidad"> <br>
+                <label for="zipcode">Código Postal*</label><br>
+                <input type="text" name="zipcode" value="" placeholder="Ingresa tu Código Postal"> <br>
+                <label for="province">Provincia*</label><br>
+                <input type="text" name="province" value="" placeholder="Ingresa tu Provincia"> <br>
+                <label for="phone">Teléfono*</label><br>
+                <input type="number" name="phone" value="" placeholder="Ingresa tu teléfono"> <br>
+            </form>
+                <button class="enviar" type="submit" name="crearCuenta" class="crearCuenta">Crear Cuenta</button>    
         </div>
 
         <div class="bannerLogin">
