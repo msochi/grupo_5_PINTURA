@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/Estilo-Alta.css">
+    <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
+    
+
+    <title>Pint@me</title>
+</head>
+<body>
+    <header class="cabecera">
+        <a href="./index.html" class="logo"><img src="./images/logos/Pintame v2.png" alt="" ></a> 
+    </header>
+
+    <section class="contenedor">
+        <div class="ingreso">
+            <h2>Registrate :)</h2> <hr class="hrcolor">
+            <h4>Datos para iniciar sesión</h4>
+            <h6>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h6>
+            <form action="login" method="POST">
+                <label for="email">Correo electronico</label><br>
+                <input type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
+                <label for="pass">Contraseña</label><br>
+                <input type="password" name="pass" value="" placeholder="Tú clave"> <br>
+            </form>
+        </div>
+
+        <div class="ingreso2">
+            <hr class="hrcolor">
+            <h4>Datos personales</h4>
+            <form action="create" method="POST">
+                <label for="name">Nombre*</label><br>
+                <input type="text" name="name" value="" placeholder="Ingresa tu nombre"> <br>
+                <label for="last_name">Apellido*</label><br>
+                <input type="text" name="name" value="" placeholder="Ingresa tu apellido"> <br>
+                <label for="dni">DNI*</label><br>
+                <input type="number" name="DNI" value="" placeholder="Ingresa tu DNI"> <br>
+                <label for="street">Dirección*</label><br>
+                <input type="text" name="street" value="" placeholder="Ingresa tu dirección"> <br>
+                <label for="location">Localidad*</label><br>
+                <input type="text" name="location" value="" placeholder="Ingresa tu localidad"> <br>
+                <label for="zipcode">Código Postal*</label><br>
+                <input type="text" name="zipcode" value="" placeholder="Ingresa tu Código Postal"> <br>
+                <label for="province">Provincia*</label><br>
+                <input type="text" name="province" value="" placeholder="Ingresa tu Provincia"> <br>
+                <label for="phone">Teléfono*</label><br>
+                <input type="number" name="phone" value="" placeholder="Ingresa tu teléfono"> <br>
+            </form>
+                <button class="enviar" type="submit" name="crearCuenta" class="crearCuenta">Crear Cuenta</button>    
+        </div>
+
+        <div class="bannerLogin">
+            <img src="./images/Banner ahora 12.jpg" alt="">
+
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="credenciales">
+            <ul>
+                <li> <a href="#"> Quienes Somos</a> </li>
+                <li> <a href="#">Pedidos Especiales </a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>    
+        </div>
+        <div class="logo-footer">
+            <img src="./images/logos/Pintame v2.png">
+        </div>
+        <div class="redesSociales">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+           
+        </div>
+     </footer>
+
+
+</body>
