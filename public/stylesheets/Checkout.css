@@ -31,11 +31,17 @@ DATOS CLIENTE
 section {
     display: flex;
     flex-wrap: wrap;
+    padding: 20px;
+   
     
 }
 
 .DatosCliente{
     width: 50%;
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 .DatosCliente h2{
     color: #F72585;
@@ -43,7 +49,6 @@ section {
 }
 
 
-}
 .DatosCliente label{
     font-size: 14px;
     margin-top: 10px;
@@ -53,20 +58,115 @@ section {
 .DatosCliente input{
     border-radius: 5px;
     width: 80%;
-    height: 10vh;;
+    height: 30px;
     margin-top: 5px;
     margin-bottom: 10px;
     
 }
 .DatosCliente input:hover{
-    background-color: rgb(116, 189, 221);
+    background-color: rgb(174, 213, 230);
     color: #f72585;
 
 }
 
-.Pago{
-    padding-top: 5%;
+.CamposSeleccionados{
+    display: flex;
+    flex-wrap: wrap;
+
+
 }
+.DatosCliente .campoChico{
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display:inline-block
+    
+}
+.DatosCliente .campoChico:hover{
+    background-color: rgb(174, 213, 230);
+    color: #f72585;
+
+}
+
+
+
+
+.Pago{
+    padding-top: 2%;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap; 
+  
+    
+}
+.camposTarjeta{
+    background-color: rgb(230, 224, 224);
+    border-radius: 5px;
+   
+    width: 80%;
+    height: 60%;
+    padding-top: 2%;
+    padding-left: 20px;
+    padding-bottom: 2px;
+    
+
+}
+.Pago label{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Pago input{
+    border-radius: 5px;
+    width: 80%;
+    height: 30px;;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+.Pago input:hover{
+    background-color: rgb(174, 213, 230);
+    color: #f72585;
+}
+
+.Pagar{
+        float:right;
+        margin-right: 5%;
+        background-color: #F72585;
+        color: white;
+        border-radius: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        font-size: large  ;
+        
+    }
+  .Pagar:hover {
+        transform: scale(1.1);
+    }
+    
+.volver {
+    margin-left: 90%; 
+    background-color:#7209B7;
+    color: white;
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size: medium ;
+    text-decoration: none;
+}   
+
+.volver:hover {
+    transform: scale(1.2);
+} 
 
 
 
@@ -113,7 +213,7 @@ footer ul li:hover{
 
 footer.logo-footer img{
     color: #F72585;
-    width: 70%;
+    width: 50%;
 
     
 }
@@ -135,3 +235,116 @@ footer.redesSociales a{
 .fa-facebook-square {
     font-size: 40px;
 }
+@media (max-width: 426px){
+    
+    header {
+        background: #F72585;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 50px;
+        width: 100%;
+        
+        }
+        header img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+           
+        }    
+        header a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+        }    
+
+    section {
+        display: block;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-around;
+        align-items: center;
+       
+    }
+    .DatosCliente{
+        width: 100%;
+        padding-left: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+    .CamposSeleccionados{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+    
+    }
+    .DatosCliente .campoChico{
+        border-radius: 5px;
+        width: 80%;
+        height: 30px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        display:inline-block
+        
+    }
+    .Pago{
+        padding-top: 2%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap; 
+    }
+
+    .volver {
+        margin-top: 20px;
+         margin-left: 80%; 
+        background-color:#7209B7;
+        color: white;
+        border-radius: 5px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        font-size: medium ;
+        text-decoration: none;
+    } 
+
+   
+    footer ul li {
+        color: #F72585;
+        list-style-type: none;
+        margin-top: 10%;
+        font-size: 10px;
+        font-weight: normal;
+             
+    }
+    .logo-footer{
+        width: 33%;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+       
+    }
+    .logo-footer img{
+        color: #F72585;
+        width: 50%;
+       
+    }
+    .redesSociales{
+        color: #F72585;
+        display: inline-block;
+        flex-wrap: wrap;
+        width: 33%;
+    }
+    .fa-youtube, .fa-instagram-square{
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    .fa-facebook-square {
+        font-size: 20px;
+    }
