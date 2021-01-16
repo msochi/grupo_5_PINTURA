@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('Head.ejs') %>
+<body>
+    <header class="cabecera">
+        <a href="./index.html" class="logo"><img src="./images/logos/Pintame v2.png" alt="" ></a> 
+    </header>
+
+    <section class="contenedor">
+        <div class="ingreso">
+            <h2>Ingresar a mi  cuenta</h2> <hr class="hrcolor">
+            <h4>Ya estoy registrado</h4>
+            <h6>Ingresá tu dirección de email y contraseña para iniciar sesión.</h6>
+            <form action="login" method="POST">
+                <label for="email">Correo electronico</label><br>
+                <input type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
+                <label for="pass">Contraseña</label><br>
+                <input type="password" name="pass" value="" placeholder="Tú clave"> <br>
+                
+                <a href="#" class="recupero">Recuperar Contraseña</a> <br>
+
+                <button type="submit" name="entrar" class="enviar">Enviar</button>
+            </form>
+        </div>
+
+        <div class="regristrarse">
+            <h2>  </h2>
+            <hr class="hrcolor">
+            <h4>No estoy registrado</h4>
+            <h6>Crear tu cuenta  y obtene increibles beneficios.</h6>
+            <ul>
+                <li>- Hace tus compras más rápidas y eficientes.</li>
+                <li>- Guarda tus productos favoritos.</li>
+                <li>- Tenes disponbile productos guardados en tu carrito y un historial de tus productos comprados.</li>
+                <li>- Guarda tu dirección y hace seguimiento de tus pedidos.</li>
+                <li>- Enterate de increibles promos, tendencias y novedades.</li>
+            </ul><br>
+            <h6>
+                Solo te pediremos la información necesaria para mejorar tu experiencia y agilizar tu proceso de compra.</h6>
+
+                <button type="submit" name="crearCuenta" class="crearCuenta"  >Crear Cuenta</button>    
+        </div>
+
+        <div class="bannerLogin">
+            <img src="./images/Bannerahora12.jpg" alt="">
+
+        </div>
+    </section>
+    <%- include('Footer.ejs') %>    
+
+
+</body>
