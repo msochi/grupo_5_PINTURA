@@ -1,0 +1,566 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+       
+}
+
+.cabecera {
+background: #F72585;   
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+justify-items: center;
+width: 100%;
+height: auto;
+overflow: hidden;
+position: fixed;
+z-index: 1020;
+text-align: center;
+
+}
+
+.cabecera img{
+    width: 70%;
+    align-items: center;
+    justify-items: center;
+}
+.opcionesHeader {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-items: center;
+    box-sizing: border-box;
+    }
+ .cabecera .busqueda{
+    display: flex; 
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+    border-color: gray;
+    background: whitesmoke;
+    align-content: stretch;
+    align-items: center;
+    justify-content: center;
+     box-shadow: 0px 4px 4px rgba(61, 60, 60, 0.733);
+             
+ }
+ .cabecera .busqueda:hover, .busqueda:active{
+     background-color: rgb(116, 189, 221);
+     color: #f72585;
+ }
+#Lupa{
+    color: #F72585;
+    display: flex;
+}
+ .cabecera div button {        
+        height: 30px;
+        width: 25px;
+        margin-left: -10%;
+        border-color: none;
+        border: none;
+        color: #F72585;
+        background-color: transparent;
+        outline-style: none;
+      }
+
+.cabecera div button:hover {           
+        height: 30px;
+        width: 25px;
+        border-color: none;
+        border: none;
+        color: #F72585;
+        outline-style: none;
+        transform: scale(2);              
+      }      
+
+.cabecera div button a::after {      
+    height: 30px;
+    width: 25px;
+    margin-left: -30px;
+    border: none;
+    background-color: transparent;
+    border-color: transparent;
+    outline-style: none;    
+    }
+   
+.Header ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+.Header ul li {
+    margin: 20px;
+    list-style: none;
+    float: left;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.Header ul li:hover{
+    color: gold;
+}
+ .Header a {
+     text-decoration: none;
+     color: white;
+     display: block;
+     
+   }
+ .Header ul li a:hover{
+    color: gold;
+ }
+/*============
+    MENU
+ ==========*/
+
+
+.MenuHorizontal{
+       background: #B5179E;   
+       display: flex;
+       flex-wrap: wrap;
+       width: 100%;
+       justify-content: space-around;
+    
+}
+ 
+ .MenuHorizontal a{
+    list-style: none;
+    float: left;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+     
+ }
+ .MenuHorizontal a:hover{
+    background-color: #F72585;
+    transform: scale(1.1);
+}
+
+ /*========
+   VITRINA
+ =========*/
+
+div.Vitrina{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    
+}
+
+div.Vitrina .InteriorVitrina{
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   height: 35vh;
+   align-items: center;   
+   text-align: right;
+   text-decoration: none;
+   background-image: url("../images/pantorena-pinceles.jpg");
+   background-size: 100% 100%;   
+  }
+  div.Vitrina .claim{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F72585;
+    margin-left: 60%;
+    text-decoration: solid;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+    text-align: right;
+    vertical-align: middle;
+    text-shadow: 4px 4px 2px #464242;
+    text-align: center;
+    
+
+}
+
+/*=========
+CONTENEDOR
+========*/
+
+section.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    
+       
+}
+
+
+/*============
+FAMILIAS
+============*/
+
+div.familias {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;  
+}
+div.familias .mundos{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    
+    }
+div.familias .mundos a{
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    justify-content: space-between;
+    vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-shadow: 4px 4px 2px #1b1919
+
+}
+div.familias .mundos .interior{
+    background-image: url("../images/Interior-6.jpg");
+    background-size: 100% 100%;
+    width: 550px;
+    height: 43vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 2px gray;
+}
+div.familias .mundos .exterior{
+    background-image: url("../images/PinturaFrente.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    width: 550px;
+    height: 43vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 2px gray;
+}
+div.familias .mundos .decoracion{
+    background-image: url("../images/CuartoClaro.jpg");
+    background-size: 100% 100%;
+    width: 550px;
+    height: 43vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 12px gray;
+}
+div.familias .mundos .herramientas{
+    background-image: url("../images/3pinceles.jpg");
+    background-size: 100% 100%;
+    width: 550px;
+    height: 43vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 12px gray;
+}
+
+.mundos a:hover{
+    transform: scale(1.1);
+          
+}
+
+
+/*============
+ENVIOS- TARJETA  - LOCALES
+============*/
+div.enviosTarjetasLocales{
+   
+    display:flex;
+    flex-wrap: wrap;
+    margin: 2%;
+    width: 100%;
+   
+    justify-content: space-around;
+    
+   
+}
+.truck{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;     
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    
+    
+       
+}
+.fa-truck{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 100px;
+    color:rgb(158, 158, 158);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5%; 
+}
+
+.tarjeta{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;     
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    
+
+}
+.fa-credit-card{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 100px;
+    color:rgb(158, 158, 158);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5%;
+}
+.retiro{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;     
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    
+}
+.fa-store {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 100px;
+    color:rgb(158, 158, 158);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.enviosTarjetasLocales p{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-weight: bold;
+    color:rgb(158, 158, 158);
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: auto;
+   
+}
+/*===========
+OPORTUNIDADES
+=========*/
+div.oportunidades{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #B5179E;
+    text-decoration: underline;
+    text-shadow: 2px 2px 2px #ad72a5;
+}
+
+div.ofertas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    }
+div.ofertas a{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: rgb(199, 197, 197);
+    border-radius: 10px;
+    margin: 1%;
+    text-decoration: none;
+}
+div.ofertas img{
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 10px;
+}
+div.ofertas .precio{
+    color: #F72585;
+    font-size: 30px;
+    font-weight: bold;   
+}
+
+.ofertas a:hover{
+    transform: scale(1.1);
+}
+
+
+/*=========
+MARCAS
+==========*/
+.marcas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.marcas li {
+    list-style-type: none;
+    
+}
+
+/*=========
+FOOTER
+=========*/
+
+footer.footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #292525;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+   }
+footer.credenciales{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F72585;
+    width: 350px;
+    
+   
+}
+footer ul li {
+    color: #F72585;
+    list-style-type: none;
+    margin-top: 10%;
+    font-size: 14px;
+    font-weight: normal;
+    
+   
+}
+footer a{
+    text-decoration: none;
+    color: #F72585;
+    width: 350px;
+}
+
+footer ul li:hover{
+    transform: scale(1.1);
+}
+
+footer.logo-footer img{
+    color: #F72585;
+    width: 70%;
+
+    
+}
+footer.redesSociales{
+    color: #F72585;
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+footer.redesSociales a{
+   
+    font-size: 40px;
+}
+
+ .fa-youtube, .fa-instagram-square{
+    font-size: 40px;
+    margin-right: 40px;
+}
+.fa-facebook-square {
+    font-size: 40px;
+}
+@media (max-width: 426px){
+    
+   
+   
+    footer ul li {
+        color: #F72585;
+        list-style-type: none;
+        margin-top: 10%;
+        font-size: 10px;
+        font-weight: normal;
+             
+    }
+    .logo-footer{
+        width: 33%;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+       
+    }
+    .logo-footer img{
+        color: #F72585;
+        width: 50%;
+       
+    }
+    .redesSociales{
+        color: #F72585;
+        display: inline-block;
+        flex-wrap: wrap;
+        width: 33%;
+    }
+    .fa-youtube, .fa-instagram-square{
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    .fa-facebook-square {
+        font-size: 20px;
+    }
+}

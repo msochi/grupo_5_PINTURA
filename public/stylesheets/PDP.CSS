@@ -152,6 +152,7 @@ CONTENEDOR PRODUCTO
 display: block;
 
 
+
 }
 .ContenedorProducto{
     display: flex;
@@ -341,6 +342,7 @@ padding: 5px 12px;
 .volver {
     float:right;
     margin-right: 10%;
+    
     background-color:#7209B7;
     color: white;
     border-radius: 5px;
