@@ -11,11 +11,11 @@
             <h2>Ingresar a mi  cuenta</h2> <hr class="hrcolor">
             <h4>Ya estoy registrado</h4>
             <h6>Ingresá tu dirección de email y contraseña para iniciar sesión.</h6>
-            <form action="login" method="POST">
+            <form action="/login" method="POST" enctype="application/x-www-form-urlencoded">
                 <label for="email">Correo electronico</label><br>
-                <input type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
+                <input id= 'mail' type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
                 <label for="pass">Contraseña</label><br>
-                <input type="password" name="pass" value="" placeholder="Tú clave"> <br>
+                <input id = 'password'  type="password" name="pass" value="" placeholder="Tú clave"> <br>
                 
                 <a href="#" class="recupero">Recuperar Contraseña</a> <br>
 

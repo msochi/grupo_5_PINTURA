@@ -1,6 +1,7 @@
 const express = require ("express");
 const app = express ();
 const path = require ("path") // adoptamos PATH para escribir rutas.
+const fs = require ('fs');
 
 const indexRouter = require ('./routes/indexRouter');     //Indicamos cual es la funciòn u objeto literal que queremos usar.
 
@@ -31,3 +32,6 @@ app.use ('/PDP', pdpRouter);
 app.use ('/miCarrito', miCarritoRouter);
 app.use ('/Checkout', checkOutRouter);
 app.use ('/ThankYou', thankYouRouter);
+
+app.use(express.urlencoded({extenden:false}));
+app.use(express.json());
