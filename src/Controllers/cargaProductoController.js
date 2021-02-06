@@ -23,6 +23,7 @@ module.exports ={
             usoRecomendado: req.body.usoRecomendado,
             secado: req.body.secado,
             garantia: req.body.garantia,
+            imagenProducto: req.files[0].filename,
           
         })
         fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
