@@ -1,7 +1,8 @@
 const express = require ("express");
 const app = express ();
-const path = require ("path") // adoptamos PATH para escribir rutas.
-const fs = require ('fs');
+const path = require ("path"); // adoptamos PATH para escribir rutas.
+
+
 
 const indexRouter = require ('./routes/indexRouter');     //Indicamos cual es la funciòn u objeto literal que queremos usar.
 
@@ -11,6 +12,8 @@ const pdpRouter = require ('./routes/pdpRouter');
 const miCarritoRouter = require ('./routes/miCarritoRouter');
 const checkOutRouter = require ('./routes/checkOutRouter');
 const thankYouRouter = require ('./routes/thankYouRouter');
+const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
+const cargaProductoRouter = require('./routes/cargaProductoRouter');
 
 app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
 
@@ -27,11 +30,15 @@ app.use ('/', indexRouter) // Le estamos diciendo a Express que cuando llegue es
 
 app.use ('/plp', plpRouter) // Aca le indico a express que cuando llegue este prefijo tengo que usar este enrutador.
 app.use ('/login',loginRouter);
-app.use ('/Alta', plpRouter);
+app.use ('/plp', plpRouter);
 app.use ('/PDP', pdpRouter);
 app.use ('/miCarrito', miCarritoRouter);
 app.use ('/Checkout', checkOutRouter);
 app.use ('/ThankYou', thankYouRouter);
+app.use ('/crearUsuario', crearUsuarioRouter);
+app.use ('/cargaProducto', cargaProductoRouter);
 
-app.use(express.urlencoded({extenden:false}));
+app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
 app.use(express.json());
+
+

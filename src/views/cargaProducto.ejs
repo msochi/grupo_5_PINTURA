@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/Estilo-Alta.css">
+    <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
+    
+
+    <title>Pint@me</title>
+</head>
+<body>
+    <header class="cabecera">
+        <a href="./index" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
+    </header>
+
+    <section class="contenedor">
+        <div class="ingreso">
+            <h2>NUEVO PRODUCTO</h2> <hr class="hrcolor">
+            <h4>Ingresar los datos correspondientes al producto</h4>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <label for="marca">Marca</label><br>
+                <input type='text' id= 'marca'name="marca" value="" placeholder="Ingresa la marca"> <br>
+                <label for="categoria">Categoria</label><br>
+                <input type="text" id='categoria' name="categoria" value="" placeholder="Categoria de producto"> <br>
+                <label for="familia">Familia</label><br>
+                <input type="text" id='familia' name="familia" value="" placeholder="Familia"> <br>
+                <label for="tipo">Tipo</label><br>
+                <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> <br>
+                <label for="presentacion">Presentacion</label><br>
+                <input type="text" id='presentacion' name="presentacion" value="" placeholder="Litros - CM3 - Unidades"> <br>
+                <label for="contenidoNeto">Contenido Neto</label><br>
+                <input type="text" id='contenidoNeto' name="contenidoNeto" value="" placeholder="Contenido Neto"> <br>
+                <label for="color">Color*</label><br>
+                <input type="text" id='color' name="color" value="" placeholder="color"> <br>
+                <label for="TiempoDeEspera">Tiempo de espera entre manos</label><br>
+                <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="" placeholder="Tiempo de espera entre manos"> <br>
+                <label for="base">Base</label><br>
+                <input type="text" id= 'base' name="base" value="" placeholder="Base (Ej: al agua)"> <br>
+                <label for="terminacion">Terminación</label><br>
+                <input type="text" id='terminacion' name="terminacion" value="" placeholder="Tipo de Terminación"> <br>
+                <label for="rendimiento">Rendimiento</label><br>
+                <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano"> <br>
+                <label for="usoRecomendado">Uso Recomendado</label><br>
+                <input type="text" id='usoRecomendado' name="usoRecomendado" value="" placeholder="Ej: Interio o exterior"> <br>
+                <label for="secado">Secado al tacto</label><br>
+                <input type="text" id='secado' name="secado" value="" placeholder="Tiempo de secado"> <br>
+                <label for="garantia">Garantia</label><br>
+                <input type="text" id='garantia' name="garantia" value="" placeholder="Tiempo de Garantia"> <br>
+                <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Cargar Productos</button>   
+            </form>
+        </div>
+     
+    </section>
+    <footer class="footer">
+        <div class="credenciales">
+            <ul>
+                <li> <a href="#"> Quienes Somos</a> </li>
+                <li> <a href="#">Pedidos Especiales </a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>    
+        </div>
+        <div class="logo-footer">
+            <img src="/images/logos/Pintamev2.png">
+        </div>
+        <div class="redesSociales">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+           
+        </div>
+     </footer>
+
+
+</body>
