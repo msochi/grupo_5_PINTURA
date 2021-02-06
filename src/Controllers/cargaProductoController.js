@@ -6,8 +6,13 @@ productos= JSON.parse(productos)
 
 
 module.exports ={
-        cargar: function(req,res){
+    formulario: function(req,res){
+        //res.send("Bienvenidos al sitio")
+        res.render ('./cargaProducto')
+    },   
+    cargar: function(req,res){
         // en req.body esta la info del usuario
+       
         productos.push({
             marca: req.body.marca,
             categoria: req.body.categoria,
@@ -27,7 +32,7 @@ module.exports ={
           
         })
         fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
-        res.redirect ('./cargaProducto');
+        res.render ('./cargaProducto');
     },
  
     }

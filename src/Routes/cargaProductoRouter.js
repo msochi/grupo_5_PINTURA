@@ -16,7 +16,7 @@ var storage = multer.diskStorage({
   var upload = multer({ storage: storage })
 
 
-router.get ("/", cargaProductoController.cargar); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
+router.get ("/", cargaProductoController.formulario); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 router.post ("/", cargaProductoController.cargar); 
 
 module.exports = router;
