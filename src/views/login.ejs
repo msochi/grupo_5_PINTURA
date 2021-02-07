@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('Head.ejs') %>
+    <%- include('partials/Head.ejs') %>
 <body>
     <header class="cabecera">
-        <a href="./index.html" class="logo"><img src="./images/logos/Pintame v2.png" alt="" ></a> 
+        <a href="./index.html" class="logo"><img src="./images/logos/Pintamev2.png" alt="" ></a> 
     </header>
 
     <section class="contenedor">
@@ -38,7 +38,7 @@
             <h6>
                 Solo te pediremos la información necesaria para mejorar tu experiencia y agilizar tu proceso de compra.</h6>
 
-                <button type="submit" name="crearCuenta" class="crearCuenta"  >Crear Cuenta</button>    
+                <button type="submit" name="crearCuenta" class="crearCuenta"> <a href="crearUsuario">Crear Cuenta</a></button>    
         </div>
 
         <div class="bannerLogin">
@@ -46,7 +46,7 @@
 
         </div>
     </section>
-    <%- include('Footer.ejs') %>    
+    <%- include('partials/Footer.ejs') %>    
 
 
 </body>

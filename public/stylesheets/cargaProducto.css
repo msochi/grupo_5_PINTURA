@@ -38,11 +38,17 @@ CONTENEDOR
     min-width: 554px;
             
 }
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
 
+}   
 .ingreso {
     display: inline-block;
     flex-wrap: wrap;
-    width: 50%;
+    width: 100%;
     padding: 40px;
     
 }
@@ -71,7 +77,7 @@ CONTENEDOR
 
 .ingreso input{
     border-radius: 5px;
-    width: 60%;
+    width: 20%;
     height: 25px;
     min-width: 160px;
     margin-top: 5px;
@@ -162,11 +168,10 @@ BannerLogin
 =========*/
 .bannerLogin{
     align-items: center;
-    width:100%;
+    width:100%,
     margin-left: 2%;
     margin-right: 2%;
 }
-
 .bannerLogin img{
     width: 100%;
     justify-content: space-around;
