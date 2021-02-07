@@ -17,24 +17,22 @@
     </header>
 
     <section class="contenedor">
+    <form action="" method="POST" enctype="multipart/form-data">
         <div class="ingreso">
             <h2>Registrate :)</h2> <hr class="hrcolor">
             <h4>Datos para iniciar sesión</h4>
             <h6>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h6>
-            <form action="" method="POST" enctype="multipart/form-data">
+            
                 <label for="email">Correo electronico</label><br>
                 <input type="email" id= 'email'name="email" value="" placeholder="Ingresa tu email"> <br>
                 <label for="pass">Contraseña</label><br>
                 <input type="password" id='pass' name="pass" value="" placeholder="Tú clave"> <br>
-                <label for="avatar">Subi tu avatar o imagen</label><br>
-                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>
-            </form>
+                
         </div>
 
         <div class="ingreso2">
             <hr class="hrcolor">
             <h4>Datos personales</h4>
-            <form action="" method="POST" enctype="multipart/form-data">
                 <label for="name">Nombre*</label><br>
                 <input type="text" id='name' name="name" value="" placeholder="Ingresa tu nombre"> <br>
                 <label for="last_name">Apellido*</label><br>
@@ -51,6 +49,8 @@
                 <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br>
                 <label for="phone">Teléfono*</label><br>
                 <input type="number" id=' phone' name="phone" value="" placeholder="Ingresa tu teléfono"> <br>
+                <label for="avatar">Subi tu avatar o imagen</label><br>
+                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>
                 <button class="enviar" type="submit" name="crearCuenta" class="crearCuenta">Crear Cuenta</button>    
             </form>
                

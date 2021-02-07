@@ -16,6 +16,8 @@ module.exports ={
     },
     crearUsuario: function(req,res){
         // en req.body esta la info del usuario
+        console.log (req.body);
+
         usuarios.push({
             email: req.body.email,
             pass: bcrypt.hashSync(req.body.pass, 12),
@@ -30,7 +32,7 @@ module.exports ={
             telefono: req.body.phone,
         })
         fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
-        res.redirect ('./index');
+        res.render ('./index');
     },
  
     }
