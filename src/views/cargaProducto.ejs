@@ -20,42 +20,58 @@
         <div class="ingreso">
             <h2>NUEVO PRODUCTO</h2> <hr class="hrcolor">
             <h4>Ingresar los datos correspondientes al producto</h4>
-            <form action="" class="form" method="POST" enctype="multipart/form-data">
+            <form action="" class="form" method="POST" enctype="multipart/form-data" >
+                <div class= "medio">
+                <div class="medio_izquierda_form">
                     <label for="marca">Marca &nbsp</label>
                     <input type='text' id= 'marca'name="marca" value="" placeholder="Ingresa la marca"> &nbsp
+
                     <label for="categoria">Categoria &nbsp</label>
                     <input type="text" id='categoria' name="categoria" value="" placeholder="Categoria de producto"> 
+
                     <label for="familia">Familia &nbsp</label>
-                    <input type="text" id='familia' name="familia" value="" placeholder="Familia"> <br>                           
+                    <input type="text" id='familia' name="familia" value="" placeholder="Familia"> <br>       
+
                      <label for="tipo">Tipo&nbsp</label>
                     <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> 
+
                     <label for="presentacion">Presentacion &nbsp</label>
                     <input type="text" id='presentacion' name="presentacion" value="" placeholder="Litros - CM3 - Unidades"> 
+
                     <label for="contenidoNeto">Contenido Neto &nbsp</label>
                     <input type="text" id='contenidoNeto' name="contenidoNeto" value="" placeholder="Contenido Neto"> <br>
+
                     <label for="color">Color &nbsp</label>
                     <input type="text" id='color' name="color" value="" placeholder="color"> <br>
+                </div>
+                <div class="medio_derecha_form">
                     <label for="TiempoDeEspera">Tiempo de espera entre manos &nbsp</label>
                     <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="" placeholder="Tiempo de espera entre manos"> 
                
               
                     <label for="base">Base  &nbsp</label>
                     <input type="text" id= 'base' name="base" value="" placeholder="Base (Ej: al agua)"> <br>
+
                     <label for="terminacion">Terminación  &nbsp</label>
                     <input type="text" id='terminacion' name="terminacion" value="" placeholder="Tipo de Terminación">
+
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
+
                     <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
                     <input type="text" id='usoRecomendado' name="usoRecomendado" value="" placeholder="Ej: Interio o exterior"> <br>
              
                     <label for="secado">Secado al tacto  &nbsp</label>
                     <input type="text" id='secado' name="secado" value="" placeholder="Tiempo de secado">
+
                     <label for="garantia">Garantia  &nbsp</label>
                     <input type="text" id='garantia' name="garantia" value="" placeholder="Tiempo de Garantia">
              
                     <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
                     <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file'> <br>
                      </article>
+                </div>
+                </div>
                 <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Cargar Productos</button>   
        
             </form>

@@ -35,7 +35,8 @@ CONTENEDOR
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-width: 554px;
+    width: 100%;
+    background-color: #7209B7 solid 2px;
             
 }
 
@@ -60,8 +61,8 @@ CONTENEDOR
     margin-bottom: 4px;
 }
 
-.ingreso h6{
-    margin-bottom: 6px;
+.ingreso h5{
+    margin-bottom: 4px;
 }
 .ingreso label{
     font-size: 14px;
