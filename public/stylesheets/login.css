@@ -7,7 +7,6 @@
    
 }
 
-
 header {
 background: #F72585;   
 display: flex;
@@ -31,81 +30,24 @@ header img{
 /*=============
 CONTENEDOR
 ===========*/
-
+section{
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
 .contenedor{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    min-width: 554px;
+    justify-content: space-around;
+    width: 100%;
+    
             
 }
-.form {
-    
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
 
-}
-div.medio{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content:space-between;
-    flex-direction: column;
-    width: 100%;
-   
-}   
-div.medio_1{
-    display: flex;
-    
-    flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
-    
-}
-div.medio_2{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
-}
-div.medio_3{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
-}
-div.medio_4{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
-}
-div.medio_5{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 10px;
-}
-label{
-    margin-right: 10px;
-    margin-left: 5px;
-}
 .ingreso {
     display: inline-block;
     flex-wrap: wrap;
-    width: 100%;
+    width: 50%;
     padding: 40px;
     
 }
@@ -119,12 +61,12 @@ label{
     color: gray;
 }
 .ingreso h4{
-    color: #F72585;
+    
     margin-bottom: 4px;
 }
 
-.ingreso h6{
-    margin-bottom: 6px;
+.ingreso h5{
+    margin-bottom: 4px;
 }
 .ingreso label{
     font-size: 14px;
@@ -134,7 +76,7 @@ label{
 
 .ingreso input{
     border-radius: 5px;
-    width: 20%;
+    width: 60%;
     height: 25px;
     min-width: 160px;
     margin-top: 5px;
@@ -147,20 +89,27 @@ label{
 }
 
 .ingreso a{
-    font-size: 8px;
+    font-size: 14px;
     font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 10px;
     
 }
 
-.ingreso2 {
-    margin-top: 27px;
-    display: inline-block;
-    flex-wrap: wrap;
-    width: 50%;
-    padding: 40px;
-    
+
+.ingreso h3{
+    color: #F72585;
+    margin-bottom: 4px;
 }
-.ingreso2 .hrcolor{
+div.regristrarse{
+    padding: 70px;
+    width:50%;
+}
+.regristrarse h3{
+    color: #F72585;
+    margin-bottom: 4px;
+}
+.hrcolor2{
     margin-top: 6px;
     margin-bottom: 6px;
     background-color: grey;   
@@ -169,40 +118,17 @@ label{
     width: 100%;
     color: gray;
 }
-.ingreso2 h4{
-    color: #F72585;
-    margin-bottom: 4px;
-}
-
-.ingreso2 h6{
+.ingreso h4{
     margin-bottom: 6px;
 }
-.ingreso2 label{
-    font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.regristrarse h4{
+    margin-bottom: 6px;
 }
-
-.ingreso2 input{
-    border-radius: 5px;
-    width: 60%;
-    height: 25px;
-    min-width: 160px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+.regristrarse ul li{
+    margin-bottom: 4px;
+    list-style: none;
 }
-.ingreso2 input:hover{
-    background-color: rgb(116, 189, 221);
-    color: #f72585;
-
-}
-
-.ingreso2 a{
-    font-size: 8px;
-    font-style: italic;
-    
-}
-form .enviar{
+div .crearCuenta{
     color: white;
     background-color: var(--colorboton);
     border-radius: 5px;
@@ -213,8 +139,26 @@ form .enviar{
     border: none;
     margin-top: 50px;
     font-size: 16px;
+    text-decoration: none;
 }
-form .enviar:hover{
+div .crearCuenta:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+div .enviar{
+    color: white;
+    background-color: var(--colorboton);
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    margin-top: 50px;
+    font-size: 16px;
+    
+}
+div .enviar:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
@@ -227,6 +171,7 @@ BannerLogin
     margin-left: 2%;
     margin-right: 2%;
 }
+
 .bannerLogin img{
     width: 100%;
     justify-content: space-around;

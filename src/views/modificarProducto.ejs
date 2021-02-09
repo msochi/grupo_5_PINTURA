@@ -18,64 +18,65 @@
 
     <section class="contenedor">
         <div class="ingreso">
-            <h2>NUEVO PRODUCTO</h2> <hr class="hrcolor">
+            <h2>Modificar Producto</h2>  <hr class="hrcolor">
             <h4>Ingresar los datos correspondientes al producto</h4>
             <form action="" class="form" method="POST" enctype="multipart/form-data" >
                 <div class= "medio">
                 <div class="medio_1">
                     <label for="sku">Sku &nbsp</label>
-                    <input type='text' id= 'sku'name="sku" value="" placeholder="Ingresa el n° de Sku"> &nbsp
+                    <input type='text' id= 'sku'name="sku" value="<%= productos.sku%>" placeholder="Ingresa el n° de Sku"> &nbsp
 
                     <label for="marca">Marca &nbsp</label>
-                    <input type='text' id= 'marca'name="marca" value="" placeholder="Ingresa la marca"> &nbsp
+                    <input type='text' id= 'marca'name="marca" value="<%= productos.marca%>" placeholder="Ingresa la marca"> &nbsp
 
                     <label for="categoria">Categoria &nbsp</label>
-                    <input type="text" id='categoria' name="categoria" value="" placeholder="Categoria de producto"> 
+                    <input type="text" id='categoria' name="categoria" value="<%= productos.categoria%>" placeholder="Categoria de producto"> 
                 </div>
                 <div class="medio_2">
                     <label for="familia">Familia &nbsp</label>
-                    <input type="text" id='familia' name="familia" value="" placeholder="Familia"> <br>       
+                    <input type="text" id='familia' name="familia" value="<%= productos.familia%>" placeholder="Familia"> <br>       
 
                      <label for="tipo">Tipo&nbsp</label>
-                    <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> 
+                    <input type="text" id='tipo' name="tipo" value="<%= productos.tipo%>" placeholder="Ejemplo: Látex interior"> 
 
                     <label for="presentacion">Presentacion &nbsp</label>
-                    <input type="text" id='presentacion' name="presentacion" value="" placeholder="Litros - CM3 - Unidades"> 
+                    <input type="text" id='presentacion' name="presentacion" value="<%= productos.presentacion%>" placeholder="Litros - CM3 - Unidades"> 
                 </div>
                 <div class="medio_3">
                     <label for="contenidoNeto">Contenido Neto &nbsp</label>
-                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="" placeholder="Contenido Neto"> <br>
+                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="<%= productos.contenidoNeto%>" placeholder="Contenido Neto"> <br>
 
                     <label for="color">Color &nbsp</label>
-                    <input type="text" id='color' name="color" value="" placeholder="color"> <br>
+                    <input type="text" id='color' name="color" value="<%= productos.color%>" placeholder="color"> <br>
                 
                 
                     <label for="TiempoDeEspera">Tiempo de espera entre manos &nbsp</label>
-                    <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="" placeholder="Tiempo de espera entre manos"> 
+                    <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="<%= productos.TiempoDeEspera%>" placeholder="Tiempo de espera entre manos"> 
                 </div>
                     <div class="medio_4">
               
                     <label for="base">Base  &nbsp</label>
-                    <input type="text" id= 'base' name="base" value="" placeholder="Base (Ej: al agua)"> <br>
+                    <input type="text" id= 'base' name="base" value="<%= productos.base%>" placeholder="Base (Ej: al agua)"> <br>
 
                     <label for="terminacion">Terminación  &nbsp</label>
-                    <input type="text" id='terminacion' name="terminacion" value="" placeholder="Tipo de Terminación">
+                    <input type="text" id='terminacion' name="terminacion" value="<%= productos.terminacion%>" placeholder="Tipo de Terminación">
                 
                     <label for="rendimiento">Rendimiento  &nbsp</label>
-                    <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
+                    <input type="text" id='rendimiento' name="rendimiento" value="<%= productos.rendimiento%>" placeholder="Ejemplo 12 a 16 m2/l por mano">
                 </div>
                 <div class="medio_5">
                     <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
-                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="" placeholder="Ej: Interio o exterior"> <br>
+                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="<%= productos.usoRecomendado%>" placeholder="Ej: Interio o exterior"> <br>
              
                     <label for="secado">Secado al tacto  &nbsp</label>
-                    <input type="text" id='secado' name="secado" value="" placeholder="Tiempo de secado">
+                    <input type="text" id='secado' name="secado" value="<%= productos.secado%>" placeholder="Tiempo de secado">
 
                     <label for="garantia">Garantia  &nbsp</label>
-                    <input type="text" id='garantia' name="garantia" value="" placeholder="Tiempo de Garantia">
+                    <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
                     <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file'> <br>
+                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value="
+                    "> <br>
                      </article>
                 </div>
                 </div>

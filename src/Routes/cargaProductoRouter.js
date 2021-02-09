@@ -9,7 +9,7 @@ var storage = multer.diskStorage({
       cb(null, path.join(__dirname, "../../public/imagenProductos") )
     },
     filename: function (req, file, cb) {
-      cb(null,req.body.imagenProducto + path.extname(file.originalname))
+      cb(null,req.body.marca + Date.now() + path.extname(file.originalname))
     }
   })
    
@@ -17,6 +17,8 @@ var storage = multer.diskStorage({
 
 
 router.get ("/", cargaProductoController.formulario); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
-router.post ("/", cargaProductoController.cargar); 
+router.post ("/",upload.any(), cargaProductoController.cargar); 
+router.get("/:sku", cargaProductoController.mostrar);
+router.post("/:sku", upload.any(), cargaProductoController.actualizar);
 
 module.exports = router;

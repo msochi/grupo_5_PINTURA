@@ -34,16 +34,24 @@ CONTENEDOR
 .contenedor{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    min-width: 554px;
-            
+    justify-content: space-around;
+    width: 100%;
+    
+}
+form {
+    display: flex;
+    width: 100%;
+
+
 }
 
 .ingreso {
     display: inline-block;
     flex-wrap: wrap;
+    justify-content:space-between;
     width: 50%;
-    padding: 40px;
+    padding: 50px;
+   
     
 }
 .ingreso .hrcolor{
@@ -61,7 +69,7 @@ CONTENEDOR
 }
 
 .ingreso h6{
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 .ingreso label{
     font-size: 14px;
@@ -73,7 +81,6 @@ CONTENEDOR
     border-radius: 5px;
     width: 60%;
     height: 25px;
-    min-width: 160px;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -90,7 +97,7 @@ CONTENEDOR
 }
 
 .ingreso2 {
-    margin-top: 27px;
+    margin-top: 37px;
     display: inline-block;
     flex-wrap: wrap;
     width: 50%;
