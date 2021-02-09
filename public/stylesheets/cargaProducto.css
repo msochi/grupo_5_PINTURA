@@ -7,6 +7,7 @@
    
 }
 
+
 header {
 background: #F72585;   
 display: flex;
@@ -53,25 +54,53 @@ div.medio{
     text-align: center;
     align-items: center;
     justify-content:space-between;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
    
 }   
-div.medio_izquierda_form{
+div.medio_1{
     display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    
+    flex-direction: row;
     width: 100%;
+    margin-top: 10px;
+    
 }
-div.medio_derecha_form{
+div.medio_2{
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content:center;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
+    margin-top: 10px;
+}
+div.medio_3{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+}
+div.medio_4{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+}
+div.medio_5{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+}
+label{
+    margin-right: 10px;
+    margin-left: 5px;
 }
 .ingreso {
     display: inline-block;
@@ -173,7 +202,7 @@ div.medio_derecha_form{
     font-style: italic;
     
 }
-.ingreso2 .enviar{
+form .enviar{
     color: white;
     background-color: var(--colorboton);
     border-radius: 5px;
@@ -183,14 +212,12 @@ div.medio_derecha_form{
     padding-right: 15px;
     border: none;
     margin-top: 50px;
-    margin-left: 65%;
     font-size: 16px;
 }
-.ingreso2 .enviar:hover{
+form .enviar:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
-
 /*==========
 BannerLogin
 =========*/

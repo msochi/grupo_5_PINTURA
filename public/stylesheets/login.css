@@ -116,7 +116,40 @@ div.regristrarse{
 .regristrarse ul li{
     margin-bottom: 4px;
 }
-
+div .crearCuenta{
+    color: white;
+    background-color: var(--colorboton);
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    margin-top: 50px;
+    font-size: 16px;
+    text-decoration: none;
+}
+div .crearCuenta:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+div .enviar{
+    color: white;
+    background-color: var(--colorboton);
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    margin-top: 50px;
+    font-size: 16px;
+    
+}
+div .enviar:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
 /*==========
 BannerLogin
 =========*/
