@@ -2,8 +2,9 @@
 //En los archivos Controllers solo van las responsabilidades del funcionamiento.
 const fs = require('fs');
 const path= require ('path');
+const bcrypt = require ("bcryptjs");
 let usuarios = fs.readFileSync(path.join(__dirname, '../database/usuarios.json'),'utf8');
-//usuarios = JSON.parse(usuarios);
+usuarios = JSON.parse(usuarios);
 
 module.exports ={
     login: function(req,res){
@@ -12,14 +13,26 @@ module.exports ={
     
     },
 
-    checkUsuario: function (req, res) {
+    checkUsuario: function (req, res) {   
+        
+        //return res.send (req.body)
         for (let i= 0; i < usuarios.length; i++) {
-            if(usuarios[i].email== req.body.email){
-                if(bcrypt.compareSync(req.body.pass, usuario[i].pass) == true){
-                   return  res.render ('/index')
+            if(usuarios[i].email == req.body.email){
+                if(bcrypt.compareSync(req.body.pass, usuarios[i].pass) == true){
+                   // aca ya puedo incluir la variables de session para guardarme registros del usuario.
+                   
+                  req.session.usuarioLogueado = {
+                   email: usuarios[i].email,
+                    
+                   }
+                    
+                   
+                     //return res.send (req.session.usuarioLogueado)            
+                    return  res.redirect ('/')
                 }
                 else {
-                   return  res.render ('/login')
+                   return  res.redirect ('/login')
+                  
                 }
             }
         }
@@ -30,3 +43,4 @@ module.exports ={
         //res.send ("Revisando el check del usuario")
     }
 }
+

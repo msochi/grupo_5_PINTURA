@@ -1,8 +1,11 @@
 const express = require ("express");
 const app = express ();
 const path = require ("path"); // adoptamos PATH para escribir rutas.
+const session = require ('express-session'); // Instalo y requiero session (middleware de aplicacion).Se ejecuta en todos los pedidos - es global.
+let port = process.env.PORT || 3000;
 
-
+const middlewareusuarioLogueado = require ('../src/middlewares/usuarioLogueado');
+const verSession = require ('../src/middlewares/verSession')
 
 const indexRouter = require ('./routes/indexRouter');     //Indicamos cual es la funciòn u objeto literal que queremos usar.
 
@@ -15,7 +18,15 @@ const thankYouRouter = require ('./routes/thankYouRouter');
 const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
 const cargaProductoRouter = require('./routes/cargaProductoRouter');
 
-app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
+
+app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
+app.use(express.json());
+app.use(session({secret:'El microchip esta en el enchufe'}));
+app.use ( verSession );
+app.use (middlewareusuarioLogueado);
+
+
+
 
 // Para usar ejs  agregamos estas líneas de código para configurar el proyecto e indicar que usamos como motor de vistas a ejs. "view engine"  lo tenemos que pasar siempre independientemente del motor de vistas que vayamos a utilizas (ej: ejs)
 app.set ("view engine" , "ejs");
@@ -38,7 +49,6 @@ app.use ('/ThankYou', thankYouRouter);
 app.use ('/crearUsuario', crearUsuarioRouter);
 app.use ('/cargaProducto', cargaProductoRouter);
 
-app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
-app.use(express.json());
-
+//app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
+app.listen(port, ()=> console.log ('Server Listen to port: ${port}'))
 
