@@ -9,4 +9,3 @@ const loginController = require ('../Controllers/loginController'); // Tengo que
 router.get ("/", loginController.login); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 router.post ("/", loginController.checkUsuario); 
 module.exports = router;
-////dfgdfg
