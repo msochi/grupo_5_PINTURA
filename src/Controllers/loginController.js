@@ -6,6 +6,8 @@ const bcrypt = require ("bcryptjs");
 let usuarios = fs.readFileSync(path.join(__dirname, '../database/usuarios.json'),'utf8');
 usuarios = JSON.parse(usuarios);
 
+
+
 module.exports ={
     login: function(req,res){
         //res.send("Bienvenidos al sitio")
@@ -25,8 +27,8 @@ module.exports ={
                    email: usuarios[i].email,
                     
                    }
-                    
-                   
+                 
+                                     
                      //return res.send (req.session.usuarioLogueado)            
                     return  res.redirect ('/')
                 }
@@ -41,6 +43,9 @@ module.exports ={
           //  email: req.body.email,
             //pass: bcrypt.hashSync(req.body.pass, 12),
         //res.send ("Revisando el check del usuario")
-    }
-}
+    },
+   
+};
+
+
 

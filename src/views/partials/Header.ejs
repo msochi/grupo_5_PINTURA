@@ -1,5 +1,5 @@
 <header class="cabecera">
-    <a href="#" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
+    <a href="/" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
     <div class="opcionesHeader">
          <input class="busqueda" type="text" placeholder=" Encontra lo que buscas">
         <button><a href="#" id="Lupa"> <i id="Lupa" class="fas fa-search" ></i></a> </button>
@@ -15,7 +15,7 @@
         <% } else { %>
             <ul>
                 <li class="carrito"><a href="Carrito"> Mi Carrito <i class="fas fa-cart-plus"></i></a> </li>
-                 <li class="Ingresar"><a href="./login"><%=usuarios[i].email%>&nbsp<i class="far fa-user" style= 'color:aqua'></i> </a></li>
+                 <li class="Ingresar"><a href="./login"><%= usuarioLogueado.email%>&nbsp<i class="far fa-user" style= 'color:white'></i> </a></li>
             </ul>
         <% } %>
     </nav>

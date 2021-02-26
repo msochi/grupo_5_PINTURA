@@ -1,10 +1,10 @@
 const express = require ('express');
 const router= express.Router ();
-const crearUsuarioController = require ('../Controllers/crearUsuarioController'); // Tengo que importar o requerir el controlador que quiero utilizar para las rutas.
+const crearUsuarioController = require ('../controllers/crearUsuarioController'); // Tengo que importar o requerir el controlador que quiero utilizar para las rutas.
 const multer = require('multer');
 
-const validacionRegistro = require ("../middlewares/validacionRegistro")
-const multerRegistro = require ("../middlewares/multerRegistro");
+const validacionRegistro = require ('../middlewares/validacionRegistro')
+const multerRegistro = require ('../middlewares/multerRegistro');
 
 
 

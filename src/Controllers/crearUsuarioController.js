@@ -37,14 +37,14 @@ module.exports ={
         fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
         res.render ('./index');
         }
-        else {
+        //else {
             //return res.send (errors.errors) para verificar si se están mandando los errores.
             //fs.unlinkSync() REVISAR DOCUMENTACION
-            fs.unlink(req.files[0].filename, function (err) {
-                if (err) throw err;
+           // fs.unlink(req.files[0].filename, function (err) {
+              //  if (err) throw err;
                
-                console.log('File deleted!')
-            });
+              //  console.log('File deleted!')
+           // });
             
 
             res.render ("./crearUsuario", {
@@ -55,7 +55,7 @@ module.exports ={
 
         }
 
-    },
+    };
  
-}
-;
+//}
+//;

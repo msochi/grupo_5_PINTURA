@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/cargaProducto.css">
+    <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
+    
+
+    <title>Pint@me</title>
+</head>
+<body>
+    <header class="cabecera">
+        <a href="./index" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
+    </header>
+
+    <section class="contenedor">
+        <div class="ingreso">
+            <h2 style="color: red" >Modificar Producto </h2>  <hr class="hrcolor">
+            <h4>Ingresar los datos a modificar</h4>
+            <form action="/borrarProducto/:sku?_method=DELETE" class="form" method="DELETE" enctype="multipart/form-data" >
+                <div class= "medio">
+                <div class="medio_1">
+                    <label for="sku">Sku &nbsp</label>
+                    <input type='text' id= 'sku'name="sku" value="<%= productos.sku%>" placeholder="Ingresa el n° de Sku"> &nbsp
+
+                    <label for="marca">Marca &nbsp</label>
+                    <input type='text' id= 'marca'name="marca" value="<%= productos.marca%>" placeholder="Ingresa la marca"> &nbsp
+
+                    <label for="categoria">Categoria &nbsp</label>
+                    <input type="text" id='categoria' name="categoria" value="<%= productos.categoria%>" placeholder="Categoria de producto"> 
+                </div>
+                <div class="medio_2">
+                    <label for="familia">Familia &nbsp</label>
+                    <input type="text" id='familia' name="familia" value="<%= productos.familia%>" placeholder="Familia"> <br>       
+
+                     <label for="tipo">Tipo&nbsp</label>
+                    <input type="text" id='tipo' name="tipo" value="<%= productos.tipo%>" placeholder="Ejemplo: Látex interior"> 
+
+                    <label for="presentacion">Presentacion &nbsp</label>
+                    <input type="text" id='presentacion' name="presentacion" value="<%= productos.presentacion%>" placeholder="Litros - CM3 - Unidades"> 
+                </div>
+                <div class="medio_3">
+                    <label for="contenidoNeto">Contenido Neto &nbsp</label>
+                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="<%= productos.contenidoNeto%>" placeholder="Contenido Neto"> <br>
+
+                    <label for="color">Color &nbsp</label>
+                    <input type="text" id='color' name="color" value="<%= productos.color%>" placeholder="color"> <br>
+                
+                
+                    <label for="TiempoDeEspera">Tiempo de espera entre manos &nbsp</label>
+                    <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="<%= productos.TiempoDeEspera%>" placeholder="Tiempo de espera entre manos"> 
+                </div>
+                    <div class="medio_4">
+              
+                    <label for="base">Base  &nbsp</label>
+                    <input type="text" id= 'base' name="base" value="<%= productos.base%>" placeholder="Base (Ej: al agua)"> <br>
+
+                    <label for="terminacion">Terminación  &nbsp</label>
+                    <input type="text" id='terminacion' name="terminacion" value="<%= productos.terminacion%>" placeholder="Tipo de Terminación">
+                
+                    <label for="rendimiento">Rendimiento  &nbsp</label>
+                    <input type="text" id='rendimiento' name="rendimiento" value="<%= productos.rendimiento%>" placeholder="Ejemplo 12 a 16 m2/l por mano">
+                </div>
+                <div class="medio_5">
+                    <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
+                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="<%= productos.usoRecomendado%>" placeholder="Ej: Interio o exterior"> <br>
+             
+                    <label for="secado">Secado al tacto  &nbsp</label>
+                    <input type="text" id='secado' name="secado" value="<%= productos.secado%>" placeholder="Tiempo de secado">
+
+                    <label for="garantia">Garantia  &nbsp</label>
+                    <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
+             
+                    <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
+                    <input type="text" name="imagenProducto" id= 'imagenProducto'  value="<%= productos.imagenProducto %>"> <br>
+                     </article>
+                </div>
+                </div>
+                <div>
+                <button " type="submit" name="eliminarProducto" class="eliminarProducto" >Eliminar Producto</button>  
+                </div>    
+            </form>
+        </div>
+     
+    </section>
+    <footer class="footer">
+        <div class="credenciales">
+            <ul>
+                <li> <a href="#"> Quienes Somos</a> </li>
+                <li> <a href="#">Pedidos Especiales </a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>    
+        </div>
+        <div class="logo-footer">
+            <img src="/images/logos/Pintamev2.png">
+        </div>
+        <div class="redesSociales">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+           
+        </div>
+     </footer>
+
+
+</body>
