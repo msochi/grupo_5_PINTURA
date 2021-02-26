@@ -8,29 +8,45 @@ productos= JSON.parse(productos)
 module.exports ={
   
     mostrar: function(req,res){
-       let flag = 0;
-        for(let i=0; i < productos.length; i++){
-            if (req.params.sku == productos[i].sku){
-                console.log(productos[i]);
-                return res.render ('./borrarProducto', {productos: productos[i]})
-                flag =1;
-            } 
+        for (i=0; i<productos.length ;i++){
+            if (productos[i].sku == req.params.sku) {
+               return res.render('borrarProducto', {productos : productos[i]});
+            }
         }
-        res.send ("No encuentro producto");
-        
+      
+      
+        //let flag = 0;
+        //for(let i=0; i < productos.length; i++){
+           // if (req.params.sku == productos[i].sku){
+             //   console.log(productos[i]);
+            //   res.render ('./borrarProducto', {productos: productos[i]})
+               // flag =1;
+           // }
+             
+       //}
+               
+       res.send ("No encuentro producto");
+      
 
     },
-
+  
    borrar: function(req,res){
-       
-     let resultados = productos.filter(function (nuevo){
-         return nuevo != req.params.sku
-    })
-    console.log (resultados);
+    //let paraBorrar= req.params.sku   
+    //let ss = productos.indexOf(paraBorrar);
+    //function myFunction(){  
+        // Deleting a key (married) from the first object by using dot notation
+      //  delete data[ss];
+    //}
+   
+
+    let paraBorrar= req.params;
+    console.log(paraBorrar)
+    let resultados = productos.filter(nuevo=>
+      nuevo.sku != paraBorrar.sku);
+     console.log (resultados);
       productos = resultados;
-        
-         
-                       
-            res.redirect('/');
+      fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))  
+      
+            res.redirect('/cargaproducto');
           
 }};

@@ -75,18 +75,27 @@
                     <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
                     <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="text" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value=""> <br>
+                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value=""> <br>
                      </article>
                 </div>
                 </div>
                 <div>
                 <button class="enviar" type="submit" name="cargarProducto">Cargar Productos</button>   &nbsp
-               
-                </div>    
+                
+                </div>   
+                
             </form>
+            <div class ="borrar" >
+                <form  action="/borrarproducto/<%= productos.sku %>?_method=DELETE" method="POST">
+                    <button class="eliminar"  type="submit">Eliminar <br> Producto</button>
+                </form>             
+            
+            </div> 
+            
         </div>
      
     </section>
+    
     <footer class="footer">
         <div class="credenciales">
             <ul>
