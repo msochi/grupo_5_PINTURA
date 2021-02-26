@@ -18,8 +18,8 @@
 
     <section class="contenedor">
         <div class="ingreso">
-            <h2>Modificar Producto</h2>  <hr class="hrcolor">
-            <h4>Ingresar los datos correspondientes al producto</h4>
+            <h2 style="color: red" >Modificar Producto </h2>  <hr class="hrcolor">
+            <h4>Ingresar los datos a modificar</h4>
             <form action="" class="form" method="POST" enctype="multipart/form-data" >
                 <div class= "medio">
                 <div class="medio_1">
@@ -75,17 +75,27 @@
                     <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
                     <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value="
-                    "> <br>
+                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value=""> <br>
                      </article>
                 </div>
                 </div>
-                <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Cargar Productos</button>   
-       
+                <div>
+                <button class="enviar" type="submit" name="cargarProducto">Cargar Productos</button>   &nbsp
+                
+                </div>   
+                
             </form>
+            <div class ="borrar" >
+                <form  action="/borrarproducto/<%= productos.sku %>?_method=DELETE" method="POST">
+                    <button class="eliminar"  type="submit">Eliminar <br> Producto</button>
+                </form>             
+            
+            </div> 
+            
         </div>
      
     </section>
+    
     <footer class="footer">
         <div class="credenciales">
             <ul>

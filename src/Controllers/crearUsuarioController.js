@@ -2,7 +2,7 @@
 //En los archivos Controllers solo van las responsabilidades del funcionamiento.
 const fs = require('fs');
 const path= require('path');
-const bcrypt = require('bcrypt'); // sirve para guardar el hash de lo que me trae por ejemplo el req.body.password.
+const bcrypt = require("bcryptjs"); // sirve para guardar el hash de lo que me trae por ejemplo el req.body.password.
 
 const {validationResult} = require("express-validator"); // En lugar de llamar check y Body, creamos la variable solamente con validationResults para poder validar la creación de usuario requiriendo express-validator. La ponemos de esta forma para destructurar y no poner todo el objeto (check, body y validationResults).
 
@@ -37,16 +37,25 @@ module.exports ={
         fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
         res.render ('./index');
         }
-        else {
+        //else {
             //return res.send (errors.errors) para verificar si se están mandando los errores.
+            //fs.unlinkSync() REVISAR DOCUMENTACION
+           // fs.unlink(req.files[0].filename, function (err) {
+              //  if (err) throw err;
+               
+              //  console.log('File deleted!')
+           // });
+            
+
             res.render ("./crearUsuario", {
+                
                 errors:errors.mapped(),  
                 old: req.body
             })
 
         }
 
-    },
+    };
  
-}
-;
+//}
+//;
