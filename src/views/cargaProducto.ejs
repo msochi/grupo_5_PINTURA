@@ -23,26 +23,70 @@
             <form action="" class="form" method="POST" enctype="multipart/form-data" >
                 <div class= "medio">
                 <div class="medio_1">
-                    <label for="proveedor">Proveedor &nbsp</label>
-                    <input type='text' id= 'proveedor'name="proveedor" value="" placeholder="Nombre del proveedor"> 
+                    <label for="id_proveedor">Proveedor &nbsp</label>
+                    <select id= 'id_proveedor' name="id_proveedor" >
+                        <% for(let i = 0; i< proveedores.length ; i++) { %> 
+                              <option value= "<%= proveedores[i].id%>">
+                                  <%= proveedores[i].proveedor%>
+                     </option>   
+                        <% } %>
+                    <!--<input type='text' id= 'id_proveedor'name="id_proveedor" value="" placeholder="Nombre del proveedor"> -->
+                </select>
                     <label for="sku">Sku &nbsp</label>
                     <input type='number' id= 'sku'name="sku" value="" placeholder="Ingresa el n° de Sku"> 
 
                     <label for="marca">Marca &nbsp</label>
-                    <input type='text' id= 'marca'name="marca" value="" placeholder="Ingresa la marca"> &nbsp
-
-                    <label for="familia">Familia &nbsp</label>
-                    <input type="text" id='familia' name="familia" value="" placeholder="Familia de producto"> 
+                    <select name="id_marca" >
+                       
+                        
+                        <% for(let i = 0; i< marca.length ; i++) { %> 
+                        
+                            <option   value= "<%= marca[i].id%>">
+                                <%= marca[i].marca %>
+                              
+                     </option>   
+                        <% } %>
+                  <!--<input type='text' id= 'marca'name="marca" value="" placeholder="Ingresa la marca"> &nbsp-->
+                </select>
+        
+                    <label for="id_familia">Familia &nbsp</label>
+                    <select name="id_familia" >
+                        <% for(let i = 0; i< familia.length ; i++) { %> 
+                              <option value= "<%= familia[i].id%>">
+                                  <%= familia[i].familia%>
+                     </option>   
+                        <% } %>
+                    <!--<input type="text" id='familia' name="familia" value="" placeholder="Familia de producto"> -->
+                </select>
                 </div>
                 <div class="medio_2">
-                    <label for="categoria">Categoria &nbsp</label>
-                    <input type="text" id='categoria' name="categoria" value="" placeholder="Categoria"> <br>       
-
-                     <label for="tipo">Tipo&nbsp</label>
-                    <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> 
-                    <label for="subtipo">Subtipo&nbsp</label>
-                    <input type="text" id='subtipo' name="subtipo" value="" placeholder="Ejemplo: Látex interior"> 
-
+                    <label for="id_subfamilia">Subfamilia &nbsp</label>
+                    <select name="id_subfamilia" >
+                        <% for(let i = 0; i< subfamilia.length ; i++) { %> 
+                              <option value= "<%= subfamilia[i].id%>">
+                                  <%= subfamilia[i].subfamilia%>
+                     </option>   
+                        <% } %>
+                   <!-- <input type="text" id='id_subfamilia' name="id_subfamilia" value="" placeholder="Subfamilia"> <br>       -->
+                </select>
+                     <label for="id_tipo">Tipo&nbsp</label>
+                     <select name="id_tipo" >
+                        <% for(let i = 0; i< tipo.length ; i++) { %> 
+                              <option value= "<%= tipo[i].id%>">
+                                  <%= tipo[i].tipo%>
+                     </option>   
+                        <% } %>
+                    <!-- <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> -->
+                </select>
+                    <label for="id_subtipo">Subtipo&nbsp</label>
+                    <select name="id_subtipo" >
+                        <% for(let i = 0; i< subtipo.length ; i++) { %> 
+                              <option value= "<%= subtipo[i].id%>">
+                                  <%= subtipo[i].subtipo%>
+                     </option>   
+                        <% } %>
+                    <!--<input type="text" id='subtipo' name="id_subtipo" value="" placeholder="Ejemplo: Látex interior"> -->
+                </select>
                     <label for="presentacion">Presentacion &nbsp</label>
                     <input type="text" id='presentacion' name="presentacion" value="" placeholder="Litros - CM3 - Unidades"> 
                 </div>
@@ -54,16 +98,16 @@
                     <input type="text" id='color' name="color" value="" placeholder="color"> <br>
                 
                 
-                    <label for="TiempoDeEspera">Tiempo de espera entre manos &nbsp</label>
-                    <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="" placeholder="Tiempo de espera entre manos"> 
+                    <label for="tiempo_entre_manos">Tiempo de espera entre manos &nbsp</label>
+                    <input type="number" id='tiempo_entre_manos' name="tiempo_entre_manos" value="" placeholder="Tiempo de espera entre manos"> 
                 </div>
                     <div class="medio_4">
               
                     <label for="base">Base  &nbsp</label>
                     <input type="text" id= 'base' name="base" value="" placeholder="Base (Ej: al agua)"> <br>
 
-                    <label for="terminacion">Terminación  &nbsp</label>
-                    <input type="text" id='terminacion' name="terminacion" value="" placeholder="Tipo de Terminación">
+                    <label for="id_terminacion">Terminación  &nbsp</label>
+                    <input type="text" id='id_terminacion' name="id_terminacion" value="" placeholder="Tipo de Terminación">
                 
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
@@ -72,8 +116,8 @@
                     <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
                     <input type="text" id='usoRecomendado' name="usoRecomendado" value="" placeholder="Ej: Interio o exterior"> <br>
              
-                    <label for="secado">Secado al tacto  &nbsp</label>
-                    <input type="text" id='secado' name="secado" value="" placeholder="Tiempo de secado">
+                    <label for="tiempo_de_secado">Secado al tacto  &nbsp</label>
+                    <input type="text" id='tiempo_de_secado' name="tiempo_de_secado" value="" placeholder="Tiempo de secado">
 
                     <label for="garantia">Garantia  &nbsp</label>
                     <input type="text" id='garantia' name="garantia" value="" placeholder="Tiempo de Garantia">

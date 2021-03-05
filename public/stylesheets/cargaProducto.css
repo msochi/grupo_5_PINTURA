@@ -145,6 +145,19 @@ label{
     color: #f72585;
 
 }
+.ingreso select{
+    border-radius: 5px;
+    width: 20%;
+    height: 25px;
+    min-width: 160px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.ingreso select:hover{
+    background-color: rgb(116, 189, 221);
+    color: #f72585;
+
+}
 
 .ingreso a{
     font-size: 8px;
@@ -211,7 +224,7 @@ form .enviar{
     padding-left: 15px;
     padding-right: 15px;
     border: none;
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 16px;
 }
 form .enviar:hover{
@@ -273,7 +286,7 @@ footer{
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
     padding-bottom: 10px;
     min-width: 554px;
    }

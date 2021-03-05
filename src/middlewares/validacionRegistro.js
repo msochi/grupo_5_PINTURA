@@ -31,7 +31,6 @@ module.exports =[
                   return true
     })
       .withMessage('DNI ya registrado'),  
-       
     
   ]
   
