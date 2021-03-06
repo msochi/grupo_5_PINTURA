@@ -24,7 +24,7 @@
                 <div class= "medio">
                 <div class="medio_1">
                     <label for="id_proveedor">Proveedor &nbsp</label>
-                    <select id= 'id_proveedor' name="id_proveedor" >
+                    <select id= 'id_proveedor' onchange="select()" name="id_proveedor" >
                         <% for(let i = 0; i< proveedores.length ; i++) { %> 
                               <option value= "<%= proveedores[i].id%>">
                                   <%= proveedores[i].proveedor%>
@@ -36,13 +36,14 @@
                     <input type='number' id= 'sku'name="sku" value="" placeholder="Ingresa el n° de Sku"> 
 
                     <label for="marca">Marca &nbsp</label>
-                    <select name="id_marca" >
+                    <select id ='id_marca'  name="id_marca" >
                        
                         
-                        <% for(let i = 0; i< marca.length ; i++) { %> 
+                        <% for(let a = 0; a< marca.length ; a++) { %> 
                         
-                            <option   value= "<%= marca[i].id%>">
-                                <%= marca[i].marca %>
+                            <option   value= '<%=a%>'>
+                                  
+                                <%= marca[a].marca %>
                               
                      </option>   
                         <% } %>
@@ -151,6 +152,6 @@
            
         </div>
      </footer>
-
+     <script src ='/js/prueba.js'></script>
 
 </body>

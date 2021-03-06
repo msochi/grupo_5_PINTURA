@@ -26,6 +26,7 @@ module.exports ={
         )
 
   },
+ 
   actualizar: function(req,res){
     db.Productos.actualizar({
             id_proveedor: req.body.id_proveedor,

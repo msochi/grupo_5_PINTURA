@@ -53,6 +53,15 @@ module.exports ={
        // fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify//(productos))
        // res.render ('./cargaProducto');
     //},
+    buscarMarca: async (req,res)=>{
+      console.log(req.params.id)
+      const marca = await db.Marcas.findAll({
+        where:{id_proveedor: req.params.id}
+      }) 
+      console.log(marca)
+      res.send(marca)
+    },
+    
     cargar: function(req,res){
       console.log(req.body) 
       db.Productos.create({
