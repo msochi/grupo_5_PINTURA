@@ -18,26 +18,53 @@
 
     <section class="contenedor">
         <div class="ingreso">
-            <h2 style="color: red" >Modificar Producto </h2>  <hr class="hrcolor">
-            <h4>Ingresar los datos a modificar</h4>
-            <form action="" class="form" method="POST" enctype="multipart/form-data" >
+            <h2>Modificar Producto</h2>  <hr class="hrcolor">
+            <h4>Ingresar los datos correspondientes al producto</h4>
+            <form  class="form" method="POST" action="/modificarProducto/<%=productos.id%>?_method=PUT&id=" enctype="multipart/form-data" >
                 <div class= "medio">
                 <div class="medio_1">
+                    <label for="id_proveedor">Proveedor &nbsp</label>
+                    <select id= 'id_proveedor' name="id_proveedor" >
+                        
+                              <option value= "<%= proveedores.id_proveedor%>">
+                                  
+                     </option>   
+                       
+                    <!--<input type='text' id= 'id_proveedor'name="id_proveedor" value="" placeholder="Nombre del proveedor"> -->
+                </select>
                     <label for="sku">Sku &nbsp</label>
                     <input type='text' id= 'sku'name="sku" value="<%= productos.sku%>" placeholder="Ingresa el n° de Sku"> &nbsp
 
                     <label for="marca">Marca &nbsp</label>
-                    <input type='text' id= 'marca'name="marca" value="<%= productos.marca%>" placeholder="Ingresa la marca"> &nbsp
-
-                    <label for="categoria">Categoria &nbsp</label>
-                    <input type="text" id='categoria' name="categoria" value="<%= productos.categoria%>" placeholder="Categoria de producto"> 
+                    <select id= 'id_marca' name="id_marca" >
+                        
+                        <option value= "<%= productos.id_marca%>">
+                           
+                        </option>   
+                    </select>    &nbsp
+                    
+                    <label for="id_familia">Familia &nbsp</label>
+                    <input type="text" id='  id_familia' name="  id_familia" value="<%= productos.  id_familia%>" placeholder="Familia"> <br> 
+                   
                 </div>
                 <div class="medio_2">
-                    <label for="familia">Familia &nbsp</label>
-                    <input type="text" id='familia' name="familia" value="<%= productos.familia%>" placeholder="Familia"> <br>       
+                    <label for="id_subfamilia">Subfamilia &nbsp</label>
+                    <select id= 'id_subfamilia' name="id_subfamilia" >
+                        
+                        <option value= "<%= proveedores.id_subfamilia%>">
+                            
+                        </option>   
+                    </select>    
 
-                     <label for="tipo">Tipo&nbsp</label>
-                    <input type="text" id='tipo' name="tipo" value="<%= productos.tipo%>" placeholder="Ejemplo: Látex interior"> 
+                     <label for="id_tipo">Tipo&nbsp</label>
+                     <select id= 'id_tipo' name="id_tipo" >
+                        
+                        <option value= "<%= proveedores.id_tipo%>">
+                            
+                        </option>   
+                    </select>    
+                    <label for="id_subtipo">Subtipo&nbsp</label>
+                    <input type="text" id='subid_subtipotipo' name="id_subtipo" value="" placeholder="Ejemplo: Látex interior"> 
 
                     <label for="presentacion">Presentacion &nbsp</label>
                     <input type="text" id='presentacion' name="presentacion" value="<%= productos.presentacion%>" placeholder="Litros - CM3 - Unidades"> 
@@ -50,16 +77,16 @@
                     <input type="text" id='color' name="color" value="<%= productos.color%>" placeholder="color"> <br>
                 
                 
-                    <label for="TiempoDeEspera">Tiempo de espera entre manos &nbsp</label>
-                    <input type="number" id='TiempoDeEspera' name="TiempoDeEspera" value="<%= productos.TiempoDeEspera%>" placeholder="Tiempo de espera entre manos"> 
+                    <label for="tiempo_entre_manos">Tiempo de espera entre manos &nbsp</label>
+                    <input type="number" id='tiempo_entre_manos' name="tiempo_entre_manos" value="<%= productos.tiempo_entre_manos%>" placeholder="Tiempo de espera entre manos"> 
                 </div>
                     <div class="medio_4">
               
                     <label for="base">Base  &nbsp</label>
                     <input type="text" id= 'base' name="base" value="<%= productos.base%>" placeholder="Base (Ej: al agua)"> <br>
 
-                    <label for="terminacion">Terminación  &nbsp</label>
-                    <input type="text" id='terminacion' name="terminacion" value="<%= productos.terminacion%>" placeholder="Tipo de Terminación">
+                    <label for="id_terminacion">Terminación  &nbsp</label>
+                    <input type="text" id='id_terminacion' name="id_terminacion" value="<%= productos.id_terminacion%>" placeholder="Tipo de Terminación">
                 
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento" value="<%= productos.rendimiento%>" placeholder="Ejemplo 12 a 16 m2/l por mano">
@@ -68,34 +95,29 @@
                     <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
                     <input type="text" id='usoRecomendado' name="usoRecomendado" value="<%= productos.usoRecomendado%>" placeholder="Ej: Interio o exterior"> <br>
              
-                    <label for="secado">Secado al tacto  &nbsp</label>
-                    <input type="text" id='secado' name="secado" value="<%= productos.secado%>" placeholder="Tiempo de secado">
+                    <label for="tiempo_de_secado">Secado al tacto  &nbsp</label>
+                    <input type="text" id='tiempo_de_secado' name="tiempo_de_secado" value="<%= productos.tiempo_de_secado%>" placeholder="Tiempo de secado">
 
                     <label for="garantia">Garantia  &nbsp</label>
                     <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
                     <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value=""> <br>
-                     </article>
+                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value="<%= productos.imagenProducto%>"> <br>
+                
                 </div>
                 </div>
-                <div>
-                <button class="enviar" type="submit" name="cargarProducto">Cargar Productos</button>   &nbsp
-                
-                </div>   
-                
+                <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Cargar Productos</button>   
+       
             </form>
             <div class ="borrar" >
                 <form  action="/borrarproducto/<%= productos.sku %>?_method=DELETE" method="POST">
                     <button class="eliminar"  type="submit">Eliminar <br> Producto</button>
                 </form>             
             
-            </div> 
-            
+            </div>
         </div>
      
     </section>
-    
     <footer class="footer">
         <div class="credenciales">
             <ul>

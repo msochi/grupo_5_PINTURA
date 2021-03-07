@@ -1,5 +1,6 @@
 const express = require ('express');
 const router= express.Router ();
+
 const multer = require('multer');
 const path= require('path');
 const modificarProductoController = require('../controllers/modificarProductoController');
@@ -9,7 +10,7 @@ var storage = multer.diskStorage({
       cb(null, path.join(__dirname, "../../public/imagenProductos") )
     },
     filename: function (req, file, cb) {
-      cb(null,req.body.marca + Date.now() + path.extname(file.originalname))
+      cb(null,req.body.id_marca + Date.now() + path.extname(file.originalname))
     }
   })
    
@@ -17,8 +18,7 @@ var storage = multer.diskStorage({
 
 
 
-
-router.get("/:sku", modificarProductoController.mostrar);// aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
-router.post("/:sku", upload.any(), modificarProductoController.actualizar);
+router.get("/:id", modificarProductoController.mostrar);
+router.post("/:id", upload.any(), modificarProductoController.actualizar);
 
 module.exports = router;

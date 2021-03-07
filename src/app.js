@@ -17,9 +17,8 @@ const checkOutRouter = require ('./routes/checkOutRouter');
 const thankYouRouter = require ('./routes/thankYouRouter');
 const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
 const cargaProductoRouter = require('./routes/cargaProductoRouter');
-const modificarProductoRouter = require('./routes/modificarProductoRouter');
-const borrarProductoRouter = require('./routes/borrarProductoRouter');
-const recuperoPassRouter = require ('./routes/recuperoPassRouter')
+const modificarProductoRouter = require ('./routes/modificarProductoRouter');
+const recuperoPassRouter = require ('./routes/recuperoPassRouter');
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
@@ -50,7 +49,6 @@ app.use ('/ThankYou', thankYouRouter);
 app.use ('/crearUsuario', crearUsuarioRouter);
 app.use ('/cargaProducto', cargaProductoRouter);
 app.use ('/modificarProducto', modificarProductoRouter);
-app.use ('/borrarProducto', borrarProductoRouter);
 app.use ('/recupero', recuperoPassRouter);
 
 //app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
