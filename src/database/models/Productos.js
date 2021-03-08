@@ -92,6 +92,12 @@ module.exports = function(sequelize, dataTypes) {
 
   
     Productos.associate = function (models){ 
+        Productos.belongsTo(models.Marcas, {
+            as: 'marcas',
+            foreignKey: 'id_marca',
+        } )
+    }
+    Productos.associate = function (models){ 
         Productos.belongsTo(models.Subtipo, {
             as: 'subtipo',
             foreignKey: 'id_subtipo',

@@ -32,6 +32,13 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'id_proveedor',
         } )
     }
+
+    Marcas.associate = function (models){ 
+        Marcas.hasMany(models.Productos, {
+            as: 'productos',
+            foreignKey: 'id_producto',
+        } )
+    }
  
 	Marcas.associate = function(models){
         Marcas.belongsToMany(models.Proveedores, {

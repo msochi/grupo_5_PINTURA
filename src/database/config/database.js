@@ -1,21 +1,21 @@
 module.exports={
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "user",
+    "password": "pass",
     "database": "pintame",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
+    "username": "user",
+    "password": "pass",
     "database": "pintame",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "user",
+    "password": "pass",
     "database": "pintame",
     "host": "127.0.0.1",
     "dialect": "mysql"

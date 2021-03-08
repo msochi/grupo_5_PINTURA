@@ -73,19 +73,20 @@ module.exports ={
             id_subfamilia: req.body.id_subfamilia,
             id_familia: req.body.id_familia,
             presentacion:req.body.presentacion,
-            contenidoNeto: req.body.contenidoNeto,
+            contenido_neto: req.body.contenido_neto,
             color: req.body.color,
-            tiempo_entre_manos: req.body.TiempoDeEspera,
+            tiempo_entre_manos: req.body.tiempo_entre_manos,
             base:req.body.base,
             id_terminacion: req.body.id_terminacion,
             rendimiento: req.body.rendimiento,
-            usoRecomendado: req.body.usoRecomendado,
+            uso_recomendado: req.body.uso_recomendado,
             tiempo_de_secado: req.body.tiempo_de_secado,
             garantia: req.body.garantia,
             id_proveedor: req.body.id_proveedor,
             imagenProducto: req.files[0].filename,
           
         })
+        console.log(req.body.id_marca)
         //fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
         res.redirect ("/cargaProducto");
     },

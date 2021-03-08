@@ -41,7 +41,7 @@
                         
                         <% for(let a = 0; a< marca.length ; a++) { %> 
                         
-                            <option   value= '<%=a%>'>
+                            <option   value= '<%=marca[a].id%>'>
                                   
                                 <%= marca[a].marca %>
                               
@@ -92,8 +92,8 @@
                     <input type="text" id='presentacion' name="presentacion" value="" placeholder="Litros - CM3 - Unidades"> 
                 </div>
                 <div class="medio_3">
-                    <label for="contenidoNeto">Contenido Neto &nbsp</label>
-                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="" placeholder="Contenido Neto"> <br>
+                    <label for="contenido_neto">Contenido Neto &nbsp</label>
+                    <input type="text" id='contenido_neto' name="contenido_neto" value="" placeholder="Contenido Neto"> <br>
 
                     <label for="color">Color &nbsp</label>
                     <input type="text" id='color' name="color" value="" placeholder="color"> <br>
@@ -114,8 +114,8 @@
                     <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
                 </div>
                 <div class="medio_5">
-                    <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
-                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="" placeholder="Ej: Interio o exterior"> <br>
+                    <label for="uso_recomendado">Uso Recomendado  &nbsp</label>
+                    <input type="text" id='uso_recomendado' name="uso_recomendado" value="" placeholder="Ej: Interio o exterior"> <br>
              
                     <label for="tiempo_de_secado">Secado al tacto  &nbsp</label>
                     <input type="text" id='tiempo_de_secado' name="tiempo_de_secado" value="" placeholder="Tiempo de secado">
