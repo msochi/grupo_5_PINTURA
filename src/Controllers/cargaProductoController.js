@@ -61,6 +61,24 @@ module.exports ={
       console.log(marca)
       res.send(marca)
     },
+
+    buscarFamilia: async (req,res)=>{
+      console.log(req.params.id)
+      const subfamilia = await db.Subfamilia.findAll({
+        where:{id_familia: req.params.id}
+      }) 
+      console.log(subfamilia)
+      res.send(subfamilia)
+    },
+
+    buscarTipo: async (req,res)=>{
+      console.log(req.params.id)
+      const subtipo = await db.Subtipo.findAll({
+        where:{id_tipo: req.params.id}
+      }) 
+      console.log(subtipo)
+      res.send(subtipo)
+    },
     
     cargar: function(req,res){
       console.log(req.body) 

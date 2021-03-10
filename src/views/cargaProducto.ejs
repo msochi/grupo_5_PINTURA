@@ -51,7 +51,7 @@
                 </select>
         
                     <label for="id_familia">Familia &nbsp</label>
-                    <select name="id_familia" >
+                    <select id='id_familia' name="id_familia" onchange="familia()">
                         <% for(let i = 0; i< familia.length ; i++) { %> 
                               <option value= "<%= familia[i].id%>">
                                   <%= familia[i].familia%>
@@ -62,16 +62,16 @@
                 </div>
                 <div class="medio_2">
                     <label for="id_subfamilia">Subfamilia &nbsp</label>
-                    <select name="id_subfamilia" >
-                        <% for(let i = 0; i< subfamilia.length ; i++) { %> 
-                              <option value= "<%= subfamilia[i].id%>">
-                                  <%= subfamilia[i].subfamilia%>
+                    <select name="id_subfamilia" id="id_subfamilia" >
+                        <% for(let b = 0; b< subfamilia.length ; b++) { %> 
+                              <option value= "<%= subfamilia[b].id%>">
+                                  <%= subfamilia[b].subfamilia%>
                      </option>   
                         <% } %>
                    <!-- <input type="text" id='id_subfamilia' name="id_subfamilia" value="" placeholder="Subfamilia"> <br>       -->
                 </select>
                      <label for="id_tipo">Tipo&nbsp</label>
-                     <select name="id_tipo" >
+                     <select name="id_tipo" onchange="tipo()" id="id_tipo">
                         <% for(let i = 0; i< tipo.length ; i++) { %> 
                               <option value= "<%= tipo[i].id%>">
                                   <%= tipo[i].tipo%>
@@ -80,7 +80,7 @@
                     <!-- <input type="text" id='tipo' name="tipo" value="" placeholder="Ejemplo: Látex interior"> -->
                 </select>
                     <label for="id_subtipo">Subtipo&nbsp</label>
-                    <select name="id_subtipo" >
+                    <select name="id_subtipo" id="id_subtipo">
                         <% for(let i = 0; i< subtipo.length ; i++) { %> 
                               <option value= "<%= subtipo[i].id%>">
                                   <%= subtipo[i].subtipo%>

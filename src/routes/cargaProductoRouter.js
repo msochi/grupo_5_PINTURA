@@ -18,6 +18,8 @@ var storage = multer.diskStorage({
 
 router.get ("/", cargaProductoController.formulario); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 router.get('/buscar/:id',cargaProductoController.buscarMarca)
+router.get('/buscar/familia/:id',cargaProductoController.buscarFamilia)
+router.get('/buscar/tipo/:id',cargaProductoController.buscarTipo)
 router.post ("/", upload.any(), cargaProductoController.cargar); 
 
 
