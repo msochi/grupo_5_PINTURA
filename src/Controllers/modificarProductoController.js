@@ -59,6 +59,15 @@ module.exports ={
     res.send(error);
     });
 },
+eliminar: function(req,res){
+db.Productos.destroy({
+	where: {
+		id: req.params.id
+}
+})  
+}
+
       }
+
      
 

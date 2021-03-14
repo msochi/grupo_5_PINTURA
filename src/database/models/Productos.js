@@ -84,8 +84,9 @@ module.exports = function(sequelize, dataTypes) {
     
     let config = {
         tableName: 'productos',
-        timestamps: false,
-        underscored: false,        // sino tenemos timestamps, underscored va falso para que lo tome correctamente la base de datos, sino no levanta correctamente el dato.
+        paranoid: true,
+        timestamps: true,
+        underscored: true,        // sino tenemos timestamps, underscored va falso para que lo tome correctamente la base de datos, sino no levanta correctamente el dato.
     }
 
     const Productos = sequelize.define(alias, cols, config);
