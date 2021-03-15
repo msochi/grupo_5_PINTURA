@@ -21,6 +21,7 @@ module.exports ={
      const terminacion = await db.Terminacion.findAll();
        db.Productos.findByPk(req.params.id)
           .then((productos) => {
+            console.log(productos);
                res.render ('./modificarProducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
             } 
         )

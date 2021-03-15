@@ -18,6 +18,7 @@ const thankYouRouter = require ('./routes/thankYouRouter');
 const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
 const cargaProductoRouter = require('./routes/cargaProductoRouter');
 const modificarProductoRouter = require ('./routes/modificarProductoRouter');
+const modificarUsuarioRouter = require ('./routes/modificarUsuarioRouter');
 const recuperoPassRouter = require ('./routes/recuperoPassRouter');
 
 app.use(methodOverride('_method'));
@@ -49,6 +50,7 @@ app.use ('/ThankYou', thankYouRouter);
 app.use ('/crearUsuario', crearUsuarioRouter);
 app.use ('/cargaProducto', cargaProductoRouter);
 app.use ('/modificarProducto', modificarProductoRouter);
+app.use ('/modificarUsuario', modificarUsuarioRouter);
 app.use ('/recupero', recuperoPassRouter);
 
 //app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
