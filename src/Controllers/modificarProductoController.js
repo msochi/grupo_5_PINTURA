@@ -46,7 +46,7 @@ module.exports ={
             usoRecomendado: req.body.usoRecomendado,
             tiempo_de_secado: req.body.tiempo_de_secado,
             garantia: req.body.garantia,
-            imagenProducto: req.files[0].filename,
+            imagen_producto: req.files[0].filename,
           },{ 
           where:{
             id: req.params.id  
@@ -63,11 +63,19 @@ eliminar: function(req,res){
 db.Productos.destroy({
 	where: {
 		id: req.params.id
-}
-})  
+  }
+}) 
+.then(function(quePaso) {
+  return res.send('Lo que me retorna es... ' + quePaso)
+})
+.catch(function(error) {
+  return res.send(error)
+}) 
 }
 
-      }
+
+
+}
 
      
 

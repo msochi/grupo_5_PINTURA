@@ -76,7 +76,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER.UNSIGNED,
             notNull: true
         },
-        imagenProducto: {
+        imagen_producto: {
             type: dataTypes.STRING(),
             notNull: true
         },

@@ -6,7 +6,7 @@ const path= require('path');
 // storage sirve para poder guargar las imagenes que sube el usuario junto con requerir multer.
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, "../../public/imagenProductos") )
+      cb(null, path.join(__dirname, "../../public/imagen_producto") )
     },
     filename: function (req, file, cb) {
       cb(null,req.body.id_marca + Date.now() + path.extname(file.originalname))

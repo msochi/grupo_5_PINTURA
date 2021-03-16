@@ -101,7 +101,7 @@ module.exports ={
             tiempo_de_secado: req.body.tiempo_de_secado,
             garantia: req.body.garantia,
             id_proveedor: req.body.id_proveedor,
-            imagenProducto: req.files[0].filename,
+            imagen_producto: req.files[0].filename,
           
         })
         console.log(req.body.id_marca)

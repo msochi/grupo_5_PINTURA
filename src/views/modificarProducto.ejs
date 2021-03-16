@@ -101,8 +101,8 @@
                     <label for="garantia">Garantia  &nbsp</label>
                     <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
-                    <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value="<%= productos.imagenProducto%>"> <br>
+                    <label for="imagen_producto">Cargar imagen del producto  &nbsp</label>
+                    <input type="file" name="imagen_producto" id= 'imagen_producto' class= 'form-control-file' value="<%= productos.imagen_producto%>"> <br>
                 
                 </div>
                 </div>
@@ -110,7 +110,7 @@
        
             </form>
             <div class ="borrar" >
-                <form  action="/borrarproducto/<%= productos.sku %>?_method=DELETE" method="POST">
+                <form  action="eliminar/<%= productos.id %>?_method=DELETE" method="POST">
                     <button class="eliminar"  type="submit">Eliminar <br> Producto</button>
                 </form>             
             
