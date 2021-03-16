@@ -51,7 +51,7 @@ module.exports ={
            // });
             
 
-            res.render ("./crearUsuario", {
+            res.render("./crearUsuario", {
                 
                 errors:errors.mapped(),  
                 old: req.body

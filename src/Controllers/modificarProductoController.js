@@ -67,7 +67,7 @@ db.Productos.destroy({
   }
 }) 
 .then(function(quePaso) {
-  return res.send('Lo que me retorna es... ' + quePaso)
+  return res.redirect('/')
 })
 .catch(function(error) {
   return res.send(error)
