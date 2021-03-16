@@ -23,6 +23,7 @@
     "mysql2": "^2.2.5",
     "nodemailer": "^6.4.18",
     "nodemon": "^2.0.7",
+    "nodeom": "0.0.1",
     "sequelize": "^6.5.0"
   }
 }
