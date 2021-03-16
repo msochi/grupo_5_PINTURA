@@ -3,8 +3,9 @@
 const fs = require('fs');
 const path= require ('path');
 const bcrypt = require ("bcryptjs");
-let usuarios = fs.readFileSync(path.join(__dirname, '../database/usuarios.json'),'utf8');
-usuarios = JSON.parse(usuarios);
+const db = require('../database/models/index')
+// let usuarios = fs.readFileSync(path.join(__dirname, '../database/usuarios.json'),'utf8');
+// usuarios = JSON.parse(usuarios);
 
 
 
@@ -15,34 +16,36 @@ module.exports ={
     
     },
 
-    checkUsuario: function (req, res) {   
-        
-        //return res.send (req.body)
-        for (let i= 0; i < usuarios.length; i++) {
-            if(usuarios[i].email == req.body.email){
-                if(bcrypt.compareSync(req.body.pass, usuarios[i].pass) == true){
-                   // aca ya puedo incluir la variables de session para guardarme registros del usuario.
-                   
-                  req.session.usuarioLogueado = {
-                   email: usuarios[i].email,
-                    
-                   }
-                 
-                                     
-                     //return res.send (req.session.usuarioLogueado)            
-                    return  res.redirect ('/')
-                }
-                else {
-                   return  res.redirect ('/login')
-                  
-                }
+    checkUsuario: async function (req, res) {   
+
+        let usuario = await db.Clientes.findAll({
+            where: {
+                email: req.body.email
             }
+        })
+
+        if (usuario[0].email != null) {
+
+            console.log(usuario[0].pass);
+            console.log(req.body.pass);
+            console.log(bcrypt.compareSync(req.body.pass, usuario[0].pass));
+
+            if(bcrypt.compareSync(req.body.pass, usuario[0].pass) == true){
+                // aca ya puedo incluir la variables de session para guardarme registros del usuario.
+                
+                req.session.usuario = usuario[0].email;
+                    //return res.send (req.session.usuarioLogueado)            
+                return  res.redirect ('/');
+            }
+            else {
+                return  res.redirect ('/login')
+                
+            }
+
         }
-        return res.redirect('/login');
-        //usuarios.push({
-          //  email: req.body.email,
-            //pass: bcrypt.hashSync(req.body.pass, 12),
-        //res.send ("Revisando el check del usuario")
+
+        return res.redirect('/');
+
     },
    
 };

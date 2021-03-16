@@ -20,6 +20,7 @@ const cargaProductoRouter = require('./routes/cargaProductoRouter');
 const modificarProductoRouter = require ('./routes/modificarProductoRouter');
 const modificarUsuarioRouter = require ('./routes/modificarUsuarioRouter');
 const recuperoPassRouter = require ('./routes/recuperoPassRouter');
+const searchRouter = require ('./routes/searchRouter');
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
@@ -52,6 +53,7 @@ app.use ('/cargaProducto', cargaProductoRouter);
 app.use ('/modificarProducto', modificarProductoRouter);
 app.use ('/modificarUsuario', modificarUsuarioRouter);
 app.use ('/recupero', recuperoPassRouter);
+app.use ('/search', searchRouter);
 
 //app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
 app.listen(port, ()=> console.log ('Server Listen to port: ${port}'))
