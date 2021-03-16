@@ -6,6 +6,7 @@ const indexController = require ('../controllers/indexController'); // Tengo que
 
 
 router.get ("/", indexController.index ); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
+router.get ("/search", indexController.index ); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 
 module.exports = router;
 

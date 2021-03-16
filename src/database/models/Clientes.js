@@ -60,6 +60,21 @@ module.exports = function(sequelize, dataTypes) {
         underscored: false,        
     }
 
-    const clientes = sequelize.define(alias, cols, config)
-    return clientes
+    const Clientes = sequelize.define(alias, cols, config)
+
+    Clientes.associate = function (models){ 
+        Clientes.belongsTo(models.Provincias, {
+            as: 'provincias',
+            foreignKey: 'id_provincia',
+        } )
+    }
+
+    Clientes.associate = function (models){ 
+        Clientes.belongsTo(models.Localidades, {
+            as: 'localidades',
+            foreignKey: 'id_localidad',
+        } )
+    }
+
+    return Clientes
 }

@@ -108,7 +108,15 @@
                     <input type="text" id= 'base' name="base" value="" placeholder="Base (Ej: al agua)"> <br>
 
                     <label for="id_terminacion">Terminación  &nbsp</label>
-                    <input type="text" id='id_terminacion' name="id_terminacion" value="" placeholder="Tipo de Terminación">
+                    <!-- <input type="text" id='id_terminacion' name="id_terminacion" value="" placeholder="Tipo de Terminación"> -->
+                    <select name="id_terminacion" id="id_terminacion">
+                        <% for(let i = 0; i< terminacion.length ; i++) { %> 
+                              <option value= "<%= terminacion[i].id%>">
+                                  <%= terminacion[i].terminacion%>
+                     </option>   
+                        <% } %>
+                    <!--<input type="text" id='subtipo' name="id_subtipo" value="" placeholder="Ejemplo: Látex interior"> -->
+                </select>
                 
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento" value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
