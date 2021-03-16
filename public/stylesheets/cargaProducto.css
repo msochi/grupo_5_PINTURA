@@ -145,6 +145,19 @@ label{
     color: #f72585;
 
 }
+.ingreso select{
+    border-radius: 5px;
+    width: 20%;
+    height: 25px;
+    min-width: 160px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.ingreso select:hover{
+    background-color: rgb(116, 189, 221);
+    color: #f72585;
+
+}
 
 .ingreso a{
     font-size: 8px;
@@ -218,6 +231,37 @@ form .enviar:hover{
     transform: scale(1.2);
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+div.borrar {
+    display:flex;
+    text-align: center;
+    align-items: center;
+    justify-content:space-around;
+    margin-right: 5px;;
+    margin-top: 2px;
+
+}
+.eliminar{
+    display:inline-flex;    
+    align-items: center;    
+    justify-content:center;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    margin-top: 5px;    
+    font-size: 16px;
+}
+button.eliminar:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 /*==========
 BannerLogin
 =========*/

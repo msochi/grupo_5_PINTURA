@@ -34,16 +34,30 @@ CONTENEDOR
 .contenedor{
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
     justify-content: space-between;
     width: 100%;
     
+=======
+    justify-content: space-around;
+    width: 100%;
+    
+}
+form {
+    display: flex;
+    width: 100%;
+
+
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 }
 
 .ingreso {
     display: inline-block;
     flex-wrap: wrap;
+    justify-content:space-between;
     width: 50%;
-    padding: 40px;
+    padding: 50px;
+   
     
 }
 .ingreso .hrcolor{
@@ -60,7 +74,11 @@ CONTENEDOR
     margin-bottom: 4px;
 }
 
+<<<<<<< HEAD
 .ingreso h5{
+=======
+.ingreso h6{
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
     margin-bottom: 4px;
 }
 .ingreso label{
@@ -73,7 +91,6 @@ CONTENEDOR
     border-radius: 5px;
     width: 60%;
     height: 25px;
-    min-width: 160px;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -90,7 +107,7 @@ CONTENEDOR
 }
 
 .ingreso2 {
-    margin-top: 27px;
+    margin-top: 37px;
     display: inline-block;
     flex-wrap: wrap;
     width: 50%;

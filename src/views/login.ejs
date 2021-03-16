@@ -13,7 +13,7 @@
     </head>
 <body>
     <header class="cabecera">
-        <a href="./index.html" class="logo"><img src="./images/logos/Pintamev2.png" alt="" ></a> 
+        <a href="/" class="logo"><img src="./images/logos/Pintamev2.png" alt="" ></a> 
     </header>
 
     <section class="contenedor">
@@ -21,13 +21,13 @@
             <h2>Ingresar a mi  cuenta</h2> <hr class="hrcolor">
             <h3>Ya estoy registrado</h3>
             <h4>Ingresá tu dirección de email y contraseña para iniciar sesión.</h4>
-            <form action="/login" method="POST" enctype="application/x-www-form-urlencoded">
+            <form action="/login" method="POST" >
                 <label for="email">Correo electronico</label><br>
-                <input id= 'mail' type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
+                <input id= 'email' type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
                 <label for="pass">Contraseña</label><br>
-                <input id = 'password'  type="password" name="pass" value="" placeholder="Tú clave"> <br>
+                <input id = "pass"  type="password" name="pass" value="" placeholder="Tú clave"> <br>
                 
-                <a href="#" class="recuperar">Recuperar Contraseña</a> <br>
+                <a href="/recupero" class="recuperar">Recuperar Contraseña</a> <br>
 
                 <button type="submit" name="entrar" class="enviar">Enviar</button>
             </form>
@@ -35,7 +35,7 @@
 
         <div class="regristrarse">
             <h2>  </h2>
-            <hr class="hrcolor">
+            <hr class="hrcolor2"> 
             <h3>No estoy registrado</h3>
             <h4>Crear tu cuenta  y obtene increibles beneficios.</h4>
             <ul>

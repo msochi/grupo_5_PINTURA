@@ -33,6 +33,10 @@ CONTENEDOR
 section{
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
+=======
+    width: 100%
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 }
 .contenedor{
     display: flex;
@@ -102,11 +106,27 @@ section{
 }
 div.regristrarse{
     padding: 70px;
+<<<<<<< HEAD
+=======
+    width:50%;
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 }
 .regristrarse h3{
     color: #F72585;
     margin-bottom: 4px;
 }
+<<<<<<< HEAD
+=======
+.hrcolor2{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: grey;   
+    border: 0;
+    height: 2px;
+    width: 100%;
+    color: gray;
+}
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 .ingreso h4{
     margin-bottom: 6px;
 }
@@ -115,6 +135,10 @@ div.regristrarse{
 }
 .regristrarse ul li{
     margin-bottom: 4px;
+<<<<<<< HEAD
+=======
+    list-style: none;
+>>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f
 }
 div .crearCuenta{
     color: white;

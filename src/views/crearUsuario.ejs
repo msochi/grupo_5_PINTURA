@@ -16,18 +16,23 @@
         <a href="./index" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
     </header>
 
-    <section class="contenedor">
+    <section class="contenedor">              
+        
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="ingreso">
             <h2>Registrate :)</h2> <hr class="hrcolor">
-            <h4>Datos para iniciar sesión</h4>
-            <h5>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h5>
-            
+            <h4>Datos para iniciar sesión</h4><br>
+            <h6>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h6>
                 <label for="email">Correo electronico</label><br>
-                <input type="email" id= 'email'name="email" value="" placeholder="Ingresa tu email"> <br>
+                <input type="email" id= 'email'name="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" placeholder="Ingresa tu email"><br>
+                <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small> <br>
+
                 <label for="pass">Contraseña</label><br>
-                <input type="password" id='pass' name="pass" value="" placeholder="Tú clave"> <br>
-                
+                <input type="password" id='pass' name="pass" value="<%= (typeof old != 'undefined' && !errors.pass) ? old.pass : '' %>" placeholder="Tú clave"> <br>
+                <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small> <br>
+                  
+                <label for="imagen_producto">Carga tu imagen o avatar</label> <br>
+                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>            
         </div>
 
         <div class="ingreso2">
@@ -40,26 +45,34 @@
                 <input type="text" id='last_name' name="last_name" value="" placeholder="Ingresa tu apellido"> <br>
 
                 <label for="dni">DNI*</label><br>
-                <input type="number" id='dni' name="dni" value="" placeholder="Ingresa tu DNI"> <br>
-
+                <input type="number" id='dni' name="dni" value="<%= (typeof old != 'undefined' && !errors.dni) ? old.dni : '' %>" placeholder="Ingresa tu DNI"> <br>
+                <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.dni) ? errors.dni.msg : '' %></small> <br>
+                <br>
                 <label for="street">Dirección*</label><br>
                 <input type="text" id= 'street' name="street" value="" placeholder="Ingresa tu dirección"> <br>
 
                 <label for="location">Localidad*</label><br>
-                <input type="text" id='location' name="location" value="" placeholder="Ingresa tu localidad"> <br>
-
+                <select name="id_localidad" id="id_localidad">
+                    <% for(let i = 0; i< localidades.length ; i++) { %> 
+                          <option value= "<%= localidades[i].id%>">
+                              <%= localidades[i].localidad%>
+                 </option>   
+                    <% } %>
+                </select><br>
                 <label for="zipcode">Código Postal*</label><br>
                 <input type="text" id='zipcode' name="zipcode" value="" placeholder="Ingresa tu Código Postal"> <br>
 
                 <label for="province">Provincia*</label><br>
-                <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br>
-
+                <!-- <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br> -->
+                <select name="id_provincia" id="id_provincia">
+                    <% for(let i = 0; i< provincias.length ; i++) { %> 
+                          <option value= "<%= provincias[i].id%>">
+                              <%= provincias[i].provincia%>
+                 </option>   
+                    <% } %>
+                </select><br>
                 <label for="phone">Teléfono*</label><br>
                 <input type="number" id=' phone' name="phone" value="" placeholder="Ingresa tu teléfono"> <br>
-
-                <label for="avatar">Subi tu avatar o imagen</label><br>
-                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>
-
                 <button class="enviar" type="submit" name="crearCuenta" class="crearCuenta">Crear Cuenta</button>    
             </form>
                

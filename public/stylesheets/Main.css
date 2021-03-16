@@ -30,7 +30,7 @@ text-align: center;
 .opcionesHeader {
     display: flex;
     flex-direction: row;
-    width: 300px;
+    width: 35%;
     justify-items: center;
     box-sizing: border-box;
     }
@@ -58,7 +58,7 @@ text-align: center;
  .cabecera div button {        
         height: 30px;
         width: 25px;
-        margin-left: -10%;
+        margin-left: 0%;
         border-color: none;
         border: none;
         color: #F72585;
@@ -189,10 +189,12 @@ div.Vitrina .InteriorVitrina{
 CONTENEDOR
 ========*/
 
-section.contenedor{
+.contenedor{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 2%;
+    margin-top: 0;
+    padding-top: 0%;
+    padding-bottom: 1%;
     
        
 }
@@ -205,7 +207,7 @@ FAMILIAS
 div.familias {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10%;
+    margin-top: 0px;
     width: 100%;
     height: auto;
     justify-content: space-around;
@@ -236,7 +238,7 @@ div.familias .mundos a{
 div.familias .mundos .interior{
     background-image: url("../images/Interior-6.jpg");
     background-size: 100% 100%;
-    width: 550px;
+    width: 500px;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -252,7 +254,7 @@ div.familias .mundos .exterior{
     background-image: url("../images/PinturaFrente.jpg");
     background-size: 100% 100%;
     background-position: center;
-    width: 550px;
+    width: 500px;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -267,7 +269,7 @@ div.familias .mundos .exterior{
 div.familias .mundos .decoracion{
     background-image: url("../images/CuartoClaro.jpg");
     background-size: 100% 100%;
-    width: 550px;
+    width: 500px;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -282,7 +284,7 @@ div.familias .mundos .decoracion{
 div.familias .mundos .herramientas{
     background-image: url("../images/3pinceles.jpg");
     background-size: 100% 100%;
-    width: 550px;
+    width: 500px;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -298,6 +300,9 @@ div.familias .mundos .herramientas{
 .mundos a:hover{
     transform: scale(1.1);
           
+}
+.mundos {
+    padding: 0px;
 }
 
 
@@ -455,12 +460,18 @@ MARCAS
 .marcas {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content:space-around;
     margin-bottom: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .marcas li {
     list-style-type: none;
-    
+    width: 20%;
+       
+}
+.marcas li img {
+    width: 100%;
 }
 
 /*=========
