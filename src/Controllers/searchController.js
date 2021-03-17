@@ -5,6 +5,6 @@ module.exports ={
     buscar: function (req, res) {
         console.log("entre")
         console.log(req.query.text);
-        res.render ('index');
+        res.render ('./plp');
     }
 }
