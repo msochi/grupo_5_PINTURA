@@ -9,5 +9,6 @@ const multerRegistro = require ('../middlewares/multerRegistro');
 
 
 router.get ("/", crearUsuarioController.crear); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
+router.get('/buscar/:id',crearUsuarioController.buscarLocalidad)
 router.post ("/", multerRegistro.any(), validacionRegistro, crearUsuarioController.crearUsuario); //upload.any o upload.single se agrgegan en router como si fuese un middleware para poder capturar las imagenes que suben.
 module.exports = router;

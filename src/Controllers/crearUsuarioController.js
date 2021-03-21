@@ -12,33 +12,47 @@ const {validationResult} = require("express-validator"); // En lugar de llamar c
 
 module.exports ={
     crear: async function(req,res){
-        const clientes = await db.Clientes.findAll();
           //res.send("Bienvenidos al sitio")
-        res.render ('./crearUsuario', {clientes});    
+        const provincias = await db.Provincias.findAll();
+        const localidades = await db.Localidades.findAll();
+        res.render('./crearUsuario', {provincias, localidades})    
     },
-    crearUsuario: function(req,res){
+    buscarLocalidad: async (req,res)=>{
+        console.log(req.params.id)
+        const localidades = await db.Localidades.findAll({
+          where:{id_provincia: req.params.id}
+        }) 
+        console.log(localidades)
+        res.send(localidades)
+      },
+
+
+    crearUsuario: async function(req,res){
         // en req.body esta la info del usuario
-        
+        const provincias = await db.Provincias.findAll();
+        const localidades = await db.Localidades.findAll();
         console.log (req.body);
+       
         //aca preogunto si hay o  no errores en la creación del usuario. Sino hay errores sigo con la creación.
         let errors= validationResult(req); // tengo que pasar validationResults con el objeto que tenga esos errores.De esta forma me guardo todo en un variable (errors).
         if(errors.isEmpty()){
+            
             db.Clientes.create({
             //usuarios.push({
                 email: req.body.email,
                 pass: bcrypt.hashSync(req.body.pass, 12),
                 avatar: req.files[0].filename,
                 nombre: req.body.name,
-                apellido: req.body.apellido,
+                apellido: req.body.last_name,
                 dni:req.body.dni,
                 direccion: req.body.street,
-                localidad: req.body.location,
+                id_localidad: req.body.id_localidad,
                 codigoPostal: req.body.zipcode,
-                provincia:req.body.province,
+                id_provincia:req.body.id_provincia,
                 telefono: req.body.phone,
             })
        // fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
-        res.render ('./index');
+       res.render('./crearUsuario', {provincias, localidades}) ;
         }
         else {
             //return res.send (errors.errors) para verificar si se están mandando los errores.
@@ -50,10 +64,12 @@ module.exports ={
            // });
             
 
-            res.render ("./crearUsuario", {
+            res.render("./crearUsuario", {
                 
                 errors:errors.mapped(),  
-                old: req.body
+                old: req.body,
+                provincias,
+                localidades,
             })
 
         }

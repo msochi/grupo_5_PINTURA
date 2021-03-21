@@ -23,10 +23,18 @@ module.exports = function(sequelize, dataTypes) {
     const Provincias = sequelize.define(alias, cols, config);
 
     Provincias.associate = function (models){ 
-        Provincias.hasMany(models.Localidades, {
+        Provincias.hasOne(models.Localidades, {
             as: 'localidades',
-            foreignKey: 'id_provincia',
+            foreignKey: 'id',
         } )
-    }    
+    }
+    
+    Provincias.associate = function (models){ 
+        Provincias.hasMany(models.Clientes, {
+            as: 'clientes',
+            foreignKey: 'id',
+        } )
+    }  
+
     return Provincias
 }

@@ -9,7 +9,9 @@
 
 module.exports ={
     plp: function(req,res){
+        console.log(req.query.text);
         //res.send("Bienvenidos al sitio")
+        
         res.render ('./plp')
     },
     //  all: function (req, res){ res.render (productos, { productosEnLaVista: productos }) 

@@ -20,58 +20,108 @@
         <div class="ingreso">
             <h2>Modificar Producto</h2>  <hr class="hrcolor">
             <h4>Ingresar los datos correspondientes al producto</h4>
-            <form  class="form" method="POST" action="/modificarProducto/<%=productos.id%>?_method=PUT&id=" enctype="multipart/form-data" >
+            <form  class="form" method="POST" action="/modificarProducto/<%=productos.id%>" enctype="multipart/form-data" >
                 <div class= "medio">
                 <div class="medio_1">
                     <label for="id_proveedor">Proveedor &nbsp</label>
-                    <select id= 'id_proveedor' name="id_proveedor" >
-                        
-                              <option value= "<%= proveedores.id_proveedor%>">
-                                  
-                     </option>   
-                       
-                    <!--<input type='text' id= 'id_proveedor'name="id_proveedor" value="" placeholder="Nombre del proveedor"> -->
+                    <select id= 'id_proveedor' name="id_proveedor" onchange="select()">
+                        <% for(let i = 0; i< proveedores.length ; i++) { %> 
+                            <% if(proveedores[i].id == productos.id_proveedor) { %> 
+                              <option selected="selected" value= "<%= proveedores[i].id%>">
+                                  <%= proveedores[i].proveedor%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= proveedores[i].id%>">
+                                    <%= proveedores[i].proveedor%>
+                                </option> 
+                            <% } %>  
+                        <% } %>
                 </select>
                     <label for="sku">Sku &nbsp</label>
                     <input type='text' id= 'sku'name="sku" value="<%= productos.sku%>" placeholder="Ingresa el n° de Sku"> &nbsp
 
                     <label for="marca">Marca &nbsp</label>
                     <select id= 'id_marca' name="id_marca" >
-                        
-                        <option value= "<%= productos.id_marca%>">
-                           
-                        </option>   
+                        <% for(let i = 0; i< marca.length ; i++) { %> 
+                            <% if(marca[i].id == productos.id_marca) { %> 
+                              <option selected="selected" value= "<%= marca[i].id%>">
+                                  <%= marca[i].marca%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= marca[i].id%>">
+                                    <%= marca[i].marca%>
+                                </option> 
+                            <% } %>  
+                        <% } %>  
                     </select>    &nbsp
                     
                     <label for="id_familia">Familia &nbsp</label>
-                    <input type="text" id='  id_familia' name="  id_familia" value="<%= productos.  id_familia%>" placeholder="Familia"> <br> 
+                    <select id= 'id_familia' name="id_familia" onchange="familia()">
+                        <% for(let i = 0; i< familia.length ; i++) { %> 
+                            <% if(familia[i].id == productos.id_familia) { %> 
+                              <option selected="selected" value= "<%= familia[i].id%>">
+                                  <%= familia[i].familia%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= familia[i].id%>">
+                                    <%= familia[i].familia%>
+                                </option> 
+                            <% } %>  
+                        <% } %>  
+                    </select>    &nbsp <br> 
                    
                 </div>
                 <div class="medio_2">
                     <label for="id_subfamilia">Subfamilia &nbsp</label>
                     <select id= 'id_subfamilia' name="id_subfamilia" >
-                        
-                        <option value= "<%= proveedores.id_subfamilia%>">
-                            
-                        </option>   
+                        <% for(let i = 0; i< subfamilia.length ; i++) { %> 
+                            <% if(subfamilia[i].id == productos.id_subfamilia) { %> 
+                              <option selected="selected" value= "<%= subfamilia[i].id%>">
+                                  <%= subfamilia[i].subfamilia%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= subfamilia[i].id%>">
+                                    <%= subfamilia[i].subfamilia%>
+                                </option> 
+                            <% } %>  
+                        <% } %> 
                     </select>    
 
                      <label for="id_tipo">Tipo&nbsp</label>
-                     <select id= 'id_tipo' name="id_tipo" >
-                        
-                        <option value= "<%= proveedores.id_tipo%>">
-                            
-                        </option>   
+                     <select id= 'id_tipo' name="id_tipo" onchange="tipo()">
+                        <% for(let i = 0; i< tipo.length ; i++) { %> 
+                            <% if(tipo[i].id == productos.id_tipo) { %> 
+                              <option selected="selected" value= "<%= tipo[i].id%>">
+                                  <%= tipo[i].tipo%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= tipo[i].id%>">
+                                    <%= tipo[i].tipo%>
+                                </option> 
+                            <% } %>  
+                        <% } %>  
                     </select>    
                     <label for="id_subtipo">Subtipo&nbsp</label>
-                    <input type="text" id='subid_subtipotipo' name="id_subtipo" value="" placeholder="Ejemplo: Látex interior"> 
+                    <select id= 'id_subtipo' name="id_subtipo" >
+                        <% for(let i = 0; i< subtipo.length ; i++) { %> 
+                            <% if(subtipo[i].id == productos.id_subtipo) { %> 
+                              <option selected="selected" value= "<%= subtipo[i].id%>">
+                                  <%= subtipo[i].subtipo%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= subtipo[i].id%>">
+                                    <%= subtipo[i].subtipo%>
+                                </option> 
+                            <% } %>  
+                        <% } %>  
+                    </select>
 
                     <label for="presentacion">Presentacion &nbsp</label>
                     <input type="text" id='presentacion' name="presentacion" value="<%= productos.presentacion%>" placeholder="Litros - CM3 - Unidades"> 
                 </div>
                 <div class="medio_3">
                     <label for="contenidoNeto">Contenido Neto &nbsp</label>
-                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="<%= productos.contenidoNeto%>" placeholder="Contenido Neto"> <br>
+                    <input type="text" id='contenidoNeto' name="contenidoNeto" value="<%= productos.contenido_neto%>" placeholder="Contenido Neto"> <br>
 
                     <label for="color">Color &nbsp</label>
                     <input type="text" id='color' name="color" value="<%= productos.color%>" placeholder="color"> <br>
@@ -86,14 +136,26 @@
                     <input type="text" id= 'base' name="base" value="<%= productos.base%>" placeholder="Base (Ej: al agua)"> <br>
 
                     <label for="id_terminacion">Terminación  &nbsp</label>
-                    <input type="text" id='id_terminacion' name="id_terminacion" value="<%= productos.id_terminacion%>" placeholder="Tipo de Terminación">
+                    <select id= 'id_terminacion' name="id_terminacion" >
+                        <% for(let i = 0; i< terminacion.length ; i++) { %> 
+                            <% if(terminacion[i].id == productos.id_terminacion) { %> 
+                              <option selected="selected" value= "<%= terminacion[i].id%>">
+                                  <%= terminacion[i].terminacion%>
+                            </option> 
+                        <% } else { %>
+                                <option value= "<%= terminacion[i].id%>">
+                                    <%= terminacion[i].terminacion%>
+                                </option> 
+                            <% } %>  
+                        <% } %>  
+                    </select>
                 
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento" value="<%= productos.rendimiento%>" placeholder="Ejemplo 12 a 16 m2/l por mano">
                 </div>
                 <div class="medio_5">
                     <label for="usoRecomendado">Uso Recomendado  &nbsp</label>
-                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="<%= productos.usoRecomendado%>" placeholder="Ej: Interio o exterior"> <br>
+                    <input type="text" id='usoRecomendado' name="usoRecomendado" value="<%= productos.uso_recomendado%>" placeholder="Ej: Interio o exterior"> <br>
              
                     <label for="tiempo_de_secado">Secado al tacto  &nbsp</label>
                     <input type="text" id='tiempo_de_secado' name="tiempo_de_secado" value="<%= productos.tiempo_de_secado%>" placeholder="Tiempo de secado">
@@ -101,16 +163,16 @@
                     <label for="garantia">Garantia  &nbsp</label>
                     <input type="text" id='garantia' name="garantia" value="<%= productos.garantia%>" placeholder="Tiempo de Garantia">
              
-                    <label for="imagenProducto">Cargar imagen del producto  &nbsp</label>
-                    <input type="file" name="imagenProducto" id= 'imagenProducto' class= 'form-control-file' value="<%= productos.imagenProducto%>"> <br>
+                    <label for="imagen_producto">Cargar imagen del producto  &nbsp</label>
+                    <input type="file" name="imagen_producto" id= 'imagen_producto' class= 'form-control-file' value="<%= productos.imagen_producto%>"> <br>
                 
                 </div>
                 </div>
-                <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Cargar Productos</button>   
+                <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto">Actualizar Productos</button>   
        
             </form>
             <div class ="borrar" >
-                <form  action="/borrarproducto/<%= productos.sku %>?_method=DELETE" method="POST">
+                <form  action="eliminar/<%= productos.id %>?_method=DELETE" method="POST">
                     <button class="eliminar"  type="submit">Eliminar <br> Producto</button>
                 </form>             
             
@@ -136,6 +198,7 @@
            
         </div>
      </footer>
+     <script src ='/js/filterProductoModificar.js'></script>
 
 
 </body>

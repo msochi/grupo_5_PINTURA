@@ -28,8 +28,15 @@ module.exports = function(sequelize, dataTypes) {
 
     Localidades.associate = function (models){ 
         Localidades.belongsTo(models.Provincias, {
-            as: 'provincia',
+            as: 'provincias',
             foreignKey: 'id_provincia',
+        } )
+    }
+
+    Localidades.associate = function (models){ 
+        Localidades.hasMany(models.Clientes, {
+            as: 'clientes',
+            foreignKey: 'id',
         } )
     }
 

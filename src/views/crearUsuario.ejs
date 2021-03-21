@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="stylesheets/Estilo-Alta.css">
     <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
     
-
+    <script src ='/js/filterCrearUsuario.js'></script>
     <title>Pint@me</title>
 </head>
 <body>
@@ -31,7 +31,7 @@
                 <input type="password" id='pass' name="pass" value="<%= (typeof old != 'undefined' && !errors.pass) ? old.pass : '' %>" placeholder="Tú clave"> <br>
                 <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small> <br>
                   
-                <label for="imagenProducto">Carga tu imagen o avatar</label> <br>
+                <label for="imagen_producto">Carga tu imagen o avatar</label> <br>
                 <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>            
         </div>
 
@@ -48,12 +48,26 @@
                 <br>
                 <label for="street">Dirección*</label><br>
                 <input type="text" id= 'street' name="street" value="" placeholder="Ingresa tu dirección"> <br>
-                <label for="location">Localidad*</label><br>
-                <input type="text" id='location' name="location" value="" placeholder="Ingresa tu localidad"> <br>
+                <label for="province">Provincia*</label><br>
+                <!-- <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br> -->
+                <select name="id_provincia" onchange="select()" id="id_provincia"  >
+                    <% for(let i = 0; i< provincias.length ; i++) { %> 
+                          <option value= "<%= provincias[i].id%>">
+                              <%= provincias[i].provincia%>
+                 </option>   
+                    <% } %>
+                </select><br><br>
+                <label for="id_localidad">Localidad*</label><br>
+                <select name="id_localidad" id="id_localidad">
+                    <% for(let a = 0; a< localidades.length ; a++) { %> 
+                          <option value= "<%= localidades[a].id%>">
+                              <%= localidades[a].localidad%>
+                 </option>   
+                    <% } %>
+                </select><br><br>
                 <label for="zipcode">Código Postal*</label><br>
                 <input type="text" id='zipcode' name="zipcode" value="" placeholder="Ingresa tu Código Postal"> <br>
-                <label for="province">Provincia*</label><br>
-                <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br>
+               
                 <label for="phone">Teléfono*</label><br>
                 <input type="number" id=' phone' name="phone" value="" placeholder="Ingresa tu teléfono"> <br>
                 <button class="enviar" type="submit" name="crearCuenta" class="crearCuenta">Crear Cuenta</button>    
@@ -84,6 +98,6 @@
            
         </div>
      </footer>
-
+   
 
 </body>
