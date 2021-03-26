@@ -66,21 +66,12 @@
                 </div>
             </aside>
             <section>
-                    <div class="marcoFoto"><img src="/images/kolor 2.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/kolor 3.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/kolor 4.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/kolor 5.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/kolor 6.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/kolor.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Maquina-Pintura.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Membrana-Fibrada.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Membrana-Liquida.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Pincel.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/tinner.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Tersuave-Techos.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/sw lata.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/Sinterras.jfif" alt="Balde de pintura"></div>
-                    <div class="marcoFoto"><img src="/images/recuplast.jfif" alt="Balde de pintura"></div>
+                <% for( let i = 0; i < productos.length; i++ ) { %>
+                    <a href="/pdp/<%= productos[i].id %>" class="card">
+                        <h2><%= productos[i].color %></h2>
+                        
+                    </a>
+                <% } %>
             </section>
         </article>
         <article>
