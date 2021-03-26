@@ -6,30 +6,26 @@ const db = require('../database/models/index')
 
 
 module.exports ={
-
-
-
  mostrar:  async (req,res)=>{
     console.log(req.params.id)
-    console.log ('te estoy viendo')
-     const proveedores = await db.Proveedores.findAll();
-     const marca = await db.Marcas.findAll()       ;
-     const tipo = await db.Tipo.findAll();
-     const subtipo = await db.Subtipo.findAll();
-     const familia = await db.Familia.findAll();
-     const subfamilia = await db.Subfamilia.findAll();
-     const terminacion = await db.Terminacion.findAll();
-       db.Productos.findByPk(req.params.id)
-          .then((productos) => {
-            console.log(productos);
-               res.render ('./modificarProducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
-            } 
-        )
 
+    const productos = await db.Productos.findByPk(req.params.id);
+    console.log(productos);
+    const proveedores = await db.Proveedores.findAll();
+    console.log(proveedores);
+    const marca = await db.Marcas.findAll();
+    const tipo = await db.Tipo.findAll();
+    const subtipo = await db.Subtipo.findAll();
+    const familia = await db.Familia.findAll();
+    const subfamilia = await db.Subfamilia.findAll();
+    const terminacion = await db.Terminacion.findAll();
+
+    res.render ('./modificarProducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
+            
   },
  
   actualizar: function(req,res){
-    db.Productos.actualizar({
+    db.Productos.update({
             id_proveedor: req.body.id_proveedor,
             sku: req.body.sku,
             id_marca: req.body.id_marca,
@@ -67,14 +63,38 @@ db.Productos.destroy({
   }
 }) 
 .then(function(quePaso) {
-  return res.send('Lo que me retorna es... ' + quePaso)
+  return res.redirect('/')
 })
 .catch(function(error) {
   return res.send(error)
 }) 
+},
+buscarMarca: async (req,res)=>{
+  console.log(req.params.id)
+  const marca = await db.Marcas.findAll({
+    where:{id_proveedor: req.params.id}
+  }) 
+  console.log(marca)
+  res.send(marca)
+},
+
+buscarFamilia: async (req,res)=>{
+  console.log(req.params.id)
+  const subfamilia = await db.Subfamilia.findAll({
+    where:{id_familia: req.params.id}
+  }) 
+  console.log(subfamilia)
+  res.send(subfamilia)
+},
+
+buscarTipo: async (req,res)=>{
+  console.log(req.params.id)
+  const subtipo = await db.Subtipo.findAll({
+    where:{id_tipo: req.params.id}
+  }) 
+  console.log(subtipo)
+  res.send(subtipo)
 }
-
-
 
 }
 

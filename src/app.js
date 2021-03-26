@@ -6,8 +6,10 @@ const methodOverride = require('method-override')
 
 let port = process.env.PORT || 3000;
 
+
+
 const middlewareusuarioLogueado = require ('../src/middlewares/usuarioLogueado');
-const verSession = require ('../src/middlewares/verSession')
+const verSession = require ('../src/middlewares/verSession');
 const indexRouter = require ('./routes/indexRouter');     //Indicamos cual es la funciòn u objeto literal que queremos usar.
 const plpRouter = require ('./routes/plpRouter')//Indicamos cual es la funciòn u objeto literal que queremos usar.
 const loginRouter = require ('./routes/loginRouter');
@@ -28,6 +30,9 @@ app.use(express.json());
 app.use(session({secret:'El microchip esta en el enchufe'}));
 app.use ( verSession );
 app.use (middlewareusuarioLogueado);
+
+
+
 
 
 // Para usar ejs  agregamos estas líneas de código para configurar el proyecto e indicar que usamos como motor de vistas a ejs. "view engine"  lo tenemos que pasar siempre independientemente del motor de vistas que vayamos a utilizas (ej: ejs)
