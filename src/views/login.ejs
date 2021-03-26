@@ -15,21 +15,24 @@
     <header class="cabecera">
         <a href="/" class="logo"><img src="./images/logos/Pintamev2.png" alt="" ></a> 
     </header>
-
+    
     <section class="contenedor">
         <div class="ingreso">
             <h2>Ingresar a mi  cuenta</h2> <hr class="hrcolor">
             <h3>Ya estoy registrado</h3>
             <h4>Ingresá tu dirección de email y contraseña para iniciar sesión.</h4>
-            <form action="/login" method="POST" >
+            <form action="/login" method="POST" id= "registro" name= "registro" class= "registro" >
                 <label for="email">Correo electronico</label><br>
-                <input id= 'email' type="email" name="email" value="" placeholder="Ingresa tu email"> <br>
+                <input id= 'email' type="email" name="email"  value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : '' %>" placeholder="Ingresa tu email"><br>
+                <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small> <br>
+               
                 <label for="pass">Contraseña</label><br>
-                <input id = "pass"  type="password" name="pass" value="" placeholder="Tú clave"> <br>
+                <input id = "pass"  type="password" name="pass" value="<%= (typeof old != 'undefined' && !errors.pass) ? old.pass : '' %>" placeholder="Tú clave"> <br>
+                <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small> <br>
                 
                 <a href="/recupero" class="recuperar">Recuperar Contraseña</a> <br>
 
-                <button type="submit" name="entrar" class="enviar">Enviar</button>
+                <button type="submit" name="entrar" class="enviar" onclick="">Enviar</button>
             </form>
         </div>
 
@@ -58,5 +61,5 @@
     </section>
     <%- include('partials/Footer.ejs') %>    
 
-
+   
 </body>
