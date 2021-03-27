@@ -2,15 +2,16 @@ const db = require('../database/models')
 
 module.exports ={
     pdp: async (req,res)=> {
-        const productos = await db.Productos.findAll();
+        
         db.Productos.findByPk(req.params.id)
         .then(function(producto) {
-           
-            return res.render('PDP', {
-                prodcuto: producto
-            },{productos})
+            if (producto){return res.render('PDP', {
+                producto: producto
+            })}
+        else {res.send("No encuentro el producto")}
+            
         })
-        console.log (req.params.id)
+       
     },
     
     //  all: function (req, res){ res.render (productos, { productosEnLaVista: productos }) 

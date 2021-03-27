@@ -109,47 +109,6 @@ module.exports ={
         //fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
         res.redirect ("/cargaProducto");
     },
-<<<<<<< HEAD
-    mostrar: function(req,res){
-        let flag = 0;
-        for(let i=0; i < productos.length; i++){
-            if (req.params.marca == productos[i].marca){
-                console.log(productos[i]);
-                return res.render ('./cargaProducto', {productos: productos[i]})
-                flag =1;
-            } 
-        }
-        res.send ("No encuentro producto");
-        
-
-    },
-    actualizar: function(req,res){
-        for(let i=0; i < productos.length; i++){
-            if (req.params.marca == productos[i].marca){
-                productos[i].marca= req.body.marca;
-                productos[i].categoria= req.body.categoria;
-                productos[i].familia= req.body.familia;
-                productos[i].tip= req.body.tipo;
-                productos[i].presentacion=req.body.presentacion;
-                productos[i].contenidoNeto= req.body.contenidoNeto;
-                productos[i].color= req.body.color;
-                productos[i].TiempoDeEspera= req.body.TiempoDeEspera;
-                productos[i].base=req.body.base;
-                productos[i].terminacion= req.body.terminacion;
-                productos[i].rendimiento= req.body.rendimiento;
-                productos[i].usoRecomendado= req.body.usoRecomendado;
-                productos[i].secado= req.body.secado;
-                productos[i].garantia= req.body.garantia;
-                productos[i].imagenProducto= req.files[0].filename;
-            } 
-        }
-        fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
-        res.send ('./actualizarProducto');
-    }
- 
-    }
-;
-=======
     //mostrar:  (req,res)=>{
        
       //  db.Productos.findByPk(req.params.id)
@@ -182,4 +141,3 @@ module.exports ={
 //.then(function (productos){
    // res.render ('./cargaProducto', {productos:productos})
 //})
->>>>>>> ae682780f4411aaecc46c0da36a5a5d707f29b5f

@@ -65,11 +65,11 @@
                     </ul>
                 </div>
             </aside>
-            <section>
+            <section class = "ProductosCard">
                 <% for( let i = 0; i < productos.length; i++ ) { %>
                     <a href="/pdp/<%= productos[i].id %>" class="card">
                         <h2><%= productos[i].color %></h2>
-                        
+                        <img src="<%= productos[i].imagen_producto %>" alt="">
                     </a>
                 <% } %>
             </section>

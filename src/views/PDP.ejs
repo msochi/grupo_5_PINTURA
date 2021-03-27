@@ -35,9 +35,9 @@
     </header>
     <section class="general">
         <section class="ContenedorProducto" >
-            <div class="FotoDetalle"> <%=productos[i].imagen_producto%>></div>
+            <div class="FotoDetalle"> <img src="<%=producto.imagen_producto%>"></div>
             <div class="DescripcionProducto">
-                <h2>PINTURA KÖLOR</h2>
+                <h2><%=producto.color%> <%=producto.base%></h2>
                 <h3>Latex Acrilico Premium Color Fucsia Pasión</h3><br>
              <button type="submit" class="eleccionColor" name="Elegi el Color" value="">Elegi Color</button> <br><br><br>
                 <h1>$5.000</h1>    
@@ -58,6 +58,10 @@
                     <li><i class="fas fa-star"></i></li>
                     <li><i class="fas fa-star"></i></li>
                 </ul>
+                <div class="cantidad">
+                <label for="Cantidad">Cantidad</label>
+                <input type="number" id="Cantidad" name="Cantidad" min="0">
+                </div>
             </div>
         </section><br>
 
@@ -118,7 +122,7 @@
                     </tr>
                     <tr>
                         <td>Garantía</td>
-                        <td>5 años</td>
+                        <td><%=producto.garantia%></td>
                     </tr>
                      <tr>
                         <td>Familia</td>
