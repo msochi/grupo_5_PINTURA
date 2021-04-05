@@ -34,7 +34,7 @@ module.exports ={
           dni:req.body.dni,
           direccion: req.body.street,
           id_localidad: req.body.id_localidad,
-          codigoPostal: req.body.zipcode,
+          codigo_Postal: req.body.codigo_Postal,
           id_provincia:req.body.id_provincia,
           telefono: req.body.phone,
           },{ 

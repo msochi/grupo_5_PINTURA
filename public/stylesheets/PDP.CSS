@@ -154,7 +154,7 @@ display: block;
 
 
 }
-.ContenedorProducto{
+.contenedorProducto{
     display: flex;
     flex-wrap: wrap;
     padding-top: 10%;
@@ -163,9 +163,16 @@ display: block;
     position: relative;
     
 }
+.contenidoPdp{
+    display: flex;
+    flex-wrap: wrap;
+
+
+
+}
 .FotoDetalle {
     width: 50%;
-    height: 70%;
+    height: 50%;
     align-items: center;
     border: gray solid 2px; 
     justify-content: space-around;
@@ -497,7 +504,7 @@ footer.redesSociales a{
         flex-direction: column;
         
         }
-        .ContenedorProducto{
+        .contenedorProducto{
             display: block;
             flex-wrap: wrap;
             margin-top: 100px;
@@ -542,8 +549,8 @@ footer.redesSociales a{
             .preguntas {
                width: 320px;
                height: 100px;
-             
-    footer ul li {
+            }
+    .footer ul li {
         color: #F72585;
         list-style-type: none;
         margin-top: 10%;

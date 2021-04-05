@@ -172,11 +172,13 @@ BannerLogin
     width:100%;
     margin-left: 2%;
     margin-right: 2%;
+    justify-content:center;
 }
 
 .bannerLogin img{
     width: 100%;
-    justify-content: space-around;
+    justify-content:space-around;
+    height: 40%;
     
     
 }
@@ -192,9 +194,14 @@ footer{
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-top: 20px;
     padding-bottom: 10px;
     min-width: 554px;
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+    text-align: center;
    }
 footer.credenciales{
     display: flex;

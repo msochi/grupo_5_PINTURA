@@ -5,10 +5,8 @@ function select (){
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-            }           
-      
-      })
-      
+            }                 
+      })      
       .then(function(response) {
         console.log (response)
         return response.json();
@@ -20,7 +18,6 @@ function select (){
             listaLocalidades.remove(0);
             
           }
-
           for (let i = 0; i < localidades.length; i++) {
             let localidad = new Option(localidades[i].localidad, localidades[i].id);
             listaLocalidades.options.add(localidad);

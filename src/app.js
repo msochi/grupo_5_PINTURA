@@ -2,33 +2,38 @@ const express = require ("express");
 const app = express ();
 const path = require ("path"); // adoptamos PATH para escribir rutas.
 const session = require ('express-session'); // Instalo y requiero session (middleware de aplicacion).Se ejecuta en todos los pedidos - es global.
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const cookieParser = require("cookie-parser"); //Cookies
 
 let port = process.env.PORT || 3000;
 
+
+
 const middlewareusuarioLogueado = require ('../src/middlewares/usuarioLogueado');
-const verSession = require ('../src/middlewares/verSession')
+const verSession = require ('../src/middlewares/verSession');
 const indexRouter = require ('./routes/indexRouter');     //Indicamos cual es la funciòn u objeto literal que queremos usar.
 const plpRouter = require ('./routes/plpRouter')//Indicamos cual es la funciòn u objeto literal que queremos usar.
+const adminRouter = require ('./routes/adminRouter');
 const loginRouter = require ('./routes/loginRouter');
 const pdpRouter = require ('./routes/pdpRouter');
 const miCarritoRouter = require ('./routes/miCarritoRouter');
 const checkOutRouter = require ('./routes/checkOutRouter');
 const thankYouRouter = require ('./routes/thankYouRouter');
 const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
-const cargaProductoRouter = require('./routes/cargaProductoRouter');
-const modificarProductoRouter = require ('./routes/modificarProductoRouter');
+//const cargaProductoRouter = require('./routes/cargaProductoRouter');
+//const modificarProductoRouter = require ('./routes/modificarProductoRouter');
 const modificarUsuarioRouter = require ('./routes/modificarUsuarioRouter');
 const recuperoPassRouter = require ('./routes/recuperoPassRouter');
 const searchRouter = require ('./routes/searchRouter');
+//const registroValidacion = require ('../middlewares/registroValidacion');
 
+app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extenden:false})); // estas 2 lineas sirven para poder interpretar los formularios. Por ejemplo el de registro.
 app.use(express.json());
 app.use(session({secret:'El microchip esta en el enchufe'}));
 app.use ( verSession );
 app.use (middlewareusuarioLogueado);
-
 
 // Para usar ejs  agregamos estas líneas de código para configurar el proyecto e indicar que usamos como motor de vistas a ejs. "view engine"  lo tenemos que pasar siempre independientemente del motor de vistas que vayamos a utilizas (ej: ejs)
 app.set ("view engine" , "ejs");
@@ -42,6 +47,9 @@ app.use (express.static(path.join(__dirname, '../public'))); // usamos este midd
 app.use ('/', indexRouter) // Le estamos diciendo a Express que cuando llegue este prefijo '/' va a usar este enrutador: index.Router.
 
 app.use ('/plp', plpRouter) // Aca le indico a express que cuando llegue este prefijo tengo que usar este enrutador.
+app.use ('/admin',adminRouter);
+//app.use ('/admin/modificarusuario',adminRouter);
+
 app.use ('/login',loginRouter);
 app.use ('/plp', plpRouter);
 app.use ('/PDP', pdpRouter);
@@ -49,14 +57,16 @@ app.use ('/miCarrito', miCarritoRouter);
 app.use ('/Checkout', checkOutRouter);
 app.use ('/ThankYou', thankYouRouter);
 app.use ('/crearUsuario', crearUsuarioRouter);
-app.use ('/cargaProducto', cargaProductoRouter);
-app.use ('/modificarProducto', modificarProductoRouter);
+//app.use ('/cargaProducto', cargaProductoRouter);
+//app.use ('/modificarProducto', modificarProductoRouter);
 app.use ('/modificarUsuario', modificarUsuarioRouter);
 app.use ('/recupero', recuperoPassRouter);
 app.use ('/search', searchRouter);
 
+
+
 //app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
-app.listen(port, ()=> console.log ('Server Listen to port: ${port}'))
+app.listen(port, ()=> console.log ('Server Listen to port: ${port}'));
 
 
-//hola
+

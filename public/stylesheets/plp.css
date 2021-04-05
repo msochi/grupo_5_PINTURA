@@ -176,7 +176,7 @@ h1 {
     flex-direction: column;
 }
 
-.menuMasTachos aside h2 {
+.menuMasTachos aside h4 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -223,6 +223,60 @@ h1 {
 .volver:hover {
     transform: scale(1.2);
 }
+
+
+
+
+div.productosPlp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+    }
+    div.productosPlp a{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 340px;
+        text-align: center;
+        justify-content: center;
+        border-style: solid;
+        border-color: rgb(199, 197, 197);
+        border-radius: 10px;
+        margin: 1%;
+        text-decoration: none;
+    }
+    div.productosPlp img{
+        width: 200px;
+        height: 200px;
+        display: block;
+        border-radius: 10px;
+        justify-content:center;
+        margin-left: 10%;
+        margin-right: 10%;
+       
+      
+    }
+    div.productosPlp p{
+        width: 100%;
+
+
+    }
+    div.productosPlp .precio{
+        color: #F72585;
+        font-size: 30px;
+        font-weight: bold;   
+    }
+    
+    .productosPlp a:hover{
+        transform: scale(1.1);
+    }
 
 /*=========
 FOOTER

@@ -52,12 +52,17 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING(100),
             notNull: true,
         },
+        tipo: {
+            type: dataTypes.INTEGER.UNSIGNED,
+            notNull: true,
+        },
     }
     
     let config = {
         tableName: 'clientes',
-        timestamps: false,
-        underscored: false,        
+        paranoid: true,
+        timestamps: true,
+        underscored: true,         
     }
 
     const Clientes = sequelize.define(alias, cols, config)
@@ -73,6 +78,12 @@ module.exports = function(sequelize, dataTypes) {
         Clientes.belongsTo(models.Localidades, {
             as: 'localidades',
             foreignKey: 'id_localidad',
+        } )
+    }
+    Clientes.associate = function (models){ 
+        Clientes.hasMany(models.Ventas, {
+            as: 'clientes',
+            foreignKey: 'id_clientes',
         } )
     }
 

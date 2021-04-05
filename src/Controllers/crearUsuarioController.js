@@ -32,28 +32,46 @@ module.exports ={
         const provincias = await db.Provincias.findAll();
         const localidades = await db.Localidades.findAll();
         console.log (req.body);
-       
+        let usuario = await db.Clientes.findAll()
+
+        let algo= function (){
+                    if(req.body.email == usuario[0].email && req.body.dni == usuario[0].dni) {
+                        return res.json(errors)
+                    }
+
+
+
+        }
         //aca preogunto si hay o  no errores en la creación del usuario. Sino hay errores sigo con la creación.
         let errors= validationResult(req); // tengo que pasar validationResults con el objeto que tenga esos errores.De esta forma me guardo todo en un variable (errors).
         if(errors.isEmpty()){
             
-            db.Clientes.create({
-            //usuarios.push({
-                email: req.body.email,
-                pass: bcrypt.hashSync(req.body.pass, 12),
-                avatar: req.files[0].filename,
-                nombre: req.body.name,
-                apellido: req.body.last_name,
-                dni:req.body.dni,
-                direccion: req.body.street,
-                id_localidad: req.body.id_localidad,
-                codigoPostal: req.body.zipcode,
-                id_provincia:req.body.id_provincia,
-                telefono: req.body.phone,
-            })
-       // fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
-       res.render('./crearUsuario', {provincias, localidades}) ;
-        }
+            if (usuario) {
+                if(req.body.email != usuario[0].email && req.body.dni != usuario[0].dni) { 
+                   db.Clientes.create({
+                        
+                            email: req.body.email,
+                            pass: bcrypt.hashSync(req.body.pass, 12),
+                            avatar: req.files[0].filename,
+                            nombre: req.body.name,
+                            apellido: req.body.last_name,
+                            dni:req.body.dni,
+                            direccion: req.body.street,
+                            id_localidad: req.body.id_localidad,
+                            codigo_Postal: req.body.codigo_Postal,
+                            id_provincia:req.body.id_provincia,
+                            telefono: req.body.phone,
+                        })
+                   // fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
+                   req.session.usuario = usuario.email;
+                             
+                   return  res.redirect ('./login')
+                   }
+
+                }
+
+            }
+            
         else {
             //return res.send (errors.errors) para verificar si se están mandando los errores.
             //fs.unlinkSync() REVISAR DOCUMENTACION

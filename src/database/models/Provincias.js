@@ -25,14 +25,14 @@ module.exports = function(sequelize, dataTypes) {
     Provincias.associate = function (models){ 
         Provincias.hasOne(models.Localidades, {
             as: 'localidades',
-            foreignKey: 'id',
+            foreignKey: 'id_localidad',
         } )
     }
     
     Provincias.associate = function (models){ 
         Provincias.hasMany(models.Clientes, {
             as: 'clientes',
-            foreignKey: 'id',
+            foreignKey: 'id_provincia',
         } )
     }  
 
