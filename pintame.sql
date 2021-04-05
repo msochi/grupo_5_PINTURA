@@ -6,24 +6,12 @@ USE `pintame`;
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.17-MariaDB
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `clientes`
 --
 
-DROP TABLE IF EXISTS `clientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `clientes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` char(45) NOT NULL,
@@ -61,9 +49,7 @@ UNLOCK TABLES;
 -- Table structure for table `familia`
 --
 
-DROP TABLE IF EXISTS `familia`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `familia` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `familia` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -85,9 +71,7 @@ UNLOCK TABLES;
 -- Table structure for table `localidades`
 --
 
-DROP TABLE IF EXISTS `localidades`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `localidades` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `localidad` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -110,9 +94,7 @@ UNLOCK TABLES;
 -- Table structure for table `marcas`
 --
 
-DROP TABLE IF EXISTS `marcas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `marcas` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `marca` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -135,9 +117,7 @@ UNLOCK TABLES;
 -- Table structure for table `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `productos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `sku` int(11) unsigned NOT NULL,
@@ -184,9 +164,7 @@ UNLOCK TABLES;
 -- Table structure for table `proveedores`
 --
 
-DROP TABLE IF EXISTS `proveedores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `proveedores` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `proveedor` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -208,9 +186,6 @@ UNLOCK TABLES;
 -- Table structure for table `provincias`
 --
 
-DROP TABLE IF EXISTS `provincias`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `provincias` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `provincia` text CHARACTER SET utf8mb4 NOT NULL,
@@ -232,9 +207,7 @@ UNLOCK TABLES;
 -- Table structure for table `stock`
 --
 
-DROP TABLE IF EXISTS `stock`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `stock` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` int(11) NOT NULL,
@@ -247,18 +220,13 @@ CREATE TABLE `stock` (
 -- Dumping data for table `stock`
 --
 
-LOCK TABLES `stock` WRITE;
-/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `subfamilia`
 --
 
-DROP TABLE IF EXISTS `subfamilia`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `subfamilia` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `subfamilia` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -281,9 +249,6 @@ UNLOCK TABLES;
 -- Table structure for table `subtipo`
 --
 
-DROP TABLE IF EXISTS `subtipo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `subtipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `subtipo` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -306,9 +271,6 @@ UNLOCK TABLES;
 -- Table structure for table `terminacion`
 --
 
-DROP TABLE IF EXISTS `terminacion`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `terminacion` (
   `id` int(11) NOT NULL,
   `terminacion` char(100) NOT NULL,
@@ -330,9 +292,7 @@ UNLOCK TABLES;
 -- Table structure for table `tipo`
 --
 
-DROP TABLE IF EXISTS `tipo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `tipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -355,9 +315,6 @@ UNLOCK TABLES;
 -- Table structure for table `ventas`
 --
 
-DROP TABLE IF EXISTS `ventas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ventas` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` int(10) unsigned NOT NULL,
