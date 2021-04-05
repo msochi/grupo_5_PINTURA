@@ -30,27 +30,34 @@ module.exports = function(sequelize, dataTypes) {
         Marcas.belongsTo(models.Proveedores, {
             as: 'proveedores',
             foreignKey: 'id_proveedor',
-        } )
-    }
+        } ),
 
-    Marcas.associate = function (models){ 
         Marcas.hasMany(models.Productos, {
             as: 'productos',
-            foreignKey: 'id_producto',
+            foreignKey: 'id_marca',
         } )
-    }
- 
-	Marcas.associate = function(models){
-        Marcas.belongsToMany(models.Proveedores, {
+      
 
-        as: "proveedores",    
-        through: "productos",    
-        foreignKey: "id_marca",        
-        otherKey: "id_proveedor",  
-        timestamps: false
-    
-    });
     }
+
+    // Marcas.associate = function (models){ 
+    //     Marcas.hasMany(models.Productos, {
+    //         as: 'productos',
+    //         foreignKey: 'id_producto',
+    //     } )
+    // }
+ 
+	// Marcas.associate = function(models){
+    //     Marcas.belongsToMany(models.Proveedores, {
+
+    //     as: "proveedores",    
+    //     through: "productos",    
+    //     foreignKey: "id_marca",        
+    //     otherKey: "id_proveedor",  
+    //     timestamps: false
+    
+    // });
+    // }
     
      return Marcas
 }

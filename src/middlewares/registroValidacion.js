@@ -23,7 +23,7 @@ module.exports =[
     check("pass")
       .isLength ({min:4, max:16}).withMessage("Debe tener un minimo de 4 letras, números o combinación de ambas"),
     check("dni")
-      .isLength ({min:8, max:8}).withMessage("Debe ingresar un DNI válido de 8 caracteres y sin puntos"),
+      .isLength ({min:8, max:10}).withMessage("Debe ingresar un DNI válido de 8 caracteres y sin puntos"),
       body('dni').custom((value , res) => {
         return db.Clientes.findOne({
            where: {

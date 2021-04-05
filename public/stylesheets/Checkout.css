@@ -183,6 +183,14 @@ footer.footer{
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 10px;
+    min-width: 554px;
+   
+    left: 0;
+    bottom: 0;
+    width: 100%;
+   
+    text-align: center;
    }
 footer.credenciales{
     display: flex;

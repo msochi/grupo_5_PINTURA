@@ -238,7 +238,7 @@ div.familias .mundos a{
 div.familias .mundos .interior{
     background-image: url("../images/Interior-6.jpg");
     background-size: 100% 100%;
-    width: 500px;
+    width: 40%;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -254,7 +254,7 @@ div.familias .mundos .exterior{
     background-image: url("../images/PinturaFrente.jpg");
     background-size: 100% 100%;
     background-position: center;
-    width: 500px;
+    width: 40%;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -269,7 +269,7 @@ div.familias .mundos .exterior{
 div.familias .mundos .decoracion{
     background-image: url("../images/CuartoClaro.jpg");
     background-size: 100% 100%;
-    width: 500px;
+    width: 40%;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -284,7 +284,7 @@ div.familias .mundos .decoracion{
 div.familias .mundos .herramientas{
     background-image: url("../images/3pinceles.jpg");
     background-size: 100% 100%;
-    width: 500px;
+    width: 40%;
     height: 43vh;
     border-radius: 5px;
     text-align: center;
@@ -424,34 +424,42 @@ div.ofertas{
     margin-top: 2%;
     margin-bottom: 2%;
     }
-div.ofertas a{
-    display: flex;
-    flex-wrap: wrap;
-    width: 300px;
-    height: 300px;
-    text-align: center;
-    justify-content: center;
-    border-style: solid;
-    border-color: rgb(199, 197, 197);
-    border-radius: 10px;
-    margin: 1%;
-    text-decoration: none;
-}
-div.ofertas img{
-    width: 200px;
-    height: 200px;
-    display: block;
-    border-radius: 10px;
-}
-div.ofertas .precio{
-    color: #F72585;
-    font-size: 30px;
-    font-weight: bold;   
-}
+    div.ofertas a{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 340px;
+        text-align: center;
+        justify-content: center;
+        border-style: solid;
+        border-color: rgb(199, 197, 197);
+        border-radius: 10px;
+        margin: 1%;
+        text-decoration: none;
+    }
+    div.ofertas img{
+        width: 200px;
+        height: 200px;
+        display: block;
+        border-radius: 10px;
+        justify-content:center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    div.ofertas p{
+        width: 100%;
 
-.ofertas a:hover{
-    transform: scale(1.1);
-}
+
+    }
+    div.ofertas .precio{
+        color: #F72585;
+        font-size: 30px;
+        font-weight: bold;   
+    }
+
+    .ofertas a:hover{
+        transform: scale(1.1);
+    }
 
 
 /*=========
@@ -485,6 +493,9 @@ footer.footer{
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    min-width: 554px;
    }
 footer.credenciales{
     display: flex;

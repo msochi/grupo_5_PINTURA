@@ -15,10 +15,10 @@
    
         <div class="familias">
             <section class="mundos">
-               <a href="" class="interior">INTERIOR</a>
-               <a href="" class="exterior">EXTERIOR</a>
-               <a href="" class="decoracion">DECORACION</a>
-               <a href="" class="herramientas">HERRAMIENTAS</a>
+               <a href="/plp/interior" class="interior">INTERIOR</a>
+               <a href="/plp/exterior" class="exterior">EXTERIOR</a>
+               <a href="/plp/otros" class="decoracion">DECORACION</a>
+               <a href="/plp/herramientas" class="herramientas">HERRAMIENTAS</a>
             </section>
         </div>
         <div class="enviosTarjetasLocales">
@@ -32,31 +32,29 @@
         <div class="oportunidades">Oportunidades de la semana </div>
 
         <div class="ofertas">
-            <a href="#" class="oferta1"> <img src="/images/kolor 4.jfif">
-               <p>Pintura Latex acrílica Kolor Purpura </p>
-               <p class="precio">$2.500</p>
-            </a>
-            <a href="#" class="oferta2"> <img src="/images/kolor 6.jfif"><p>Pintura Latex acrílica Kolor bordo </p>
-                <p class="precio">$2.500</p>
-            </a>
-            <a href="#" class="oferta3"> <img src="/images/kolor 5.jfif"><p>Pintura Latex acrílica Kolor ocre </p>
-                <p class="precio">$2.500</p>
-            </a>
-            <a href="#" class="oferta4"> <img src="/images/kolor 2.jfif"><p>Pintura Latex acrílica Kolor gris claro </p>
-                <p class="precio">$2.500</p>
-            </a>
-            <a class="oferta5"> <img src="/images/duralba.jfif">             <p>Impermeabilizante Duralba </p>
-                <p class="precio">$4.150</p>
-            </a>
-            <a href="" class="oferta6"> <img src="/images/piletas.jfif"><p>Alba Piletas Caucho clorado </p>
-                <p class="precio">$1.500</p>
-            </a>
-            <a href="#" class="oferta7"> <img src="/images/recublock.jfif"><p>Recublock Cimientos Sinteplas</p>
-                <p class="precio">$1.750</p>
-            </a>
-            <a href="#" class="oferta8"> <img src="/images/sw lata.jfif"><p>Esmalte sintectio para pisos SW</p>
-                <p class="precio">$2.975</p>
-            </a>
+          
+            <% for( let i = 0; i < productos.length; i++ ) { %>
+                <%    if(productos[i].promo == "si"){ %>
+                         
+                <a href="/pdp/<%= productos[i].id%>" class="card">
+                                               
+                    <img src="<%= '/imagen_producto/'+ productos[i].imagen_producto %>" alt=""> <br>
+                    <h6>Código:<%= productos[i].sku %></h2></p>
+                        <p>
+                            <!--*<%= productos[i].marcas.marca %>&nbsp-->
+                           <%= productos[i].titulo_producto %>&nbsp
+                           <!--<%= productos[i].color %>&nbsp</p>-->
+                       <p>  <h4 class='precio'>$ <%= productos[i].precio %></h4> </p>
+                                          
+                </a>    
+               
+                <% } %> 
+            <% } %>
+
+
+
+
+
         </div>
      </section>
      <section class="marcas">

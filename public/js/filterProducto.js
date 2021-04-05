@@ -1,7 +1,7 @@
 function select (){
     let proveedores2= document.getElementById('id_proveedor')
 
-    fetch("cargaProducto/buscar/"+ proveedores2.value, {
+    fetch("/admin/buscar/"+ proveedores2.value, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function select (){
 function familia (){
   let familia= document.getElementById('id_familia')
 
-  fetch("cargaProducto/buscar/familia/"+ familia.value, {
+  fetch("/admin/buscar/familia/"+ familia.value, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",
@@ -60,7 +60,7 @@ function familia (){
 function tipo (){
   let tipo= document.getElementById('id_tipo')
 
-  fetch("cargaProducto/buscar/tipo/"+ tipo.value, {
+  fetch("/admin/buscar/tipo/"+ tipo.value, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",

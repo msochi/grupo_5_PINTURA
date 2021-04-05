@@ -26,28 +26,33 @@ module.exports = function(sequelize, dataTypes) {
         Proveedores.hasMany(models.Marcas, {
             as: 'marca',
             foreignKey: 'id_proveedor',
-        } )
-    }
-   
-    Proveedores.associate = function (models){ 
+        } ),
         Proveedores.hasMany(models.Productos, {
             as: 'productos',
             foreignKey: 'id_proveedor',
         } )
-    }  
-   
-   
-   Proveedores.associate = function(models){
-        Proveedores.belongsToMany(models.Marcas, {
 
-        as: "marcas",    
-        through: "productos",    
-        foreignKey: "id_proveedor",        
-        otherKey: "id_marca",  
-        timestamps: false
-    
-    });
     }
+   
+//     Proveedores.associate = function (models){ 
+//         Proveedores.hasMany(models.Productos, {
+//             as: 'productos',
+//             foreignKey: 'id_proveedor',
+//         } )
+//     }  
+   
+   
+//    Proveedores.associate = function(models){
+//         Proveedores.belongsToMany(models.Marcas, {
+
+//         as: "marcas",    
+//         through: "productos",    
+//         foreignKey: "id_proveedor",        
+//         otherKey: "id_marca",  
+//         timestamps: false
+    
+//     });
+    //}
 
     return Proveedores
 }

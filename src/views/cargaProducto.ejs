@@ -22,8 +22,8 @@
         <div class="ingreso">
             <h2>NUEVO PRODUCTO</h2> <hr class="hrcolor">
             <h4>Ingresar los datos correspondientes al producto</h4>
-            <form action="" class="form" id="form" name="form" method="POST" enctype="multipart/form-data" >
-                <div class= "medio">
+            <form action="/admin/cargaproducto/ " class="form" id="form" name="form" method="POST" enctype="multipart/form-data" >
+            <div class= "medio">
                 <div class="medio_1">
                     <label for="id_proveedor">Proveedor &nbsp</label>
                     <select id= 'id_proveedor' onchange="select()" name="id_proveedor" >
@@ -105,7 +105,7 @@
                 
                 
                     <label for="tiempo_entre_manos">Tiempo de espera entre manos &nbsp</label>
-                    <input type="number" id='tiempo_entre_manos' name="tiempo_entre_manos" 
+                    <input type="text" id='tiempo_entre_manos' name="tiempo_entre_manos" 
                     class="tiempo_entre_manos" 
                     value="" placeholder="Tiempo de espera entre manos"> 
                 </div>
@@ -128,6 +128,8 @@
                     <label for="rendimiento">Rendimiento  &nbsp</label>
                     <input type="text" id='rendimiento' name="rendimiento"
                     class="rendimiento"  value="" placeholder="Ejemplo 12 a 16 m2/l por mano">
+                    <label for="garantia">Garantia  &nbsp</label>
+                    <input type="text" id='garantia'  name="garantia" class="garantia" value="" placeholder="Tiempo de Garantia">
                 </div>
                 <div class="medio_5">
                     <label for="uso_recomendado">Uso Recomendado  &nbsp</label>
@@ -138,15 +140,33 @@
                     <input type="text" id='tiempo_de_secado' name="tiempo_de_secado" 
                     class="tiempo_de_secado" value="" placeholder="Tiempo de secado">
 
-                    <label for="garantia">Garantia  &nbsp</label>
-                    <input type="text" id='garantia'  name="garantia" class="garantia" value="" placeholder="Tiempo de Garantia">
+                    <label for='promo'>Promociando  &nbsp</label>
+                    <select name="promo" id="promo" class='promo' value= "Seleccionar" >
+                        <option value="no">NO</option>
+                        <option value="si">SI</option>
+                    </select> 
+                </div>
+                <div class="medio_6">
+                    <label for="precio">Precio  &nbsp</label>
+                    <input type="text" id='precio' name="precio" class="precio"
+                    value="" placeholder="Precio $">
+
+                    <label for="costo">Costo  &nbsp</label>
+                    <input type="text" id='costo' name="costo" class="costo"
+                    value="" placeholder="Costo $"> <br>
              
                     <label for="imagen_producto">Cargar imagen del producto  &nbsp</label>
                     <input type="file" name="imagen_producto" 
                     class="imagen_producto" id= 'imagen_producto' class= 'form-control-file'> <br>
                      </article>
+                </div> <br>
+                <div class="datosProducto">
+                    <label for="titulo">Título del producto &nbsp</label>
+                    <textarea name="titulo_producto" class="titulo_producto"></textarea>
+                    <label for="descirpcion">Descripción &nbsp</label>
+                    <textarea name= "descripcion" class="descripcion"></textarea>
                 </div>
-                </div>
+            </div>
                 <button class="enviar" type="submit" name="cargarProducto" class="cargarProducto"
                 onclick="">Cargar Productos</button>   
        

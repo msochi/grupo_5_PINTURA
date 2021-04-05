@@ -1,7 +1,7 @@
 const express = require ('express');
 const router= express.Router ();
 
-const multer = require('multer');
+
 const path= require('path');
 const modificarUsuarioController = require('../controllers/modificarUsuarioController');
 const multerRegistro = require ('../middlewares/multerRegistro');
@@ -11,7 +11,7 @@ const registroValidacion = require ('../middlewares/registroValidacion')
 
 
 
-router.get("/:id", modificarUsuarioController.mostrar);
-router.post("/:id", multerRegistro.any(), registroValidacion, modificarUsuarioController.actualizar);
+//router.get("/:id", modificarUsuarioController.mostrar);
+//router.post("/:id", multerRegistro.any(), registroValidacion, modificarUsuarioController.actualizar);
 
 module.exports = router;
