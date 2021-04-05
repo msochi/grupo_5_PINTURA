@@ -1,15 +1,15 @@
 CREATE DATABASE  IF NOT EXISTS `pintame` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci */;
 USE `pintame`;
--- MySQL dump 10.13  Distrib 8.0.21, for macos10.15 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: pintame
+-- Host: 127.0.0.1    Database: pintame
 -- ------------------------------------------------------
--- Server version	5.7.33
+-- Server version	5.5.5-10.4.17-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `pintame`;
 
 DROP TABLE IF EXISTS `clientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clientes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` char(45) NOT NULL,
@@ -31,16 +31,20 @@ CREATE TABLE `clientes` (
   `dni` int(11) NOT NULL,
   `direccion` text CHARACTER SET big5 NOT NULL,
   `id_localidad` int(10) unsigned NOT NULL,
-  `codigoPostal` int(11) unsigned NOT NULL,
+  `codigo_Postal` int(11) unsigned NOT NULL,
   `id_provincia` int(11) unsigned NOT NULL,
   `telefono` int(10) unsigned NOT NULL,
   `email` char(80) NOT NULL,
   `pass` text NOT NULL,
   `avatar` char(100) NOT NULL,
+  `tipo` int(1) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_provincias_idx` (`id_provincia`),
   KEY `id_localidad_idx` (`id_localidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +53,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'Marcelo Raúl','',17783576,'Uspallata 2288',0,1643,0,4294967295,'123@123123.com','','123@123123.com1613951625789.jpg'),(2,'Juan','',22333444,'Uspallata 2288',0,1643,0,4294967295,'juan@jaun.com','$2a$12$3jAKG3gYwfD1YDIxv7IixeLbC25LiHs0Xnh4eGKdnuDqz0fdj3XI6','juan@jaun.com1613952049401.jpg'),(3,'asda','sad',12345678,'sadads 45688',1,1754,1,1545678909,'asddasa@gmail.com','$2a$12$MGCDskppCLBY13QnO/Bb/up3ZSYxpK.vkcHGZfxKWs.8MsD6d2kjC','asddasa@gmail.com1615824954920.png'),(4,'NICOLAS','FERNANDEZ',34234234,'Coronel',782,1754,1,1564357234,'fernandez.nicolas.gonzalo@gmail.com','$2a$12$5SXSpyk0c1w6l6vUPSgy0ekZ3g7wCVuGX5FkTlyc/JFWoq6LWvRZK','fernandez.nicolas.gonzalo@gmail.com1615909470492.jpg'),(5,'NICOLAS','FERNANDEZ',12346780,'Coronel Lezica',1,1754,1,1234567890,'a@gmail.com','$2a$12$Unl0hObidLCWIRSjBcV7x.c7B20Vapr/UDxnN60OU5FBwB9fDnLfO','a@gmail.com1615917787187.jpg'),(6,'dfsg','dfsg',21342354,'sadads 456',1,1754,6,1567897654,'holis@gmail.com','$2a$12$L73TcXDRj1u7nQEIoEn4luTXLIlpE7YHpxOA97ZPmdD7CyyVGzIFS','holis@gmail.com1615935391365.jpg');
+INSERT INTO `clientes` VALUES (1,'Marcelo Raúl','',17783576,'Uspallata 2288',0,1643,0,4294967295,'123@123123.com','','123@123123.com1613951625789.jpg',0,NULL,NULL,NULL),(2,'Juan','',22333444,'Uspallata 2288',0,1643,0,4294967295,'juan@jaun.com','$2a$12$3jAKG3gYwfD1YDIxv7IixeLbC25LiHs0Xnh4eGKdnuDqz0fdj3XI6','juan@jaun.com1613952049401.jpg',0,NULL,NULL,NULL),(3,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',16,1643,1,4294967295,'Hola@nose.com','$2a$12$xt/t5a4euRMJTNTC2VxtFez/owd6KaafAWE0XrWTvCm92szxx1XN2','Hola@nose.com1616352065240.png',0,NULL,NULL,NULL),(4,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',11,1643,1,4294967295,'Hola@nose.com','$2a$12$fLIb7wOa1000K/jmoNCMOOj/fsvCAI..g5Ep0oyogPHZZyQnlTJq2','Hola@nose.com1616352152617.png',0,NULL,NULL,NULL),(5,'Marcelo','Sochissss',26681499,'Intendente Becco 2380 PB 18',11,1643,1,4294967295,'Hola@nose.com','$2a$12$owmbtkhTiCVzM6sCVl7pkeLYPABhLxdm/xd/yFLaE9mmZLXerSXwa','Hola@nose.com1616821524678.jpg',1,NULL,'2021-03-27 05:05:25',NULL),(6,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',11,1643,1,4294967295,'Hola@nose.com','$2a$12$/exIn9qqdAj6aLZ6m.fAY.Y9YnaiJzSunmDZVRoH.TDDna/dmcOqy','Hola@nose.com1616819343448.jpg',0,NULL,'2021-03-27 04:29:03',NULL),(7,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$LyW.B1rwjA6.DKxonEmZOO4OoSW5NxbkXcrpDfSNoCH.ppYgWZhKy','Hola@nose.com1616352433503.png',0,NULL,NULL,NULL),(8,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$NyiWqiIGAAuFZ62hwLuWuuffLZDrzbybQkZaH.6Ay03gL1iAuuKPS','Hola@nose.com1616352960748.png',0,NULL,NULL,NULL),(9,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$8kYixRaGm1HZgU9qVi2Uw.w6D.7gxnryf68pVmooK9PJE1N4lrHZC','Hola@nose.com1616849872044.jpg',0,NULL,'2021-03-27 12:57:52',NULL),(10,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$F2jZb7V38.CZouoFJYqjVORMWX1FFmN6DW9gHMhWhYPMTmVMLIACa','Hola@nose.com1616356294737.png',0,NULL,NULL,NULL),(11,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$jU43tAMqr2U.2Kzkd2LFrOo/7podIppZGmuGnBQ5dr.s7n6fq6V7u','Hola@nose.com1616356309466.png',0,NULL,NULL,NULL),(12,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$DsDxNJ7.j3EySzlS9edIE.vyt1G4U6DB3b89RvMUxkngmufk.bNnm','Hola@nose.com1616356321942.png',0,NULL,NULL,NULL),(13,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$X7iltTuLmC8lfYny1xn2O.lT4DVBr93hZV1buAf2H3tSxsdouXf6a','Hola@nose.com1616356331106.png',0,NULL,NULL,NULL),(14,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$iiexzAm92Eo8PjM6VtMoHecyqBUhgHKQqSm9W5LNFNHlqTr3ZeIva','Hola@nose.com1616356937776.png',0,NULL,NULL,NULL),(15,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$2wB6X2OnsD1uHp8KWX66HeG8kTbtQ6w3LnIgDss5jzT5QvHzfBZla','Hola@nose.com1616357118493.png',0,NULL,NULL,NULL),(16,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$5gOiCmf1fCika1NJ.NCI3emDXZkxg4ykyottXGcLR8XqBp9rJ5Xcm','Hola@nose.com1616357168843.png',0,NULL,NULL,NULL),(17,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$ujh7v7KXLnqadcUv5yW/pOfGBb.UTmcVp4mSQitpKBpKjsQFIXIBq','Hola@nose.com1616357376666.png',0,NULL,NULL,NULL),(18,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$CLK/EbHo4woNi.PmLVZj6el2IajfLJouwzrV9vZSDbC/ePhClhZsq','Hola@nose.com1616357388453.png',0,NULL,NULL,NULL),(19,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$IGEdfI3p6O/qVmOWCFVdm.SLYgA.Hg7dWsnOawdvHN9XBw.z7qLuq','Hola@nose.com1616357493154.png',0,NULL,NULL,NULL),(20,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$slkhoaxbyAbukUlKIg6RnOxFyrGHF7zkHQLPLiifmKDVmeCTIl6zi','Hola@nose.com1616357572539.png',0,NULL,NULL,NULL),(21,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$SCKBlb/GnFIfF0pechaew.EmD2C.vGJXF6Ba/z/kX7nauLeQjX/G6','Hola@nose.com1616357892708.png',0,NULL,NULL,NULL),(22,'Marcelo','Sochi',17783576,'Intendente Becco 2380 PB 18',10,1643,1,4294967295,'Hola@nose.com','$2a$12$16tFZGJ1PWnO9Rr.xGPu.uwMvKSYrIZySDnt1Z2Hgo8DeKwAshWiS','Hola@nose.com1616358143950.png',0,NULL,NULL,NULL),(23,'Juan','',17783576,'',1,0,1,0,'hoy@hotmail.com','$2a$12$9KzPEoq/oUgII5a.l0P/n.GH3Wn1TqpbpN8ElYXtYijDV2YKYAMDW','hoy@hotmail.com1617056359547.JPG',1,NULL,'2021-03-29 22:19:19',NULL),(24,'Jero','Martinez',17783599,'Uspallata 2288',11,1643,9,4294967295,'sodi@sodi.com','$2a$12$R3zsVc5uZ0AUXMvnYCRkN.kmhLET.Aq4zmRnsPehTkKhINMMsMsVG','sodi@sodi.com1616426823650.png',0,NULL,NULL,NULL),(25,'Jero','Martinez',17783599,'Uspallata 2288',11,1643,9,4294967295,'sodi@sodi.com','$2a$12$.p2ZogM54daBi9MRfSX/B.MhNWMNtoSu6T5JKUeb6aCx7TemrLX96','sodi@sodi.com1616426950026.png',0,NULL,NULL,NULL),(26,'Carla','Martinez',26681600,'Uspallata 2288  casa 30',11,1643,9,4294967295,'su@su.com','$2a$12$gI3Es7kI2IR2kXn8GcpQCOxYZS7xWm9WxMRb/D.SQ3L2Kw2PkZppm','su@su.com1617129814680.jpg',0,NULL,'2021-03-30 18:43:35',NULL),(27,'Carla','Martinez',26681600,'Uspallata 2288  casa 30',11,1643,9,4294967295,'su@su.com','$2a$12$rLJ/rA743kyWFsfxFQ.CJuk4et20G1O9eqD7oy7JkqejsaFFbm9La','su@su.com1616434821458.png',0,NULL,NULL,NULL),(28,'Marcelo','Sochi',17783575,'Intendente Becco 2380 PB 18',1,1643,1,4294967295,'jjjj@jjjj','$2a$12$YuYAXISy0VOpB.MC5cMl/ueMTmFAIRuLn0JKJKJu2LoEj3fq.hnSu','jjjj@jjjj1616631345605.png',0,NULL,NULL,NULL),(29,'Marcelo','Sochi',17783575,'Intendente Becco 2380 PB 18',1,1643,1,4294967295,'jjjj@jjjj','$2a$12$aUajQROtAtWYSGYxI3JQ9eoo755pOPF0.UZNQIPeANDV8YPXizkW6','jjjj@jjjj1616631397337.png',0,NULL,NULL,NULL),(30,'Marcelo','Sochi',17783575,'Intendente Becco 2380 PB 18',1,1643,1,4294967295,'jjjj@jjjj','$2a$12$rCrfVINNl5GtGqe14odGa.1lmSI0u1TAQ2Vx49hpd9t6pYJP5LiCG','jjjj@jjjj1616631472920.png',0,NULL,NULL,NULL),(31,'Juan','Garcia',26681601,'Intendente Becco 2380 PB 18',1,1643,1,4294967295,'diego@diego.com','$2a$12$hO11VmIZ/rnzrVgWsK10xurv1nCW1fXwrqIsGc5rslABta8.UfPtq','diego@diego.com1616719578178.png',0,NULL,NULL,NULL),(32,'Marcelo','Sochi',26681601,'Intendente Becco 2380 PB 18',1,1643,1,1168996776,'diego@diego.com','$2a$12$wK.y33s7LtEO3ZBGz.vBuuG.DJOnHDXmaWZOn2HS2CIwT3s0/lL3K','diego@diego.com1616719624432.png',0,NULL,NULL,NULL),(33,'Ruben','Santos',26681499,'Uspallata 2288',1,1643,1,4294967295,'diego@diego.com','$2a$12$37KmxsnjLMTyhxlffoje0.2d3aoTELVuT7EfLXpdde2dLOBUoOfw6','diego@diego.com1616719844932.png',0,NULL,NULL,NULL),(34,'Ruben','Santos',26681601,'Uspallata 2288',1,1643,1,4294967295,'diego@diego.com','$2a$12$s2RPmFSlrWvJ.F3c5GlV3OE/1cCkJKqJWD9JKWgpfuyhlgRoCHcCy','diego@diego.com1616821383823.png',0,NULL,'2021-03-27 05:03:04',NULL),(35,'cacho','perez',26686000,'Uspallata 2288  casa 30',1,1643,1,4294967295,'diego@diego.com','$2a$12$unNhgdJgD0wq3zE8Z6fyOuGChMTTlvuWncUd77ClTJ0J539b58HUa','diego@diego.com1616856264440.JPG',0,NULL,'2021-03-27 14:44:25',NULL),(36,'Marcelo Raúl','Santos',11111111,'Uspallata 2288',1,1643,10,4294967295,'pitupitu@sdf.com','$2a$12$7HmqP1dmsYckPQv6ZOiEV.0wzAK40ChgWHl9ysv4uoHeB4o9Cj8RG','pitupitu@sdf.com1617104975013.JPG',0,NULL,'2021-03-30 11:49:36',NULL),(37,'Admin','Admin',1,'Intendente Becco 2380 PB 18',229,0,12,2614238675,'admin@pintame.com.ar','$2a$12$gbAmsLNkUio9hMjlkYM06.hBVpywYlhcZ8RxFsbdLbVoqPSQYsFh2','admin@pintame.com.ar1617222742029.jpg',1,'2021-03-31 20:23:58','2021-03-31 20:32:22',NULL);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +63,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `familia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `familia` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `familia` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -83,7 +87,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `localidades`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `localidades` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `localidad` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -108,7 +112,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `marcas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `marcas` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `marca` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -133,7 +137,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `sku` int(11) unsigned NOT NULL,
@@ -153,12 +157,17 @@ CREATE TABLE `productos` (
   `uso_recomendado` text NOT NULL,
   `tiempo_de_secado` text NOT NULL,
   `garantia` text NOT NULL,
+  `promo` text NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `costo` decimal(10,0) NOT NULL,
   `imagen_producto` text NOT NULL,
+  `titulo_producto` text NOT NULL,
+  `descripcion` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +176,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,2223,0,0,0,0,0,0,'ASDFASDF','','','','',0,'','','','8','',NULL,NULL,'2021-03-16 22:39:00'),(2,2222,1,0,0,0,0,0,'1L','','azul','','al agua',0,'12 mts','','','5','',NULL,NULL,'2021-03-16 22:40:30'),(3,4444,0,0,0,0,0,0,'','','','','',0,'','','','','',NULL,NULL,NULL),(4,1111,0,0,0,0,0,0,'1L','','blanco','','al agua',0,'12 mts','','','5','',NULL,NULL,NULL),(5,55555,0,0,0,0,0,0,'','','','','',0,'','','','','La nueva1613610796630.jpg',NULL,NULL,NULL),(6,55555,0,0,0,0,0,0,'','','','','',0,'','','','','La nueva1613611739899.jpg',NULL,NULL,NULL),(7,55555,0,0,0,0,0,0,'','','','','',0,'','','','','La nueva1613611747415.jpg',NULL,NULL,NULL),(8,0,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(9,0,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(10,0,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(11,0,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(12,4488,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(13,0,0,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(14,88888,1,0,0,0,0,0,'','','','','',0,'','','','','NaN.jpg',NULL,NULL,NULL),(15,1414,1,1,1,0,1,1,'1L','','blanco','','al agua',0,'12 mts','','al tacto','5 años','NaN.jpg',NULL,NULL,NULL),(16,1415,1,1,1,1,1,1,'1L','','blanco','','al agua',0,'12 mts','','al tacto','5 años','NaN.jpg',NULL,NULL,NULL),(17,1416,1,1,1,1,1,1,'','','','','',0,'','','','','11614131239163.jpg',NULL,NULL,NULL),(18,23234,0,8,1,1,1,2,'4','213432','3242','1','234',1,'324','2342','324','324','01615160064227.png',NULL,NULL,NULL),(19,1234123,3,16,1,1,1,1,'123','2314','3214','3214','2314',0,'213421','3214','3214','234','31615160479342.png',NULL,NULL,NULL),(20,2334532,1,20,1,1,1,1,'3425','4325','432543','4325','4325',0,'34254','3245','3253','5432','11615161002475.png',NULL,NULL,NULL),(21,43214,1,20,1,1,1,1,'3214','3214','3214','2314','214',321,'4321','34214','43214','321','11615161568299.png',NULL,NULL,NULL),(22,43214,1,20,1,1,1,1,'3214','3214','3214','2314','214',321,'4321','34214','43214','321','11615161659339.png',NULL,NULL,NULL),(23,23432,1,20,1,1,1,1,'23424','2342','4324','32432','324',324,'432','234','324','342','11615161694807.png',NULL,NULL,NULL),(24,3333333,45,18,1,1,1,1,'21312','3213','2131','3213','2131',1,'1231','213','3213','2313','451616015390658.jpg',NULL,'2021-03-17 21:09:50',NULL),(25,3243214,1,1,1,1,1,1,'','2134','dsac32','2','3214',3,'2314','321','321','3241','11615739347261.png',NULL,NULL,NULL),(26,3543556,2,9,20,4,3,2,'435','435','345','4','534',3,'435','345','435','453','21616016391168.jpg','2021-03-17 21:26:31','2021-03-17 21:26:31',NULL);
+INSERT INTO `productos` VALUES (1,10001,1,1,1,1,1,1,'ASDFASDF','','','','',1,'','','','8','',0,0,'11616538410815.png','','',NULL,'2021-03-23 22:26:50','2021-03-23 22:27:46'),(2,10002,1,0,0,0,0,0,'1L','','azul','','al agua',0,'12 mts','','','5','',0,0,'','','',NULL,NULL,'2021-03-23 22:29:42'),(3,10003,6,3,43,19,3,2,'15 Litros','15 Litros','blanco','1 hora','al agua',2,'12 m2 x litro','Interior','1 hora','5 años','si',7600,2200,'61617576360047.jfif','Pintura látex Albatex pared mate ultralavable blanco 20L\"','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\n¿Sabías que utlizando latex premium ulatralabable podés mantener como nuevas tus paredes durante más de 5 años con un cuidado normal? Elegí el color que mejor combina con tus paredes y renova todos tus ambientes con las pinturas Premium y ultralavables de ALBA.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.\r\n',NULL,'2021-04-04 22:46:00',NULL),(4,10004,21,3,13,6,1,2,'1L','1Litro','transparente','2 horas','al aceite',3,'12 mts','exterior','1 hora','5 años','no',999,457,'211617577004290.jfif','Protector para maderas classic satinado roble 1 L','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\nSolo en PINTAME encontrarás los precios más bajos en protector para madera classic satinado roble de 1 litro.\r\nEl protector para madera de Cetol protege del sol, lluvia, nieve, brisa marina y de los cambios bruscos de temperatura. Penetra profundamente sin formar película superficial y en consecuencia, no cuartea ni descascara.\r\nSi estás pensando en renovar un mueble y queres cuidarlo, necesitas un protector para madera classic satinado, compralo de la manera más fácil y rápida.',NULL,'2021-04-04 22:56:44',NULL),(5,10005,36,15,73,12,2,1,'2 unidades','s/d','Marrón','no aplica','s/d',1,'50 metros','interior y exterior','no aplica','1 año','no',300,100,'361617578372096.jfif','Pincel de obra n° 10 negro','PeloMix (Natural + Sintético). Óptima relación precio-producto.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.',NULL,'2021-04-04 23:19:32',NULL),(6,10006,23,16,34,23,1,2,'4 Litros','4 Litros','Bordo','2 horas','al agua',1,'12 mts','exterior','2 hora','5 años','no',1150,650,'231617577113134.jfif','Esmalte chrom metal 3 en 1 blanco 4 L','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\n\r\nEsmalte Chrom metal 3 en 1 blanco 4 l. En PINTAME encontras los mejores productos para proteger tus metales.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.',NULL,'2021-04-04 22:58:33',NULL),(7,10007,39,16,70,13,1,2,'4 Kg','4 Kg','Blanco','4 Horas','al agua',1,'15 mts2','Exterior','4 Horas','5 años','no',6900,2300,'391617577262075.jfif','Impermeabilizante para techos emacril blanco 4 kg','Producto ecológico,impermeabilizante elastomérico para techos,de formulación acrílica,para uso exterior.\r\n\r\nIdeal para Techos exteriores y terrazas de tránsito moderado; de concreto,mampostería,ladrillo,fibrocemento,piedras,baldosas,cerámica no esmaltada,membranas asfálticas con terminación de poliéster,etc.',NULL,'2021-04-04 23:01:02',NULL),(8,10008,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,'2021-04-01 14:59:12'),(9,10009,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,'2021-03-31 19:44:45'),(10,10010,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,'2021-04-01 14:59:18'),(11,10011,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,'2021-04-01 14:59:25'),(12,10012,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,NULL),(13,10013,0,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,NULL),(14,10014,1,0,0,0,0,0,'','','','','',0,'','','','','',0,0,'NaN.jpg','','',NULL,NULL,NULL),(15,10015,101,52,35,23,1,2,'1 Litro','1 Litro','blanco','2 horas','De aceite',4,'12 mts','Exterior','al tacto','5 años','no',1800,750,'1011617577359384.jfif','Esmalte Epoxi Induplast Sintepox brillante blanco 1 l','Todo sobre los esmaltes\r\nEn PINTAME te ofrecemos una gran variedad de pinturas y accesorios para pintar, hoy te vamos a hablar de los esmaltes sintéticos.\r\n\r\nLos esmaltes son la pintura que mejor conserva el brillo, tanto en interiores como en exteriores. El acabado es liso y puede tener aspecto mate, satinado o brillante. Se utiliza para proteger superficies de metal y madera.\r\n\r\nTiene una base de aceite, por lo que es más durable que la pintura plástica y cubre más con menos capas, por eso se utiliza también para pintar muebles y piezas de madera. \r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.',NULL,'2021-04-04 23:02:39',NULL),(16,10016,1,1,1,1,1,1,'1L','','blanco','','al agua',0,'12 mts','','al tacto','5 años','',0,0,'NaN.jpg','','',NULL,NULL,'2021-03-30 22:34:48'),(17,10017,57,54,50,19,3,2,'4 Litros','4 Litros','Griss','2 Horas','Al aguarras',1,'12 mts2','Interior','2 Horas','5 años','si',2700,1100,'571617377977066.jfif','PINTURA KÖLOR  - Latex Acrilico Premium Color Gris   ','¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?  En PINTAME contamos con una amplia selección de latex mate para exterior donde es posible comprarlo en distintas presentaciones y tamaños. Tenemos las mejores ofertas de latex para exterior como para interior. En PINTAME contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.',NULL,'2021-04-02 15:39:37',NULL),(18,10018,57,54,50,19,3,2,'4 Litros','4 Litros','Beige','4 Horas','Al aguarras',1,'12 mts2','Interior','4 Horas','5 años','si',2700,1100,'571617377990863.jfif','PINTURA KÖLOR 2   - Latex Acrílico Premium Color Beige','¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?  En PINTAME contamos con una amplia selección de latex mate para exterior donde es posible comprarlo en distintas presentaciones y tamaños. Tenemos las mejores ofertas de latex para exterior como para interior. En PINTAME contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.','2021-03-31 20:07:54','2021-04-02 15:39:50',NULL),(19,10019,57,54,50,19,3,2,'4 Litros','4 Litros','Violeta','4 Horas','Al aguarras',1,'12 mts 23423423','Interior','4 Horas','5 años','si',2700,1100,'571617377950660.jfif','PINTURA KÖLOR 2   - Latex Acrílico Premium Color Fuccia','¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?  En PINTAME contamos con una amplia selección de latex mate para exterior donde es posible comprarlo en distintas presentaciones y tamaños. Tenemos las mejores ofertas de latex para exterior como para interior. En PINTAME contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.','2021-03-31 20:09:32','2021-04-02 15:39:10',NULL),(20,10020,12,8,25,10,2,1,'1 unidad','1 unidad','s/d','s/d','s/d',1,'s/d','Interior y Exterior','s/d','5 años','si',9990,3200,'121617575217069.jfif','PPistola Equipo De Pintar Black Decker Bdph1200','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\nPistola Equipo De Pintar Black Decker Bdph1200, una pistola de aire ideal para todo tipo de superficies de interior y exterior. Optimiza el uso de la pintura cubriendo toda la superficie con gran eficiencia y ahorrando  pintura.\r\nBlack Decker es una marca Premium y conseguís todo de las mejoras marcas para pintar en PINTAME.\r\n','2021-04-01 14:31:05','2021-04-04 22:26:57',NULL),(21,10021,6,3,69,13,1,2,'10 Litros','10 Litros','Blanco','4 Horas','Al agua',1,'15 mts2','Exterior','4 Horas','5 años','si',8725,3899,'61617575767024.jfif','Membrana líquida impermeabilizante duralba para muros 10 L','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\nTenemos pinturas y membranas de la mejor calidad.  La membrana líquida impermiabilizante DURALBA es ideal para impermeabilizar tus muros.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.\r\n','2021-04-02 15:11:52','2021-04-04 22:36:07',NULL),(22,10022,36,15,79,24,2,1,'s/d','s/d','s/d','s/d','s/d',1,'s/d','Interior y Exterior','s/d','1 año','si',750,330,'361617573933772.jfif','Rodillo  El Galgo - Lana naranja de primera calidad.','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\nComo este rodillo EL Galgo, un rodillo premium ideal para paredes de exterior. Es antigoteo y con una adecuada limpieza puede durar para pintar una y otra vez tus ambientes debido a su resistencia y lana de alta calidad.\r\n','2021-04-02 15:31:28','2021-04-04 22:05:33',NULL),(23,10023,57,54,50,19,3,2,'4 Litros','4 Litros','Ocre','4 Horas','Al aguarras',1,'12 mts2','Interior','4 Horas','5 años','si',2700,1100,'571617378043380.jfif','PINTURA KÖLOR 2   - Latex Acrílico Premium Color Ocre','¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?  En PINTAME contamos con una amplia selección de latex mate para exterior donde es posible comprarlo en distintas presentaciones y tamaños. Tenemos las mejores ofertas de latex para exterior como para interior. En PINTAME contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.','2021-04-02 15:33:52','2021-04-02 15:40:43',NULL),(24,10024,57,54,50,19,3,2,'4 Litros','4 Litros','Bordo','4 Horas','Al aguarras',1,'12 mts2','Interior','4 Horas','5 años','si',2700,1100,'571617378061883.jfif','PINTURA KÖLOR 2   - Latex Acrílico Premium Color Bordo','¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?  En PINTAME contamos con una amplia selección de latex mate para exterior donde es posible comprarlo en distintas presentaciones y tamaños. Tenemos las mejores ofertas de latex para exterior como para interior. En PINTAME contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.','2021-04-02 15:35:22','2021-04-02 15:41:01',NULL),(25,10025,118,49,70,13,1,2,'10 kg','10 kg','Rojo','6 Horas','Al aguarras',1,'15 mts2','Exterior','10 Horas','10 años','no',9999,4790,'1181617577529130.jfif','Membrana para techos fibrada blanco 10 kg','Puede ser aplicada sobre carpetas cementicias,hormigón,PVC,cerámico poroso no esmaltados,fibrocemento,metal,tejas,etc. Para reimpermeabilizar,techos con impermeabilización acrílica existente.\r\n\r\nimprimación +2 manos de impermeabilización','2021-04-02 15:48:03','2021-04-04 23:05:29',NULL),(26,10026,118,49,15,13,1,2,'4 kg','4 kg','Rojo','6 Horas','s/d',1,'15 mts2','Exterior','6 Horas','5 años','no',11350,6500,'1181617577624992.jfif','Membrana fibrada para techos Weberdry teja 4 kg','Ideal para Carpetas cementicias, hormigón, PVC, cerámico poroso no esmaltado, fibrocemento, tejas, membrana acrílica, membrana asfáltica con recubrimiento de geotextil.\r\nNo aplicar con temperaturas inferiores a 10°C ni superiores a 30°C.No aplicar con riesgo de lluvias o heladas.Se recomienda realizar los trabajos a partir del mediodía para permitir que la superficie evapore cualquier resto de agua o humedad que pudiera haberse generado por acción del rocío u otros factores.\r\nImpermeabilizante, lista para usar.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 15:49:41','2021-04-04 23:07:04',NULL),(27,10027,96,50,28,21,3,2,'1 Litro','1 Litro','Rojo','4 Horas','Al aguarras',3,'12 mts2','Pisos','4 Horas','8 años','si',2450,1230,'961617576290729.jfif','\"Recubrimiento especial esmalte pisos rojo 1 L','El mejor recubrimiento para tus pisos lo conseguis en PINTAME.\r\nRecubrimiento Especial Esmalte Pisos Rojo  Sherwin Williams, ideal para plastificados de pisos interiores y exteriores.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 15:53:11','2021-04-04 22:44:50',NULL),(28,10028,65,54,49,19,3,2,'10 Litros','10 Litros','Blanco','4 Horas','Al agua',1,'12 mts2','Interior y Exterior','4 Horas','5 años','no',5300,2340,'651617576509968.jfif','Pintura látex interior y exterior mate Midway blanco 10 L','¿Sabías que utilizando latex Interior/Exterior mate Midway de 20 litros podes brindarle un look nuevo y único a tu casa o departamento? En PINTAME contamos con una amplia selección de latex Tersuave para interior de donde es posible comprarlo en distintas presentaciones y tamaños.\r\n\r\nTenemos las mejores ofertas de latex Interior/Exterior mate Midway. En PINTAME contamos con la mayor variedad de pintura latex para interiores y exteriores deTersuave, para ayudarte a que tus proyectos se hagan realidad.\r\n\r\nLatex Interior/Exterior mate Midway de Tersuave, latex Handy Home para interior Alba, son algunos de los productos que podrás encontrar en nuestra tienda. \r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 15:55:53','2021-04-04 22:48:29',NULL),(29,10029,6,3,43,19,3,2,'1 Litro','1 Litro','Blanco','2 horas','Al aguarras',2,'12 mts2','Interior','2 Horas','5 años','no',1330,650,'61617576690636.jfif','Esmalte Satinol blanco 1 L','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\n\r\nEsmalte Satinol blanco de 1 litro. Encontrá lo que necesitás en nuestra amplia selección de esmaltes satinol.\r\nEncontrá los precios más bajos en esmaltes para exteriores de base solvente y terminación satinada para que tu casa quede como nueva.\r\nNunca fue tan fácil y rápido comprar lo que necesitás para hacer tu sueño realidad. En PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.\r\n\r\n','2021-04-02 16:02:56','2021-04-04 22:51:30',NULL),(30,10030,6,3,50,19,3,2,'4 Litros','4 Litros','Blanco','2 horas','Al aguarras',1,'12 mts2','Interior','2 Horas','5 años','no',3800,1990,'61617576753068.jfif','Pintura látex Albatex pared mate ultralavable blanco 4 L','En PINTAME conseguís los mejores accesorios para pintar y decorar tus ambientes.\r\n¿Sabías que utlizando latex premium ulatralabable podés mantener como nuevas tus paredes durante más de 5 años con un cuidado normal? Elegí el color que mejor combina con tus paredes y renova todos tus ambientes con las pinturas Premium y ultralavables de ALBA.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.\r\n','2021-04-02 16:04:36','2021-04-04 22:52:33',NULL),(31,10031,46,31,52,15,2,1,'10 unidades','10 unidades','Rojo','s/d','s/d',1,'5mts2','Interior y Exterior','s/d','s/d','no',130,50,'461617583157558.jfif','Lija rubí n° 100','Papel de Lija Rubí\r\nRecomendado especialmente para la preparación de maderas en general, el lijado de paredes antes de ser pintadas, después de los selladores y entre manos de pintura.\r\n\r\nPuede usarse a mano, debido a su flexibilidad, o con la ayuda de un taco de madera sobre las superficies lisas\r\n\r\nSu gran poder de corte permite realizar trabajos de alta remoción con mínimo esfuerzo o delicadas terminaciones\r\n\r\nPara uso de artesanos, profesionales, pintores y hobbistas.','2021-04-02 16:16:12','2021-04-05 00:39:17',NULL),(32,10032,107,54,1,1,4,1,'40 cm3','40 cm3','blanco','2 Horas','s/d',3,'12 mts2','Interior y Exterior','2 Horas','s/d','no',490,185,'1071617578295767.jfif','Esmalte sintético brillante en aerosol blanco 440 cm3','Ideal para Maderas / Metales.\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 16:19:37','2021-04-04 23:18:15',NULL),(33,10033,92,48,27,5,1,1,'650cc','650cc','Azul','2 horas','s/d',3,'12 mts2','Interior y Exterior','2 Horas','5 años','no',720,235,'921617577815131.jfif','Anticorrosivo stops-rust metalizado azul cobalt.','Nueva tecnología de pintado en cualquier ángulo. También tiene una válvula confortable que previene el cansancio de los dedos.\r\nIdeal para todo tipo de metales y para Bicicletas,automóviles,motocicletas,etc.\r\n\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 16:21:08','2021-04-04 23:10:15',NULL),(34,10034,92,48,32,5,4,1,' 340 g',' 340 g','Rojo','2 horas','s/d',2,'12 mts2','Interior y Exterior','2 Horas','5 años','no',720,235,'921617577937320.jfif','Convertidor de óxido en aerosol stops-rust imprimante para metal 340 g','Nueva tecnología de pintado en cualquier ángulo. También tiene una válvula confortable que previene el cansancio de los dedos.\r\nEsmalte formulado para ser aplicado sobre el óxido. Con una excelente resistencia a la corrosión y oxidación.\r\nIdeal para todo tipo de objetos metálicos o de cualquier otro material,como rejas,puertas,muebles,herramientas,etc.\r\n\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 16:22:53','2021-04-04 23:12:17',NULL),(35,10035,92,48,32,5,4,1,'650cc','650cc','Amarillo','2 Horas','s/d',2,'12 mts2','Interior y Exterior','2 Horas','5 años','no',720,235,'921617583177969.jfif','Pintura en aerosol ultra mate esmeralda','Nueva tecnología de pintado en cualquier ángulo. También tiene una válvula confortable que previene el cansancio de los dedos.  Ideal para Madera / Metal / Plástico.\r\n\r\nEn PINTAME conseguí el mejor asesoramiento para pintar y decorar tus ambientes.','2021-04-02 16:25:03','2021-04-05 00:39:37',NULL),(36,10036,10,48,27,5,4,1,'340 g','340 g','Rosa','2 horas','s/d',4,'12 mts2','Interior y Exterior','2 Horas','5 años','no',720,235,'101617578181670.jfif','Pintura en aerosol multiuso Ultra Cover 2x rosa Intenso brillante 340 g','Nueva tecnología de pintado en cualquier ángulo. Encontra todas las pinturas en aerosol, al mejor precio en PINTAME.\r\n\r\nTips\r\nCubra el área circundante para protegerla de la pintura. Limpie la superficie con agua y jabón, enjuague y deje secar. Si la superficie es lisa o brillante, lije para crear porosidad. Pruebe en una superficie pequeña antes de pintar. El uso de un Imprimante provee una adhesión y cubrimiento superior. Esto es especialmente recomendado para superficies de madera y metal virgen.','2021-04-02 16:26:36','2021-04-04 23:16:21',NULL);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +186,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `proveedores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proveedores` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `proveedor` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -201,7 +210,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `provincias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `provincias` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `provincia` text CHARACTER SET utf8mb4 NOT NULL,
@@ -225,7 +234,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `stock` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `id_producto` int(11) NOT NULL,
@@ -249,7 +258,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `subfamilia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `subfamilia` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `subfamilia` char(100) COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -274,7 +283,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `subtipo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `subtipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `subtipo` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -299,7 +308,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `terminacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `terminacion` (
   `id` int(11) NOT NULL,
   `terminacion` char(100) NOT NULL,
@@ -323,7 +332,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tipo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tipo` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` text COLLATE utf8mb4_spanish_ci NOT NULL,
@@ -343,6 +352,34 @@ INSERT INTO `tipo` VALUES (1,'Adhesivo Contacto/Neopreno',2),(2,'Adhesivo De Mon
 UNLOCK TABLES;
 
 --
+-- Table structure for table `ventas`
+--
+
+DROP TABLE IF EXISTS `ventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ventas` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_producto` int(10) unsigned NOT NULL,
+  `id_clientes` int(10) unsigned NOT NULL,
+  `unidades` decimal(10,0) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ventas`
+--
+
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'pintame'
 --
 
@@ -359,4 +396,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-17 19:00:50
+-- Dump completed on 2021-04-04 22:29:09
