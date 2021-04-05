@@ -15,10 +15,10 @@ module.exports={
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "",
-    "database": "pintame",
-    "host": "127.0.0.1",
+    "username": "marcelos",
+    "password": "Jose2017@",
+    "database": "marcelos_pintame",
+    "host": "mysql-marcelos.alwaysdata.net",
     "dialect": "mysql"
   }
 }
