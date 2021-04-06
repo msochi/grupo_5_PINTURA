@@ -17,7 +17,7 @@ module.exports ={
        const subfamilia = await db.Subfamilia.findAll();
        const terminacion = await db.Terminacion.findAll();
        const productos = await db.Productos.findAll();
-        res.render('./cargaProducto', {proveedores,marca,  tipo,subtipo, familia, subfamilia, terminacion,productos }) 
+        res.render('./cargaproducto', {proveedores,marca,  tipo,subtipo, familia, subfamilia, terminacion,productos }) 
     },
     //Tambien se puede hacer  de esta forma: formulario:
      //function(req,res){
@@ -106,7 +106,7 @@ module.exports ={
         })
         console.log(req.body.id_marca)
         //fs.writeFileSync(path.join(__dirname, '../database/productos.json'), JSON.stringify(productos))
-        res.redirect ("/cargaProducto");
+        res.redirect ("/cargaproducto");
     },
     //mostrar:  (req,res)=>{
        

@@ -18,7 +18,7 @@ module.exports ={
        db.Clientes.findByPk(req.params.id)
           .then((cliente) => {
             console.log(cliente);
-               res.render ('./modificarUsuario', {cliente, localidades, provincias})
+               res.render ('./modificarusuario', {cliente, localidades, provincias})
             } 
         )
 

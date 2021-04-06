@@ -20,7 +20,7 @@ module.exports ={
     const subfamilia = await db.Subfamilia.findAll();
     const terminacion = await db.Terminacion.findAll();
 
-    res.render ('./modificarProducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
+    res.render ('./modificarproducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
             
   },
  

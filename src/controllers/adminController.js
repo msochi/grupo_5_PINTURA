@@ -47,7 +47,7 @@ module.exports = {
                   res.cookie("recordamecheck",usuario.email, {maxAge: 7200000 })
                    
                 }
-                return  res.redirect ('/admin/consolaAdmin');
+                return  res.redirect ('/admin/consolaadmin');
                 }
 
             } 
@@ -127,7 +127,7 @@ mostrarUsuario: async function (req, res) {
          const subfamilia = await db.Subfamilia.findAll();
          const terminacion = await db.Terminacion.findAll();
          const productos = await db.Productos.findAll();
-          res.render('cargaProducto', {proveedores,marca,  tipo,subtipo, familia, subfamilia, terminacion,productos }) 
+          res.render('cargaproducto', {proveedores,marca,  tipo,subtipo, familia, subfamilia, terminacion,productos }) 
       },
       
       buscarMarca1: async (req,res)=>{
@@ -203,7 +203,7 @@ buscarProducto:  function (req,res){
 })
 .then(function (cliente) {                      
          //return res.json(cliente.id) ;                
-          res.redirect ('/admin/modificarProducto/'+cliente.id)
+          res.redirect ('/admin/modificarproducto/'+cliente.id)
           } 
     ) 
      .catch(function (error) {
@@ -224,7 +224,7 @@ mostrarProducto:  async (req,res)=>{
   const subfamilia = await db.Subfamilia.findAll();
   const terminacion = await db.Terminacion.findAll();
 
-  res.render ('./modificarProducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
+  res.render ('./modificarproducto', {productos:productos, proveedores,marca, tipo,subtipo,familia,subfamilia,terminacion })
           
 },
 

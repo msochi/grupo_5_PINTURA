@@ -15,7 +15,7 @@ module.exports ={
           //res.send("Bienvenidos al sitio")
         const provincias = await db.Provincias.findAll();
         const localidades = await db.Localidades.findAll();
-        res.render('./crearUsuario', {provincias, localidades})    
+        res.render('./crearusuario', {provincias, localidades})    
     },
     buscarLocalidad: async (req,res)=>{
         console.log(req.params.id)
@@ -82,7 +82,7 @@ module.exports ={
            // });
             
 
-            res.render("./crearUsuario", {
+            res.render("./crearusuario", {
                 
                 errors:errors.mapped(),  
                 old: req.body,
