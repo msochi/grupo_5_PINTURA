@@ -12,7 +12,7 @@ const {validationResult } = require("express-validator");
 module.exports = {
   login: function (req, res) {
     //res.send("Bienvenidos al sitio")
-    res.render("./login");
+    res.render("login");
   },
 
   checkUsuario: async function (req, res) {

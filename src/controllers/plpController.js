@@ -10,6 +10,13 @@ const db = require('../database/models')
 
 
 module.exports ={
+   log:  function (req,res){
+         
+      //res.send("Bienvenidos al sitio")
+      
+      res.redirect ('/login')
+  },
+
     plp:  async (req,res)=>{
         const productos = await db.Productos.findAll();
         //res.send("Bienvenidos al sitio")
@@ -119,7 +126,7 @@ module.exports ={
                 } 
             )    
       },
-
+      
 
     //   mostrarinterior: async function (req, res) {
         
