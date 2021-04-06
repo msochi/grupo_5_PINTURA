@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/PDP.CSS">
+               <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
+        <!-- Comentario vacio-->
+    
+        <title>Pint@me</title>
+    </head>
+<body>
+    <%- include('partials/Header.ejs') %>
+    </header>
+    <section class="general">
+        
+        <section class="contenedorProducto" ></section>
+           
+            <div class='contenidoPdp' <%= productos.id %>>      
+               
+            <div class="FotoDetalle"> <img src="<%= '/imagen_producto/'+ productos.imagen_producto %>" alt=""></div>
+          
+            <div class="DescripcionProducto">
+                <!--<h2>PINTURA KÖLOR <%= productos.id_familia %>&nbsp  <%= productos.marca %></h2>-->
+                <h2> <%= productos.titulo_producto %>&nbsp  </h2>
+                <!-- <h3>Latex Acrilico Premium Color Fucsia Pasión &nbsp<%= productos.id_subtipo %>&nbsp<%= productos.color %> </h3><br>-->
+             <!--<button type="submit" class="eleccionColor" name="Elegi el Color" value="">Elegi Color</button> <br><br><br> -->
+                <h1>$<%= productos.precio %></h1>    
+                
+                <h3>Financiación</h3><br>
+                <ul class="tarjetasPdp">
+                <li><img src="/images/logos/VISA.jpg"></li>
+                <li><img src="/images/logos/AMEX.jpg"</li>
+                <li><img src="/images/logos/MASTERCARD.jpg"></li>                
+                <li><img src="/images/logos/MERCADOPAGO.jpg"></li>
+                </ul> <br>
+                <button type="submit" class="Comprar" name="Comprar"><a href="/CheckOut" style="text-decoration: none; color: aliceblue;">COMPRAR</a></button>
+                <button type="submit" class="Agregar" name="Agregar"><a href="Carrito"> Agregar al Carro <i class="fas fa-cart-plus"></i></a> </button>
+                <br><br>
+                <ul class="estrellas">
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                    <li><i class="fas fa-star"></i></li>
+                </ul>
+            </div>
+        </section><br>
+
+        <section class="fichaTecnica">
+            <article>
+                <h2>DESCRIPCIÓN</h2><br>
+            <H5> <%= productos.descripcion %></H5>
+
+            </article><br> <br>
+
+            <table>
+                <tbody class="tabla">
+                    <tr>
+                        <td class="linea1">Categoría</td>
+                        <td><%= productos.id_familia %>&nbsp<%= productos.id_subtipo %></td>
+                    </tr>
+                    <tr>
+                        <td>Tiempo de espera entre manos</td>
+                        <td><%= productos.tiempo_entre_manos %></td>
+                    </tr>
+                    <tr>
+                        <td class="linea1" >Base</td>
+                        <td><%= productos.base %></td>
+                    </tr>
+                    <tr>
+                        <td class="linea1">Terminación</td>
+                        <td><%= productos.id_terminacion %></td>
+                    </tr>
+                    <tr>
+                        <td>Rendimiento</td>
+                        <td><%= productos.rendimiento %></td>
+                    </tr>
+                    <tr>
+                        <td>Tipo</td>
+                        <td><%= productos.id_subtipo %></td>
+                    </tr>
+                    <tr>
+                        <td>Marca</td>
+                        <td> <%= productos.id_marca %></td>
+                    </tr>
+                    <tr>
+                        <td>Uso recomendado</td>
+                        <td> <%= productos.uso_recomendado %></td>
+                    </tr>
+                    <tr>
+                        <td>Secado al tacto</td>
+                        <td> <%= productos.tiempo_de_secado %></td>
+                    </tr>
+                    <tr>
+                        <td>Contenido neto</td>
+                        <td> <%= productos.contenido_neto %></td>
+                    </tr>
+                    <tr>
+                        <td>Garantía</td>
+                        <td> <%= productos.garantia %></td>
+                    </tr>
+                     <tr>
+                        <td>Familia</td>
+                        <td><%= productos.id_familia %></td>
+                    </tr>
+                </tbody>  
+            </table><br>
+            <a href="/" class="volver">Volver</a> 
+          
+        </div>
+           
+
+        <!--</section>
+    </section><br><br>
+    <section class="Consultas">
+      <div class="QAClientes">  
+        <h2> PREGUNTAS</h2><br>
+        <textarea class="preguntas">           
+        </textarea> <br>
+        <button type="button" class="enviarpregunta" name="enviarpregunta">Enviar</button><br><br><br>
+        <h5> Juan</h5>
+        <h6>Hola, sirve para paredes sin enduir? Vienen tachos mas grandes?</h6>
+        <h5 class="Respuestas"> PINTAME</h5>
+        <h6 class="RespuestaPintame">Hola Juan, si sirve para todo tipo de paredes pero recomendamos enduir primero. Viene en presentaciones de 10 y 20lts también</h6>
+        <h5> Pedro</h5>
+        <h6>Consulta, seca rápido y sirve para metales?</h6>
+        <h5 class="Respuestas"> PINTAME</h5>
+        <h6 class="RespuestaPintame">Hola Pedro, si seca en una hora y podes darle más manos para un mejor acabado. Sirve para metales también </h6><br>
+
+    </div> -->
+    <div class="bannerPDP"> <img src="/images/logos/AHORA12CUADRADO.png"></div>
+
+    </section><br>
+    <%- include('partials/Footer.ejs') %>   
+
+    </body>
+
