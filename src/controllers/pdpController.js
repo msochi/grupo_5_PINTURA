@@ -28,7 +28,7 @@ module.exports ={
         {
             //res.send (productos.datavalues)
            //return res.json(productos);
-          res.render('pdp', {productos:productos,marcas })
+          res.render('./pdp', {productos:productos,marcas })
       })
     })
 
