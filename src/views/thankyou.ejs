@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('Head.ejs') %>
+    <%- include('partials/Head.ejs') %>
 <body>
+    <%- include('partials/Header.ejs') %>
     <header class="cabecera">
         <a href="/" class="logo"><img src="./images/logos/Pintamev2.png" alt="" ></a> 
         <div class="opcionesHeader">
@@ -38,12 +39,12 @@
             </ul><br><br>
             <button type="submit" name="entrar" class="enviar">Enviar</button><br><br>
 
-            <a href="./index.html" class="SeguirComprando">Seguir Comprando</a> 
+            <a href="/" class="SeguirComprando">Seguir Comprando</a> 
         </div>
 
 
     </section>
 
-    <%- include('Footer.ejs') %>   
+    <%- include('partials/Footer.ejs') %>    
 
 </body>    
