@@ -68,6 +68,7 @@
             <section>
                 <section class = "productosCard">
                     <div class ='productosPlp'> 
+                    <% console.log(productos[0])%>
                     <% for( let i = 0; i < productos.length; i++ ) { %>
                          
                         <a href="/pdp/<%= productos[i].id%>" class="card">
@@ -75,9 +76,10 @@
                             <img src="<%= '/imagen_producto/'+ productos[i].imagen_producto %>" alt=""> <br>
                             <h6>Código:<%= productos[i].sku %></h2></p>
                                 <p>
-                                    <!--*<%= productos[i].marcas.marca %>&nbsp-->
+                                    <%= productos[i].marcas.marca %>
                                    <%= productos[i].titulo_producto %>&nbsp
-                                   <!--<%= productos[i].color %>&nbsp</p>-->
+                                   <%= productos[i].color %>&nbsp
+                                </p>
                                <p>  <h4 class='precio'>$ <%= productos[i].precio %></h4> </p>
                                                   
                         </a>    

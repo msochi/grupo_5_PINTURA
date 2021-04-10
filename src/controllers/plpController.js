@@ -6,6 +6,9 @@
 //productos = JSON.parse (productos)
 const path = require('path');
 const db = require('../database/models')
+const Sequelize = require('sequelize');
+const Marcas = require("../database/models/Marcas");
+const Op = Sequelize.Op;
 
 
 
@@ -17,15 +20,62 @@ module.exports ={
       res.redirect ('/login')
   },
 
-    plp:  async (req,res)=>{
-        const productos = await db.Productos.findAll();
-        //res.send("Bienvenidos al sitio")
-        
-        res.render ('./plp')
+    plp:  async (req,res) => {
+
+      if (req.query.text) {
+         console.log("Hay input");
+         let productos = await db.Productos.findAll({
+            where: {
+               [Op.or]:
+                   [
+                        {
+                           titulo_producto: {
+                              [Op.like]: `%${req.query.text}%`
+                           }
+                        },
+                       {
+                           '$marcas.marca$': {
+                               [Op.like]: `%${req.query.text}%`
+                           }
+                       },
+                       {
+                           '$proveedores.proveedor$': {
+                              [Op.like]: `%${req.query.text}%`
+                           }
+                        },
+                        {
+                           '$tipo.tipo$': {
+                              [Op.like]: `%${req.query.text}%`
+                        }
+                        },
+                        // {
+                        //    '$subtipo.tipo$': {
+                        //       [Op.like]: `%${req.query.text}%`
+                        //    }
+                        // }
+                   ]
+           },
+           include: [
+               {association: 'marcas'},
+               {association: 'proveedores'},
+               {association: 'tipo'},
+               // {association: 'subtipo'},
+            ],
+             
+        })
+         console.log(productos);
+         res.render ('plp',{productos: productos})
+
+      } else {
+
+         console.log ('Estoy buscando todo')            
+         let productos = await db.Productos.findAll({
+            include: [{association: 'marcas'} ],      
+         })
+         res.render ('plp',{productos: productos})
+      }
+            
     },
-
-
-
 
     interior:  async function (req,res){       
         
@@ -43,7 +93,7 @@ module.exports ={
         .then( function (marcas)
              {
                  console.log( productos)
-                res.render ('plp',{productos: productos, marcas})
+                res.render ('plp',{productos: productos})
              }
                 )
         
@@ -67,8 +117,8 @@ module.exports ={
          db.Marcas.findAll()
         .then( function (marcas)
              {
-                 console.log( productos)
-                res.render ('plp',{productos: productos, marcas})
+                  console.log(productos)
+                  res.render ('plp',{productos: productos, marcas})
              }
                 )
         
