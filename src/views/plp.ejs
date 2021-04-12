@@ -22,7 +22,7 @@
         <article class="menuMasTachos">
             <aside>
                 <div>
-                    <h2>Tipo de pinturas</h2>
+                    <h4>Tipo de pinturas</h4>
                     <ul>
                         <li>Al agua</li>
                         <li>Esmalte acrílico</li>
@@ -30,7 +30,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h2>Marcas</h2>
+                    <h4>Marcas</h4>
                     <ul>
                         <li>Alba</li>
                         <li>Tersuave</li>
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h2>Financiación</h2>
+                    <h4>Financiación</h4>
                     <ul>
                         <li>Ahora 12</li>
                         <li>Ahora 18</li>
@@ -48,14 +48,14 @@
                     </ul>
                 </div>
                 <div>
-                    <h2>Precio</h2>
+                    <h4>Precio</h4>
                     <ul>
                         <li>Desde: -------- </li>
                         <li>Hasta: -------- </li>
                     </ul>
                 </div>
                 <div>
-                    <h2>Opinión de Clientes</h2>
+                    <h4>Opinión de Clientes</h4>
                     <ul class="estrellas">
                         <li><i class="fas fa-star"></i></li>
                         <li><i class="fas fa-star"></i></li>
@@ -65,13 +65,25 @@
                     </ul>
                 </div>
             </aside>
-            <section class = "ProductosCard">
-                <% for( let i = 0; i < productos.length; i++ ) { %>
-                    <a href="/pdp/<%= productos[i].id %>" class="card">
-                        <h2><%= productos[i].color %></h2>
-                        <img src="<%= productos[i].imagen_producto %>" alt="">
-                    </a>
-                <% } %>
+            <section>
+                <section class = "productosCard">
+                    <div class ='productosPlp'> 
+                    <% for( let i = 0; i < productos.length; i++ ) { %>
+                         
+                        <a href="/pdp/<%= productos[i].id%>" class="card">
+                                                       
+                            <img src="<%= '/imagen_producto/'+ productos[i].imagen_producto %>" alt=""> <br>
+                            <h6>Código:<%= productos[i].sku %></h2></p>
+                                <p>
+                                    <!--*<%= productos[i].marcas.marca %>&nbsp-->
+                                   <%= productos[i].titulo_producto %>&nbsp
+                                   <!--<%= productos[i].color %>&nbsp</p>-->
+                               <p>  <h4 class='precio'>$ <%= productos[i].precio %></h4> </p>
+                                                  
+                        </a>    
+                    
+                    <% } %>
+                </section>
             </section>
         </article>
         <article>

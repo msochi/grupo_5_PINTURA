@@ -76,8 +76,29 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER.UNSIGNED,
             notNull: true
         },
+        promo: {
+            type: dataTypes.STRING(),
+            notNull: true
+        },    
+        precio: {
+            type: dataTypes.DECIMAL(),
+            notNull: true
+        },    
+        costo: {
+            type: dataTypes.DECIMAL(),
+            notNull: true
+        },    
+
         imagen_producto: {
             type: dataTypes.STRING(),
+            notNull: true
+        },
+        titulo_producto: {
+            type: dataTypes.STRING(),
+            notNull: true
+        },
+        descripcion: {
+            type: dataTypes.STRING(300),
             notNull: true
         },
     }
@@ -96,44 +117,73 @@ module.exports = function(sequelize, dataTypes) {
         Productos.belongsTo(models.Marcas, {
             as: 'marcas',
             foreignKey: 'id_marca',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Subtipo, {
             as: 'subtipo',
             foreignKey: 'id_subtipo',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Tipo, {
             as: 'tipo',
             foreignKey: 'id_tipo',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Subfamilia, {
             as: 'subfamilia',
             foreignKey: 'id_subfamilia',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Familia, {
             as: 'familia',
             foreignKey: 'id_familia',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Terminacion, {
             as: 'terminacion',
             foreignKey: 'id_terminacion',
-        } )
-    }
-    Productos.associate = function (models){ 
+        } ),
         Productos.belongsTo(models.Proveedores, {
             as: 'proveedores',
             foreignKey: 'id_proveedor',
+        } ),
+        Productos.hasMany(models.Ventas, {
+            as: 'ventas',
+            foreignKey: 'id_producto',
         } )
-    }  
+        
+    }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Subtipo, {
+    //         as: 'subtipo',
+    //         foreignKey: 'id_subtipo',
+    //     } )
+    // }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Tipo, {
+    //         as: 'tipo',
+    //         foreignKey: 'id_tipo',
+    //     } )
+    // }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Subfamilia, {
+    //         as: 'subfamilia',
+    //         foreignKey: 'id_subfamilia',
+    //     } )
+    // }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Familia, {
+    //         as: 'familia',
+    //         foreignKey: 'id_familia',
+    //     } )
+    // }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Terminacion, {
+    //         as: 'terminacion',
+    //         foreignKey: 'id_terminacion',
+    //     } )
+    // }
+    // Productos.associate = function (models){ 
+    //     Productos.belongsTo(models.Proveedores, {
+    //         as: 'proveedores',
+    //         foreignKey: 'id_proveedor',
+    //     } )
+    // }  
    
 
     return Productos

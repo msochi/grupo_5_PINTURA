@@ -5,50 +5,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-               <link rel="stylesheet" href="/stylesheets/PDP.CSS">
+        <link rel="stylesheet" href="/stylesheets/PDP.CSS">
                <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
         
     
         <title>Pint@me</title>
     </head>
 <body>
-    <header class="cabecera">
-        <a href="/" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
-        <div class="opcionesHeader">
-             <input class="busqueda" type="text" placeholder=" Encontra lo que buscas">
-            <button><a href="#" id="Lupa"> <i id="Lupa" class="fas fa-search" ></i></a> </button>
-        </div>
-       
-        <nav class="Header">
-            <ul>
-                <li class="carrito"><a href="Carrito"> Mi Carrito <i class="fas fa-cart-plus"></i></a> </li>
-                 <li class="Ingresar"><a href="./Login">Ingresar <i class="far fa-user"></i> </a></li>
-            </ul>
-        </nav>
-        <div class="MenuHorizontal">
-            <a href="#">PINTURA INTERIOR</a>
-            <a href="#">PINTURA EXTERIOR</a>
-            <a href="#">DECORACION</a>
-            <a href="#">HERRAMIENTAS Y ACCESORIOS</a>
-            
-        </div>
+    <%- include('partials/Header.ejs') %>
     </header>
     <section class="general">
-        <section class="ContenedorProducto" >
-            <div class="FotoDetalle"> <img src="<%=producto.imagen_producto%>"></div>
+        
+        <section class="contenedorProducto" ></section>
+           
+            <div class='contenidoPdp' <%= productos.id %>>      
+
+               
+            <div class="FotoDetalle"> <img src="<%= '/imagen_producto/'+ productos.imagen_producto %>" alt=""></div>
+          
             <div class="DescripcionProducto">
-                <h2><%=producto.color%> <%=producto.base%></h2>
-                <h3>Latex Acrilico Premium Color Fucsia Pasión</h3><br>
-             <button type="submit" class="eleccionColor" name="Elegi el Color" value="">Elegi Color</button> <br><br><br>
-                <h1>$5.000</h1>    
+                <!--<h2>PINTURA KÖLOR <%= productos.id_familia %>&nbsp  <%= productos.marca %></h2>-->
+                <h2> <%= productos.titulo_producto %>&nbsp  </h2>
+                <!-- <h3>Latex Acrilico Premium Color Fucsia Pasión &nbsp<%= productos.id_subtipo %>&nbsp<%= productos.color %> </h3><br>-->
+             <!--<button type="submit" class="eleccionColor" name="Elegi el Color" value="">Elegi Color</button> <br><br><br> -->
+                <h1>$<%= productos.precio %></h1>    
+                
                 <h3>Financiación</h3><br>
                 <ul class="tarjetasPdp">
-                <li><img src="./images/logos/VISA.jpg"></li>
-                <li><img src="./images/logos/AMEX.jpg"></li>
-                <li><img src="./images/logos/MASTERCARD.jpg"></li>                
-                <li><img src="./images/logos/MERCADOPAGO.jpg"></li>
+                <li><img src="/public/images/logos/VISA.jpg"></li>
+                <li><img src="/public/images/logos/AMEX.jpg"</li>
+                <li><img src="public/images/logos/MASTERCARD.jpg"></li>                
+                <li><img src="/public/images/logos/MERCADOPAGO.jpg"></li>
                 </ul> <br>
-                <button type="submit" class="Comprar" name="Comprar">COMPRAR</button>
+                <button type="submit" class="Comprar" name="Comprar"><a href="/CheckOut" style="text-decoration: none; color: aliceblue;">COMPRAR</a></button>
                 <button type="submit" class="Agregar" name="Agregar"><a href="Carrito"> Agregar al Carro <i class="fas fa-cart-plus"></i></a> </button>
                 <br><br>
                 <ul class="estrellas">
@@ -68,13 +57,7 @@
         <section class="fichaTecnica">
             <article>
                 <h2>DESCRIPCIÓN</h2><br>
-            <H5>¿Sabías que utlizando latex mate premium de 4 litros de Kölor podes brindarle un look nuevo y único a tu casa o departamento?<br> En Sodimac contamos con una amplia selección de latex mate para exterior Vermol donde es posible comprarlo en distintas presentaciones y tamaños.
-            Tenemos las mejores ofertas de latex para exterior como para interior. <b>PINTAME</b> contamos con la mayor variedad de latex interior, para ayudarte a que paredes cobren vida y tus proyectos se hagan realidad.
-            Excelente acabado, de fácil aplicación y simple para limpiar.
-
-            ¡¡¡Dale vida a tus ambientes!!! <b>PINTAME</b> es tu mejor elección y contas con el mejor asesoramiento online.            
-                </H5>
-
+            <H5> <%= productos.descripcion %></H5>
 
             </article><br> <br>
 
@@ -82,56 +65,60 @@
                 <tbody class="tabla">
                     <tr>
                         <td class="linea1">Categoría</td>
-                        <td>Pintura látex</td>
+                        <td><%= productos.id_familia %>&nbsp<%= productos.id_subtipo %></td>
                     </tr>
                     <tr>
                         <td>Tiempo de espera entre manos</td>
-                        <td>4 horas</td>
+                        <td><%= productos.tiempo_entre_manos %></td>
                     </tr>
                     <tr>
                         <td class="linea1" >Base</td>
-                        <td>Al Agua</td>
+                        <td><%= productos.base %></td>
                     </tr>
                     <tr>
                         <td class="linea1">Terminación</td>
-                        <td>Mate</td>
+                        <td><%= productos.id_terminacion %></td>
                     </tr>
                     <tr>
                         <td>Rendimiento</td>
-                        <td>12 a 16 m2/l por mano</td>
+                        <td><%= productos.rendimiento %></td>
                     </tr>
                     <tr>
                         <td>Tipo</td>
-                        <td>Látex interior</td>
+                        <td><%= productos.id_subtipo %></td>
                     </tr>
                     <tr>
                         <td>Marca</td>
-                        <td>Kölor</td>
+                        <td> <%= productos.id_marca %></td>
                     </tr>
                     <tr>
                         <td>Uso recomendado</td>
-                        <td>Interior</td>
+                        <td> <%= productos.uso_recomendado %></td>
                     </tr>
                     <tr>
                         <td>Secado al tacto</td>
-                        <td>1 hora</td>
+                        <td> <%= productos.tiempo_de_secado %></td>
                     </tr>
                     <tr>
                         <td>Contenido neto</td>
-                        <td>4 Litros</td>
+                        <td> <%= productos.contenido_neto %></td>
                     </tr>
                     <tr>
                         <td>Garantía</td>
-                        <td><%=producto.garantia%></td>
+                        <td> <%= productos.garantia %></td>
                     </tr>
                      <tr>
                         <td>Familia</td>
-                        <td>Pinturas Interior</td>
+                        <td><%= productos.id_familia %></td>
                     </tr>
                 </tbody>  
             </table><br>
             <a href="./index.html" class="volver">Volver</a> 
-        </section>
+          
+        </div>
+           
+
+        <!--</section>
     </section><br><br>
     <section class="Consultas">
       <div class="QAClientes">  
@@ -148,11 +135,11 @@
         <h5 class="Respuestas"> PINTAME</h5>
         <h6 class="RespuestaPintame">Hola Pedro, si seca en una hora y podes darle más manos para un mejor acabado. Sirve para metales también </h6><br>
 
-    </div> 
-    <div class="bannerPDP"> <img src="./images/logos/AHORA12CUADRADO.png"></div>
-
+    </div> -->
+    <div class="bannerPDP"> <img src="./public/images/logos/AHORA12CUADRADO.png"></div>
 
     </section><br>
     <%- include('partials/Footer.ejs') %>   
 
     </body>
+

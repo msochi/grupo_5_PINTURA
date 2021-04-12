@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/Estilo-Alta.css">
     <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
     
-
+  
     <title>Pint@me</title>
 </head>
 <body>
@@ -18,11 +18,11 @@
 
     <section class="contenedor">              
         
-    <form action="/modificarUsuario/<%=cliente.id%>" method="POST" enctype="multipart/form-data">
+    <form action="/admin/modificarusuario/<%=cliente.id%>" method="POST" enctype="multipart/form-data">
         <div class="ingreso">
-            <h2>Registrate :)</h2> <hr class="hrcolor">
-            <h4>Datos para iniciar sesión</h4><br>
-            <h6>Ingresá tu dirección de email y contraseña con los que iniciarás sesión.</h6>
+            <h2>Vas a Actualizar tus datos</h2> <hr class="hrcolor">
+            <h4>Revisa tus datos para iniciar sesión</h4><br>
+            <h6>Revisa nuevamente tu dirección de email y contraseña con los que iniciarás sesión.</h6>
                 <label for="email">Correo electronico</label><br>
                 <input type="email" id= 'email'name="email" value="<%= (typeof old != 'undefined' && !errors.email) ? old.email : cliente.email %>" placeholder="Ingresa tu email"><br>
                 <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small> <br>
@@ -32,7 +32,9 @@
                 <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small> <br>
                   
                 <label for="imagenProducto">Carga tu imagen o avatar</label> <br>
-                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>            
+                <input type="file" name="avatar" id= 'avatar' class= 'form-control-file'> <br>    
+                <label for="tipo">Tipo de Usuario: Admin o Usuario</label><br>
+                <input type="number" min="0" max="1" id='tipo' name="tipo" value= "<%= cliente.tipo%>" placeholder="Ingresa 1 para Admin o 0 para user"> <br>        
         </div>
 
         <div class="ingreso2">
@@ -62,8 +64,8 @@
                         <% } %>  
                     <% } %>
                 </select><br>
-                <label for="zipcode">Código Postal*</label><br>
-                <input type="text" id='zipcode' name="zipcode" value= "<%= cliente.codigoPostal%>" placeholder="Ingresa tu Código Postal"> <br>
+                <label for="codigo_Postal">Código Postal*</label><br>
+                <input type="codigo_Postal" id='codigo_Postal' name="codigo_Postal" value= "<%= cliente.codigoPostal%>" placeholder="Ingresa tu Código Postal"> <br>
                 <label for="province">Provincia*</label><br>
                 <!-- <input type="text" id='province' name="province" value="" placeholder="Ingresa tu Provincia"> <br> -->
                 <select name="id_provincia" id="id_provincia">
@@ -110,5 +112,5 @@
         </div>
      </footer>
 
-
+     <script src ='/js/filterCrearUsuario.js'></script>
 </body>
