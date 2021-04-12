@@ -1,10 +1,11 @@
 <!DOCTYPE html >
 <html lang="en">
     <%- include('partials/Head.ejs') %>
-
+    <script src="/js/agregadocarro.js"type="text/javascript"></script>
 <body>
+
    <%- include ('partials/Header.ejs')%>
-   
+ 
   
     <div class="Vitrina">
         <a href="#" class="InteriorVitrina">
@@ -35,7 +36,7 @@
           
             <% for( let i = 0; i < productos.length; i++ ) { %>
                 <%    if(productos[i].promo == "si"){ %>
-                         
+                    
                 <a href="/pdp/<%= productos[i].id%>" class="card">
                                                
                     <img src="<%= '/imagen_producto/'+ productos[i].imagen_producto %>" alt=""> <br>
@@ -44,14 +45,14 @@
                             <!--*<%= productos[i].marcas.marca %>&nbsp-->
                            <%= productos[i].titulo_producto %>&nbsp
                            <!--<%= productos[i].color %>&nbsp</p>-->
-                       <p>  <h4 class='precio'>$ <%= productos[i].precio %></h4> </p>
-                                          
-                </a>    
-               
+                       <p>  <h4 class='precio'>$ <%= productos[i].precio %></h4>  </p>
+                    </a>  
+                
                 <% } %> 
+               
             <% } %>
 
-
+           
 
 
 
@@ -69,5 +70,7 @@
 
      <%- include('partials/Footer.ejs') %>    
      <script src="/js/functions.js" type="text/javascript"> </script>
+     
+     <script src="/js/carrito.js"type="text/javascript"></script>
 </body>
 </html>

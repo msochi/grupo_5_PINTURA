@@ -1,57 +1,47 @@
 <!DOCTYPE html>
+
+
 <html lang="en">
     <%- include('partials/Head.ejs') %>
+    
 <body>
     <header>
-        <div class="menuSuperior">
-            <a href="/" class="logo"> <img src="    /images/logos/Pintamev2.png" alt="Logo de la empresa"> </a>
-            <div class="barraBuscadora">
-                <input class="busqueda" type="text" placeholder=" Encontra lo que buscas">
-                <button><a href="#" id="Lupa"> <i id="Lupa" class="fas fa-search" ></i></a> </button>
-            </div>
-            <div class="mainIcons">
-                <ul>
-                    <li>
-                        <a href="Carrito"> <span> Mi Carrito </span> <i class="fas fa-cart-plus"></i></a>
-                    </li>
-                    <li>
-                        <a href="Ingresar"> <span> Ingresar </span> <i class="far fa-user"></i> </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="menuInferior">
-            <a href="#">PINTURA INTERIOR</a>
-            <a href="#">PINTURA EXTERIOR</a>
-            <a href="#">DECORACION</a>
-            <a href="#">HERRAMIENTAS Y ACCESORIOS</a>
-        </div>
+        <%- include ('partials/Header.ejs')%>   
     </header>
     <main>
         <article>
             <h1>Mi Carrito</h1>
             <article class="articleDeCompras">
-                <div class="marcoyprecio">
-                    <div class="marcoFoto"><img src="./images/kolor 2.jfif" alt="Balde de pintura"></div>
-                    <h2>Pinturita 1</h2>
-                    <h2>$100</h2>
-                </div>
-                <div class="marcoyprecio">
-                    <div class="marcoFoto"><img src="./images/kolor 3.jfif" alt="Balde de pintura"></div>
-                    <h2>Pinturita 2</h2>
-                    <h2>$100</h2>
-                </div>
-                <div class="marcoyprecio">
-                    <div class="marcoFoto"><img src="./images/kolor 4.jfif" alt="Balde de pintura"></div>
-                    <h2>Pinturita 3</h2>
-                    <h2>$100</h2>
-                </div>
-                <div class="marcoyprecio">
-                    <div class="marcoFoto"><img src="./images/kolor 5.jfif" alt="Balde de pintura"></div>
-                    <h2>Pinturita 4</h2>
-                    <h2>$100</h2>
-                </div>
-        </article>
+               <!-- <div class="mostrarCarro">
+                <div class="ordenes">
+                    <img src="${item.imagen}" alt="">
+                    <h3 class ="sku">${item.sku} </h3>
+                    <h3 class= "descripcion">${item.descripcion}</h3>
+                    <h3 class="cantidad> ${item.cantidad} </h3>
+                    <h3 class"precio"> ${item.precio} </h3>
+                    <div class ="remover"><button>Eliminar</button></div>
+                 </div>
+            </div> -->
+                <div class="cartBox">
+                    <div class="cart">
+                   <div class="itemsOrden">
+                        <img src="${item.imagen}" alt="">
+                        <div class ="sku"> <h2> SKU</h2> </div>
+                        <div class ="descripcion"> <h2> DESCRIPCION</h2> </div>
+                        <div class ="cantidad"> <h2> CANTIDAD</h2> </div>
+                        <div class ="preciofinal"> <h2> PRECIO</h2> </div>
+                        <div class ="totalcompra"> <h2> TOTAL</h2> </div>
+                   </div>
+                   <div class="mostrarCarro">  </div>
+                  
+                   
+                   
+                   
+                        <!-- <table class "orden"></table> -->
+                    </div>
+                </div>             
+              
+            </article>
         </article>
         <br>
         <hr>
@@ -84,7 +74,7 @@
             </ul>    
         </div>
         <div class="logo-footer">
-            <img src="./images/logos/Pintame v2.png">
+            <img src="/images/logos/Pintamev2.png">
         </div>
         <div class="redesSociales">
             <a href="#"><i class="fab fa-youtube"></i></a>
@@ -93,5 +83,9 @@
            
         </div>
      </footer>
+     <script src="/js/agregadocarro.js"type="text/javascript"></script>
+     <script src="/js/carrito.js"type="text/javascript"></script>
+
+
 </body>
 </html>

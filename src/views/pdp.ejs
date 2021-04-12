@@ -6,12 +6,15 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/PDP.CSS">
-               <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/stylesheets/head.css">
+        <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
         <!-- Comentario vacio-->
-    
+       
+
         <title>Pint@me</title>
     </head>
 <body>
+    <header>
     <%- include('partials/Header.ejs') %>
     </header>
     <section class="general">
@@ -23,6 +26,8 @@
             <div class="FotoDetalle"> <img src="<%= '/imagen_producto/'+ productos.imagen_producto %>" alt=""></div>
           
             <div class="DescripcionProducto">
+                <h6> <%= productos.sku %></h6>
+                
                 <!--<h2>PINTURA KÖLOR <%= productos.id_familia %>&nbsp  <%= productos.marca %></h2>-->
                 <h2> <%= productos.titulo_producto %>&nbsp  </h2>
                 <!-- <h3>Latex Acrilico Premium Color Fucsia Pasión &nbsp<%= productos.id_subtipo %>&nbsp<%= productos.color %> </h3><br>-->
@@ -36,8 +41,10 @@
                 <li><img src="/images/logos/MASTERCARD.jpg"></li>                
                 <li><img src="/images/logos/MERCADOPAGO.jpg"></li>
                 </ul> <br>
-                <button type="submit" class="Comprar" name="Comprar"><a href="/CheckOut" style="text-decoration: none; color: aliceblue;">COMPRAR</a></button>
-                <button type="submit" class="Agregar" name="Agregar"><a href="carrito"> Agregar al Carro <i class="fas fa-cart-plus"></i></a> </button>
+                <div class=' seccionBotones'>
+                <div><button type="submit" class="Comprar" name="Comprar"><a href="/micarrito" style="text-decoration: none; color: aliceblue;">COMPRAR</a></button></div>
+                <div><button type="submit" class="agregar" name="agregar">Agregar al Carro <i class="fas fa-cart-plus"></i> </button></div>
+                </div>
                 <br><br>
                 <ul class="estrellas">
                     <li><i class="fas fa-star"></i></li>
@@ -132,9 +139,11 @@
 
     </div> -->
     <div class="bannerPDP"> <img src="/images/logos/AHORA12CUADRADO.png"></div>
-
+   
     </section><br>
     <%- include('partials/Footer.ejs') %>   
-
+    <script src="/js/carrito.js"type="text/javascript"></script>
+    <script src="/js/agregadocarro.js"type="text/javascript"></script>
+    
     </body>
 
