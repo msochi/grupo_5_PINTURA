@@ -7,7 +7,7 @@
 const path = require('path');
 const db = require('../database/models')
 const Sequelize = require('sequelize');
-const Marcas = require("../database/models/Marcas");
+// const Marcas = require("../database/models/Marcas");
 const Op = Sequelize.Op;
 
 
@@ -22,9 +22,9 @@ module.exports ={
 
     plp:  async (req,res) => {
 
-      if (req.query.text) {
+      if (req.query.text || req.query.marca || req.query.tipo || req.query.min || req.query.max) {
          console.log("Hay input");
-         let productos = await db.Productos.findAll({
+         var productos = await db.Productos.findAll({
             where: {
                [Op.or]:
                    [
@@ -33,47 +33,41 @@ module.exports ={
                               [Op.like]: `%${req.query.text}%`
                            }
                         },
+                        {
+                           precio: {
+                              [Op.gte]: `${req.query.min}`
+                           }
+                        },
                        {
                            '$marcas.marca$': {
-                               [Op.like]: `%${req.query.text}%`
+                               [Op.like]: `${(req.query.marca ? req.query.marca : req.query.text)}`
                            }
                        },
-                       {
-                           '$proveedores.proveedor$': {
-                              [Op.like]: `%${req.query.text}%`
-                           }
-                        },
                         {
                            '$tipo.tipo$': {
-                              [Op.like]: `%${req.query.text}%`
+                              [Op.like]: `${(req.query.tipo ? req.query.tipo : req.query.text)}`
                         }
-                        },
-                        // {
-                        //    '$subtipo.tipo$': {
-                        //       [Op.like]: `%${req.query.text}%`
-                        //    }
-                        // }
+                     }
                    ]
            },
            include: [
                {association: 'marcas'},
-               {association: 'proveedores'},
                {association: 'tipo'},
-               // {association: 'subtipo'},
             ],
              
         })
-         console.log(productos);
-         res.render ('plp',{productos: productos})
-
+         // console.log(productos);
       } else {
-
          console.log ('Estoy buscando todo')            
-         let productos = await db.Productos.findAll({
+         var productos = await db.Productos.findAll({
             include: [{association: 'marcas'} ],      
          })
-         res.render ('plp',{productos: productos})
       }
+      const marcas = await db.Marcas.findAll();
+      const tipos = await db.Tipo.findAll();
+      let marca_selected = (req.query.marca ? req.query.marca : " ");
+      let tipo_selected = (req.query.tipo ? req.query.tipo : " ");
+      res.render ('plp',{productos: productos, marcas, tipos, marca_selected, tipo_selected})
             
     },
 
@@ -81,100 +75,69 @@ module.exports ={
         
         console.log ('Estoy buscando interior')        
            
-        await db.Productos.findAll({
+        const productos = await db.Productos.findAll({
           where: {
               id_subfamilia: 3,
                  },
          include: [{association: 'marcas'} ],
            
       })
-      .then( function (productos) {       
-         db.Marcas.findAll()
-        .then( function (marcas)
-             {
-                 console.log( productos)
-                res.render ('plp',{productos: productos})
-             }
-                )
-        
-                //return res.json(interior) ;                
-               
-                } 
-            )    
+
+         console.log( productos)
+         const marcas = await db.Marcas.findAll();
+         const tipos = await db.Tipo.findAll();
+         res.render ('plp',{productos: productos, marcas, tipos})
+  
       },
 
       exterior:  async function (req,res){       
         
         console.log ('Estoy buscando interior')        
            
-        await db.Productos.findAll({
+        const productos = await db.Productos.findAll({
           where: {
               id_subfamilia: 1,
                  },
          include: [{association: 'marcas'} ]      
       })
-      .then( function (productos) {       
-         db.Marcas.findAll()
-        .then( function (marcas)
-             {
+
                   console.log(productos)
-                  res.render ('plp',{productos: productos, marcas})
-             }
-                )
-        
-                //return res.json(interior) ;                
-               
-                } 
-            )    
+                  const marcas = await db.Marcas.findAll();
+                  const tipos = await db.Tipo.findAll();
+                  res.render ('plp',{productos: productos, marcas, tipos})
+
       },
-      decoracion:  function (req,res){       
+      decoracion:  async function (req,res){       
         
-        console.log ('Estoy buscando interior')        
-      const marcas= db.Marcas.findAll ();     
-         db.Productos.findAll({
+        console.log ('Estoy buscando interior')            
+        const productos = db.Productos.findAll({
           where: {
               id_subfamilia: 4,
                  },
          include: [{association: 'marcas'} ]      
       })
-      .then( function (productos) {       
-         //db.Marcas.findAll()
-       // .then( function (marcas)
-            // {
-                 //console.log( productos)
-                res.render ('plp',{productos: productos, marcas})
-            // }
-                //)
-        
-                //return res.json(interior) ;                
-               
-                } 
-            )    
+         const marcas = await db.Marcas.findAll();
+         const tipos = await db.Tipo.findAll();
+         res.render ('plp',{productos: productos, marcas, tipos})
+    
       },
 
       herramientas:  async function (req,res){       
         
         console.log ('Estoy buscando interior')        
            
-        await db.Productos.findAll({
+        const productos = await db.Productos.findAll({
           where: {
               id_subfamilia: 2,
                  },
          include: [{association: 'marcas'} ]      
       })
-      .then( function (productos) {       
-         db.Marcas.findAll()
-        .then( function (marcas)
-             {
-                 console.log( productos)
-                res.render ('plp',{productos: productos, marcas})
-             }
-                )
-        
-                //return res.json(interior) ;                
-               
-                } 
-            )    
+      
+         console.log( productos)
+         const marcas = await db.Marcas.findAll();
+         const tipos = await db.Tipo.findAll();
+         res.render ('plp',{productos: productos, marcas, tipos})
+             
       },
       
 

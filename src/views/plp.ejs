@@ -21,54 +21,53 @@
         <h1>Oportunidades de la semana</h1>
         <article class="menuMasTachos">
             <aside>
+                <form action="/plp" method="GET">
                 <div>
                     <h4>Tipo de pinturas</h4>
                     <ul>
-                        <li>Al agua</li>
-                        <li>Esmalte acrílico</li>
-                        <li>Esmalte sintético</li>
+                        <li>Al agua <input type="checkbox" name="text" value="agua"></li>
+                        <li>Esmalte acrílico <input type="checkbox" name="text" value="acrilico"></li>
+                        <li>Esmalte sintético <input type="checkbox" name="text" value="sintetico"></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Marcas</h4>
-                    <ul>
-                        <li>Alba</li>
-                        <li>Tersuave</li>
-                        <li>Sinteplast</li>
-                        <li>SW</li>
-                    </ul>
-                </div>
+                    <select name="marca">
+                    <option value="<%= marca_selected %>" selected="selected"><%= marca_selected %></option>
+                     <% for( let i = 0; i < marcas.length; i++ ) { %>
+                        <option value= "<%= marcas[i].marca%>">
+                            <%= marcas[i].marca%>
+                        </option> 
+                    <% } %>
+                </select>
+                </div> 
                 <div>
-                    <h4>Financiación</h4>
-                    <ul>
-                        <li>Ahora 12</li>
-                        <li>Ahora 18</li>
-                        <li>Mercado Pago</li>
-                        <li>BBVA</li>
-                    </ul>
-                </div>
+                    <h4>Tipo</h4>
+                    <select name="tipo">
+                        <option value="<%= tipo_selected %>" selected="selected"><%= tipo_selected %></option>
+                        <% for( let i = 0; i < tipos.length; i++ ) { %>
+                           <option value= "<%= tipos[i].tipo%>">
+                               <%= tipos[i].tipo%>
+                           </option> 
+                       <% } %>
+                   </select>
+                </div> 
                 <div>
                     <h4>Precio</h4>
                     <ul>
-                        <li>Desde: -------- </li>
-                        <li>Hasta: -------- </li>
+                        <li>Desde: <input class="precioMin"  type="number" placeholder="Precio mínimo" name="min"> </li>
+                        <li>Hasta: <input class="precioMax"  type="number" placeholder="Precio máximo" name="max"> </li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Opinión de Clientes</h4>
-                    <ul class="estrellas">
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                        <li><i class="fas fa-star"></i></li>
-                    </ul>
+                    <h4>&nbsp</h4>
+                    <button type="submit">Buscar</button>
                 </div>
+            </form>
             </aside>
             <section>
                 <section class = "productosCard">
                     <div class ='productosPlp'> 
-                    <% console.log(productos[0])%>
                     <% for( let i = 0; i < productos.length; i++ ) { %>
                          
                         <a href="/pdp/<%= productos[i].id%>" class="card">
