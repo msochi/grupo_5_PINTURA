@@ -19,19 +19,18 @@ module.exports ={
     producto: async function(req,res){
        // return res.json (req.body)
         console.log ('Estoy viendo detalle de producto')
-        // var productos2 = await db.Productos.findByPk(req.params.id);
-       var productos = await db.Productos.findAll({
-        where: { id: req.params.id },
-       include: [
-           {association: 'marcas'},
-           {association: 'tipo'},
-           {association: 'familia'},
-           {association: 'terminacion'},
-           {association: 'subtipo'},
-        ],  
+    
+       await db.Productos.findByPk(req.params.id)
+    
+      .then( function (productos){
+         db.Marcas.findAll()
+        .then (function (marcas)
+        {
+            //res.send (productos.datavalues)
+           //return res.json(productos);
+          res.render('./pdp', {productos:productos,marcas })
+      })
     })
-        console.log(productos);
-        res.render('pdp', {productos})
 
     },
 }
