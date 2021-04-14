@@ -3,6 +3,7 @@
 function mostrarCarItem (){
     let html =" ";
     let carItem = JSON.parse(localStorage.getItem("productoEnCarro"));
+    var count = 1;
     carItem.forEach(item=> {
         html += ` 
         
@@ -10,10 +11,8 @@ function mostrarCarItem (){
             <div class="forImage"><img src="${item.imagen}" alt=""></div>
             <div class="forItem"> <h3 class ="numeroProducto">${item.sku} </h3></div>   
             <div class="forDetalle"><h3 class= "detalle">${item.descripcion}</h3></div>
-            <div class="forUnidades">  <h3 class="unidades"> 
-              <button class ="adicionar"  style="font-size:10px" type="button" onclick="incrementar()">+</button>&nbsp 
-                <input id='elnumero' class="incrementoCantidad"  type="text" min=1 max=1 value="${item.cantidad}">&nbsp&nbsp            
-            <button class ="restar" style="font-size:10px; padding-left:1%; padding-right: 1%" type="button" onclick="decrease()">-</button> </h3></div>
+            <div class="forUnidades">  <h3 class="unidades"> <button class ="adicionar" style="font-size:10px" type="button" onclick="increase(text${count})">+</button>&nbsp <input class="incrementoCantidad" min="0" type="text" id="text${count}" value="${item.cantidad}">&nbsp&nbsp            
+            <button class ="restar" style="font-size:10px; padding-left:1%; padding-right: 1%" type="button" onclick="decrease(text${count})">-</button> </h3></div>
             <div class="forPrecio"><h3 class"preciofinal">$ ${item.precio} </h3></div>
             <div class="forTotalcompra">$<input class="TT" disabled placeholder= "" Value="${item.cantidad * item.precio}"></div>   
             <div class ="remover"><button>Eliminar</button></div>
@@ -21,6 +20,7 @@ function mostrarCarItem (){
         </div>
         
          `
+         count++;
     });
    
 document.querySelector(".mostrarCarro").innerHTML = html;
@@ -68,42 +68,17 @@ var totalOrden = 0;
 
 
 /// INCREMENTO CANTIDADES - NO FUNCIONA
-// function increase(){
-//   var a = 1;
-//   var textBox = document.getElementById("text");
-//   textBox.value++;
+function increase(id){
+  var textBox = document.getElementById(id.id);
+  textBox.value++;
 
-// }   
-// increase() 
-// function decrease(){
-// var textBox = document.getElementById("text");
-//   textBox.value--;
-//  // window.location.reload(); 
-// }
-//  var nuevoValor;
-// document.querySelector('.adicionar').addEventListener("click", function(){
-// // agarro el valor del input
-//   nuevoValor = document.getElementById('elnumero').value
-// // incremento el valor en 1
-//  nuevoValor ++;
-// // seteando el incremento en el input
-// document.getElementById('elnumero').value=nuevoValor
+}   
 
-// })
-
-function subir(){
-var ordenesDiv= document.getElementsByClassName('mostrarCarro')[0]
-var ordenesMacro= ordenesDiv.getElementsByClassName('ordenes')
-for (var i= 0; i<ordenesMacro.length;i++){
-  var ordenesMacro= ordenesMacro[i]
-  var cantidadElemento= ordenesMacro.getElementsByClassName("incrementoCantidad")
-  
-
-  var precioElemento= ordenesMacro.getElementsByClassName("preciofinal")[0]
-  console.log(cantidadElemento)
+function decrease(id){
+var textBox = document.getElementById(id.id);
+  textBox.value--;
 }
 
 
-}
-subir()
+
 
