@@ -3,20 +3,22 @@
 function mostrarCarItem (){
     let html =" ";
     let carItem = JSON.parse(localStorage.getItem("productoEnCarro"));
+    var count = 1;
     carItem.forEach(item=> {
         html += ` 
         <div class="ordenes" onload="subTota()">
             <div class="forImage"><img src="${item.imagen}" alt=""></div>
             <div class="forItem"> <h3 class ="numeroProducto">${item.sku} </h3></div>   
             <div class="forDetalle"><h3 class= "detalle">${item.descripcion}</h3></div>
-            <div class="forUnidades">  <h3 class="unidades"> <button class ="adicionar" style="font-size:10px" type="button" onclick="increase()">+</button>&nbsp <input class="incrementoCantidad"  type="text" id="text" value="${item.cantidad}">&nbsp&nbsp            
-            <button class ="restar" style="font-size:10px; padding-left:1%; padding-right: 1%" type="button" onclick="decrease()">-</button> </h3></div>
+            <div class="forUnidades">  <h3 class="unidades"> <button class ="adicionar" style="font-size:10px" type="button" onclick="increase(text${count})">+</button>&nbsp <input class="incrementoCantidad" min="0" type="text" id="text${count}" value="${item.cantidad}">&nbsp&nbsp            
+            <button class ="restar" style="font-size:10px; padding-left:1%; padding-right: 1%" type="button" onclick="decrease(text${count})">-</button> </h3></div>
             <div class="forPrecio"><h3 class"preciofinal">$ ${item.precio} </h3></div>
             <div class="forTotalcompra">$<input class="TT" disabled placeholder= "" Value="${item.cantidad * item.precio}"></div>   
             <div class ="remover"><button>Eliminar</button></div>
             
         </div>
          `
+         count++;
     });
    
 document.querySelector(".mostrarCarro").innerHTML = html;
@@ -64,17 +66,15 @@ var totalOrden = 0;
 
 
 /// INCREMENTO CANTIDADES - NO FUNCIONA
-function increase(){
-  var a = 1;
-  var textBox = document.getElementById("text");
+function increase(id){
+  var textBox = document.getElementById(id.id);
   textBox.value++;
 
 }   
-increase() 
-function decrease(){
-var textBox = document.getElementById("text");
+
+function decrease(id){
+var textBox = document.getElementById(id.id);
   textBox.value--;
- // window.location.reload(); 
 }
  
 
