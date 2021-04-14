@@ -7,24 +7,14 @@ const productos =[];
 for (let i= 0; i <botonAgregar.length; i ++){
     let cartBtn= botonAgregar[i];
     cartBtn.addEventListener("click", ()=> {
-       // console.log(parseInt(event.target.parentElement.parentElement.parentElement.children[2].textContent));
-       // precio1 = parseInt(event.target.parentElement.parentElement.parentElement.children[2].textContent);
-       //console.log (precio.slice(0,1));
-       
-        //console.log(event.target.parentElement.children[0].textContent)
-        //console.log( event.target.parentElement.children[1].textContent)
-        var px= event.target.parentElement.parentElement.parentElement.children[2].textContent.slice(0,1)
-        console.log(px);
-
-
+             
         let producto={
            // imagen: event.target.parentElement.previousElementSibling.children[0].src,
            imagen: event.target.parentElement.parentElement.parentElement.previousElementSibling.children[0].src,
            sku:parseInt(event.target.parentElement.parentElement.parentElement.children[0].textContent),
            descripcion: event.target.parentElement.parentElement.parentElement.children[1].textContent,
            precio: Number(event.target.parentElement.parentElement.parentElement.children[2].textContent.replace(/[^0-9.-]+/g,"")),
-
-           //precio: event.target.parentElement.parentElement.parentElement.children[2].textContent,
+        
             cantidad: 1,
         }
        // console.log(producto);
@@ -69,3 +59,4 @@ document.querySelector(".cantidadcarro").textContent = numeroCarro;
 
 }
 numeroEnCarro()
+

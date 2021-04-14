@@ -5,13 +5,14 @@ function mostrarCarItem (){
     let carItem = JSON.parse(localStorage.getItem("productoEnCarro"));
     carItem.forEach(item=> {
         html += ` 
-        <div class="ordenes">
+        <div class="ordenes" onload="subTota()">
             <div class="forImage"><img src="${item.imagen}" alt=""></div>
             <div class="forItem"> <h3 class ="numeroProducto">${item.sku} </h3></div>   
             <div class="forDetalle"><h3 class= "detalle">${item.descripcion}</h3></div>
-            <div class="forUnidades">  <h3 class="unidades"> ${item.cantidad} </h3></div>
-            <div class="forPrecio"><h3 class"preciofinal"> ${item.precio} </h3></div>
-            <div class="forTotalcompra"><input Value=""></div>   
+            <div class="forUnidades">  <h3 class="unidades"> <button class ="adicionar" style="font-size:10px" type="button" onclick="increase()">+</button>&nbsp <input class="incrementoCantidad"  type="text" id="text" value="${item.cantidad}">&nbsp&nbsp            
+            <button class ="restar" style="font-size:10px; padding-left:1%; padding-right: 1%" type="button" onclick="decrease()">-</button> </h3></div>
+            <div class="forPrecio"><h3 class"preciofinal">$ ${item.precio} </h3></div>
+            <div class="forTotalcompra">$<input class="TT" disabled placeholder= "" Value="${item.cantidad * item.precio}"></div>   
             <div class ="remover"><button>Eliminar</button></div>
             
         </div>
@@ -22,20 +23,20 @@ document.querySelector(".mostrarCarro").innerHTML = html;
 }
 
 mostrarCarItem ()
+////
 
 
-
-
+////ELIMINAR PODUCTO DE LINEA DE ORDEN
 const remover = document.getElementsByClassName("remover")
 for (let i= 0; i <remover.length; i ++){
     let botonRemover = remover[i];
-    console.log(botonRemover)
+   // console.log(botonRemover)
      botonRemover.addEventListener("click", () => {
        // console.log("Funciona");         
         //console.log ( event.target.parentElement.parentElement.children[1].children[0].textContent)
          let carItem = JSON.parse(localStorage.getItem("productoEnCarro"))
          console.log (event.target.parentElement.parentElement.children[2].children[0].textContent)
-        /carItem.forEach(item => {
+        carItem.forEach(item => {
               if(item.descripcion != event.target.parentElement.parentElement.children[2].children[0].textContent){
                 productos.push(item)
        
@@ -47,3 +48,34 @@ for (let i= 0; i <remover.length; i ++){
       });
 
 }
+///FUNCIONA SUMA TOTAL ORDEN
+
+const  traer =document.getElementsByClassName("TT")
+
+var totalOrden = 0;
+ for (var i = 0; i < traer.length; i ++) {
+     var val = parseInt(traer[i].getAttribute('value'), 10);
+     totalOrden += val;
+ }
+ document.getElementById("monto").innerHTML= "$ "+totalOrden;
+ console.log(totalOrden);
+
+
+
+
+/// INCREMENTO CANTIDADES - NO FUNCIONA
+function increase(){
+  var a = 1;
+  var textBox = document.getElementById("text");
+  textBox.value++;
+
+}   
+increase() 
+function decrease(){
+var textBox = document.getElementById("text");
+  textBox.value--;
+ // window.location.reload(); 
+}
+ 
+
+
