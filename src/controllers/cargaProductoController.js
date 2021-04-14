@@ -10,7 +10,7 @@ module.exports ={
     formulario: async (req,res)=>{
       
        const proveedores = await db.Proveedores.findAll();
-       const marca = await db.Marcas.findAll()       ;
+       const marca = await db.Marcas.findAll();
        const tipo = await db.Tipo.findAll();
        const subtipo = await db.Subtipo.findAll();
        const familia = await db.Familia.findAll();

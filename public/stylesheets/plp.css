@@ -117,7 +117,24 @@ h1 {
     transform: scale(1.2);
 }
 
+.buscar {
+    float:left;
+    margin-right: 10%;
+    background-color:#7209B7;
+    color: white;
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size: medium ;
+    text-decoration: none;
+}   
 
+.buscar:hover {
+    transform: scale(1.2);
+}
 
 
 div.productosPlp{
