@@ -20,17 +20,18 @@ module.exports ={
        // return res.json (req.body)
         console.log ('Estoy viendo detalle de producto')
     
-       await db.Productos.findByPk(req.params.id)
+        var productos = await db.Productos.findAll({
+            where: { id: req.params.id },
+           include: [
+               {association: 'marcas'},
+               {association: 'tipo'},
+               {association: 'familia'},
+               {association: 'terminacion'},
+               {association: 'subtipo'},
+            ],  
+        })
+            console.log(productos);
+            res.render('pdp', {productos})
     
-      .then( function (productos){
-         db.Marcas.findAll()
-        .then (function (marcas)
-        {
-            //res.send (productos.datavalues)
-           //return res.json(productos);
-          res.render('./pdp', {productos:productos,marcas })
-      })
-    })
-
-    },
-}
+        },
+    }
