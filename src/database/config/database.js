@@ -1,14 +1,14 @@
 module.exports={
   "development": {
-    "username": "user",
-    "password": "pass",
+    "username": "root",
+    "password": "",
     "database": "pintame",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "port":"3306"
   },
   "test": {
-    "username": "user",
+    "username": "root",
     "password": "",
     "database": "pintame",
     "host": "127.0.0.1",
