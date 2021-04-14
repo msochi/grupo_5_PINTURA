@@ -12,32 +12,18 @@
         <article>
             <h1>Mi Carrito</h1>
             <article class="articleDeCompras">
-               <!-- <div class="mostrarCarro">
-                <div class="ordenes">
-                    <img src="${item.imagen}" alt="">
-                    <h3 class ="sku">${item.sku} </h3>
-                    <h3 class= "descripcion">${item.descripcion}</h3>
-                    <h3 class="cantidad> ${item.cantidad} </h3>
-                    <h3 class"precio"> ${item.precio} </h3>
-                    <div class ="remover"><button>Eliminar</button></div>
-                 </div>
-            </div> -->
                 <div class="cartBox">
                     <div class="cart">
-                   <div class="itemsOrden">
-                        <img src="${item.imagen}" alt="">
-                        <div class ="sku"> <h2> SKU</h2> </div>
-                        <div class ="descripcion"> <h2> DESCRIPCION</h2> </div>
-                        <div class ="cantidad"> <h2> CANTIDAD</h2> </div>
-                        <div class ="preciofinal"> <h2> PRECIO</h2> </div>
-                        <div class ="totalcompra"> <h2> TOTAL</h2> </div>
-                   </div>
-                   <div class="mostrarCarro">  </div>
-                  
-                   
-                   
-                   
-                        <!-- <table class "orden"></table> -->
+                        <div class="itemsOrden">
+                            <div class="fotoProd"><h2>IMAGEN</h2> </div>
+                            <div class ="sku"> <h2> SKU</h2> </div>
+                            <div class ="descripcion"> <h2> DESCRIPCION</h2> </div>
+                            <div class ="cantidad"> <h2> CANTIDAD</h2> </div>
+                            <div class ="preciounidad"> <h2> PRECIO</h2> </div>
+                            <div class ="preciofinal"> <h2> TOTAL</h2> </div>
+                        </div>
+                        <div class="mostrarCarro">  </div>               
+               
                     </div>
                 </div>             
               
@@ -45,25 +31,29 @@
         </article>
         <br>
         <hr>
+      
+        <div class="totalcompra">
+            <div class="montofinal">TOTAL</div>
+            <div class="monto" id="monto">$ 0</div>          
+        </div>
+      
+        <hr>      
         <br>
-        <article class="total">
-            <h2>Total</h2>
-            <h2>$400</h2>
-        </article>
-        <article class="formaDePagoContainer">
+        <div class="formaDePagoContainer">
             <div class="formaDePago">
                 <h3>Formas de Pago</h3>
                 <img src="./images/Formas_de_pago.png" alt="Formas de Pago">
             </div>
-        </article>
+        </div>
+    
         <article>
             <br>
-            <div>
-                <a href="#" class="volver">Volver</a>
-                <a href="#" class="comprar">Comprar</a>
+            <div class="botonera">
+                <a href="/index" class="volver">Volver</a>
+                <a href="/checkout" class="comprar">Comprar</a>
             </div>
             <br>
-        </article>
+        </article>    
     </main>
     <footer class="footer">
         <div class="credenciales">
@@ -83,9 +73,10 @@
            
         </div>
      </footer>
+     <script src="/js/prueba.js.js"type="text/javascript"></script>
      <script src="/js/agregadocarro.js"type="text/javascript"></script>
      <script src="/js/carrito.js"type="text/javascript"></script>
-
+    
 
 </body>
 </html>
