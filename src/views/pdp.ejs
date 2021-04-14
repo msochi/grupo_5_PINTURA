@@ -21,18 +21,18 @@
         
         <section class="contenedorProducto" ></section>
            
-            <div class='contenidoPdp' <%= productos.id %>>      
+            <div class='contenidoPdp' <%= productos[0].id %>>      
                
-            <div class="FotoDetalle"> <img src="<%= '/imagen_producto/'+ productos.imagen_producto %>" alt=""></div>
+            <div class="FotoDetalle"> <img src="<%= '/imagen_producto/'+ productos[0].imagen_producto %>" alt=""></div>
           
             <div class="DescripcionProducto">
-                <h6> <%= productos.sku %></h6>
+                <h6> <%= productos[0].sku %></h6>
                 
-                <!--<h2>PINTURA KÖLOR <%= productos.id_familia %>&nbsp  <%= productos.marca %></h2>-->
-                <h2> <%= productos.titulo_producto %>&nbsp  </h2>
-                <!-- <h3>Latex Acrilico Premium Color Fucsia Pasión &nbsp<%= productos.id_subtipo %>&nbsp<%= productos.color %> </h3><br>-->
+                <!--<h2>PINTURA KÖLOR <%= productos[0].id_familia %>&nbsp  <%= productos[0].marca %></h2>-->
+                <h2> <%= productos[0].titulo_producto %>&nbsp  </h2>
+                <!-- <h3>Latex Acrilico Premium Color Fucsia Pasión &nbsp<%= productos[0].id_subtipo %>&nbsp<%= productos[0].color %> </h3><br>-->
              <!--<button type="submit" class="eleccionColor" name="Elegi el Color" value="">Elegi Color</button> <br><br><br> -->
-                <h1>$<%= productos.precio %></h1>    
+                <h1>$<%= productos[0].precio %></h1>    
                 
                 <h3>Financiación</h3><br>
                 <ul class="tarjetasPdp">
@@ -59,7 +59,7 @@
         <section class="fichaTecnica">
             <article>
                 <h2>DESCRIPCIÓN</h2><br>
-            <H5> <%= productos.descripcion %></H5>
+            <H5> <%= productos[0].descripcion %></H5>
 
             </article><br> <br>
 
@@ -67,51 +67,51 @@
                 <tbody class="tabla">
                     <tr>
                         <td class="linea1">Categoría</td>
-                        <td><%= productos.id_familia %>&nbsp<%= productos.id_subtipo %></td>
+                        <td><%= productos[0].subtipo.subtipo %></td>
                     </tr>
                     <tr>
                         <td>Tiempo de espera entre manos</td>
-                        <td><%= productos.tiempo_entre_manos %></td>
+                        <td><%= productos[0].tiempo_entre_manos %></td>
                     </tr>
                     <tr>
                         <td class="linea1" >Base</td>
-                        <td><%= productos.base %></td>
+                        <td><%= productos[0].base %></td>
                     </tr>
                     <tr>
                         <td class="linea1">Terminación</td>
-                        <td><%= productos.id_terminacion %></td>
+                        <td><%= productos[0].terminacion.terminacion %></td>
                     </tr>
                     <tr>
                         <td>Rendimiento</td>
-                        <td><%= productos.rendimiento %></td>
+                        <td><%= productos[0].rendimiento %></td>
                     </tr>
                     <tr>
                         <td>Tipo</td>
-                        <td><%= productos.id_subtipo %></td>
+                        <td><%= productos[0].tipo.tipo %></td>
                     </tr>
                     <tr>
                         <td>Marca</td>
-                        <td> <%= productos.id_marca %></td>
+                        <td> <%= productos[0].marcas.marca %></td>
                     </tr>
                     <tr>
                         <td>Uso recomendado</td>
-                        <td> <%= productos.uso_recomendado %></td>
+                        <td> <%= productos[0].uso_recomendado %></td>
                     </tr>
                     <tr>
                         <td>Secado al tacto</td>
-                        <td> <%= productos.tiempo_de_secado %></td>
+                        <td> <%= productos[0].tiempo_de_secado %></td>
                     </tr>
                     <tr>
                         <td>Contenido neto</td>
-                        <td> <%= productos.contenido_neto %></td>
+                        <td> <%= productos[0].contenido_neto %></td>
                     </tr>
                     <tr>
                         <td>Garantía</td>
-                        <td> <%= productos.garantia %></td>
+                        <td> <%= productos[0].garantia %></td>
                     </tr>
                      <tr>
                         <td>Familia</td>
-                        <td><%= productos.id_familia %></td>
+                        <td><%= productos[0].familia.familia %></td>
                     </tr>
                 </tbody>  
             </table><br>
