@@ -6,6 +6,7 @@ function mostrarCarItem (){
     var count = 1;
     carItem.forEach(item=> {
         html += ` 
+        
         <div class="ordenes" onload="subTota()">
             <div class="forImage"><img src="${item.imagen}" alt=""></div>
             <div class="forItem"> <h3 class ="numeroProducto">${item.sku} </h3></div>   
@@ -17,6 +18,7 @@ function mostrarCarItem (){
             <div class ="remover"><button>Eliminar</button></div>
             
         </div>
+        
          `
          count++;
     });
@@ -76,6 +78,7 @@ function decrease(id){
 var textBox = document.getElementById(id.id);
   textBox.value--;
 }
- 
+
+
 
 
