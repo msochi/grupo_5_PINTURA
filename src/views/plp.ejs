@@ -33,35 +33,45 @@
                 <div>
                     <h4>Marcas</h4>
                     <select name="marca">
-                    <option value="<%= marca_selected %>" selected="selected"><%= marca_selected %></option>
+                    <% if (typeof marca_selected === 'undefined') { %> 
+                        <option value="" selected="selected"></option>
+                    <% } else { %>
+                        <option value="<%= marca_selected %>" selected="selected"><%= marca_selected %></option>
+                    <% } %>   
                      <% for( let i = 0; i < marcas.length; i++ ) { %>
                         <option value= "<%= marcas[i].marca%>">
                             <%= marcas[i].marca%>
                         </option> 
                     <% } %>
+                    <option value=""></option>
                 </select>
                 </div> 
                 <div>
                     <h4>Tipo</h4>
                     <select name="tipo">
-                        <option value="<%= tipo_selected %>" selected="selected"><%= tipo_selected %></option>
+                        <% if (typeof tipo_selected === 'undefined') { %> 
+                            <option value="" selected="selected"></option>
+                        <% } else { %>
+                            <option value="<%= tipo_selected %>" selected="selected"><%= tipo_selected %></option>
+                        <% } %>
                         <% for( let i = 0; i < tipos.length; i++ ) { %>
                            <option value= "<%= tipos[i].tipo%>">
                                <%= tipos[i].tipo%>
                            </option> 
                        <% } %>
+                       <option value=""></option>   
                    </select>
                 </div> 
                 <div>
                     <h4>Precio</h4>
                     <ul>
-                        <li>Desde: <input class="precioMin"  type="number" placeholder="Precio mínimo" name="min"> </li>
-                        <li>Hasta: <input class="precioMax"  type="number" placeholder="Precio máximo" name="max"> </li>
+                        <li>Desde: <input class="precioMin"  type="number" placeholder="<%= (typeof precio_min_selected === 'undefined' ? "Precio mínimo" : precio_min_selected) %>" name="min"> </li>
+                        <li>Hasta: <input class="precioMax"  type="number" placeholder="<%= (typeof precio_max_selected === 'undefined' ? "Precio máximo" : precio_max_selected) %>" name="max"> </li>
                     </ul>
                 </div>
                 <div>
                     <h4>&nbsp</h4>
-                    <button type="submit">Buscar</button>
+                    <button type="submit" class="buscar">Buscar</button>
                 </div>
             </form>
             </aside>

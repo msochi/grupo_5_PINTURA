@@ -7,6 +7,7 @@
 const path = require('path');
 const db = require('../database/models')
 const Sequelize = require('sequelize');
+const { or } = require('sequelize');
 // const Marcas = require("../database/models/Marcas");
 const Op = Sequelize.Op;
 
@@ -24,28 +25,38 @@ module.exports ={
 
       if (req.query.text || req.query.marca || req.query.tipo || req.query.min || req.query.max) {
          console.log("Hay input");
+         console.log(req.query.text);
+         console.log(req.query.marca);
+         console.log(req.query.tipo);
+         console.log(req.query.min);
+         console.log(req.query.max);
          var productos = await db.Productos.findAll({
             where: {
-               [Op.or]:
+               [Op.and]:
                    [
                         {
                            titulo_producto: {
-                              [Op.like]: `%${req.query.text}%`
+                              [Op.like]: `%${(req.query.text == " " ||  typeof req.query.text === "undefined" ? "" : req.query.text)}%`
                            }
                         },
                         {
                            precio: {
-                              [Op.gte]: `${req.query.min}`
+                              [Op.gte]: `${(req.query.min ? req.query.min : 0)}`
+                           }
+                        },
+                        {
+                           precio: {
+                              [Op.lte]: `${(req.query.max ? req.query.max : 1000000000)}`
                            }
                         },
                        {
                            '$marcas.marca$': {
-                               [Op.like]: `${(req.query.marca ? req.query.marca : req.query.text)}`
+                               [Op.like]: `%${(req.query.marca == " " ||  typeof req.query.marca === "undefined" ? "" : req.query.marca)}%`
                            }
                        },
                         {
                            '$tipo.tipo$': {
-                              [Op.like]: `${(req.query.tipo ? req.query.tipo : req.query.text)}`
+                              [Op.like]: `%${(req.query.tipo == " " ||  typeof req.query.tipo === "undefined" ? "" : req.query.tipo)}%`
                         }
                      }
                    ]
@@ -67,7 +78,9 @@ module.exports ={
       const tipos = await db.Tipo.findAll();
       let marca_selected = (req.query.marca ? req.query.marca : " ");
       let tipo_selected = (req.query.tipo ? req.query.tipo : " ");
-      res.render ('plp',{productos: productos, marcas, tipos, marca_selected, tipo_selected})
+      let precio_min_selected = (req.query.min ? req.query.min : " ");
+      let precio_max_selected = (req.query.max ? req.query.max : " ");
+      res.render ('plp',{productos: productos, marcas, tipos, marca_selected, tipo_selected, precio_min_selected, precio_max_selected})
             
     },
 
