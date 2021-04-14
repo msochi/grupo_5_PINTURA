@@ -123,7 +123,7 @@ module.exports ={
       decoracion:  async function (req,res){       
         
         console.log ('Estoy buscando interior')            
-        const productos = db.Productos.findAll({
+        const productos = await db.Productos.findAll({
           where: {
               id_subfamilia: 4,
                  },
