@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
             req.session.usuario = resultado;
             next()
         }).catch(function(e){
-           return res.render("not-found")
+           return res.render("no encontrado")
         })
     }else {
     next()

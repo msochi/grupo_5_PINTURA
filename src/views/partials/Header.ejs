@@ -6,17 +6,45 @@
     </div>
    
     <nav class="Header">
-        <% if(typeof usuario != 'undefined') { %>
+                   
+            <%  if(typeof usuario != 'undefined')  { %>
+               <% if( usuario == 'admin@pintame.com.ar') { %>
             <ul>
-                <li class="carrito"><a href="Carrito"> Mi Carrito <i class="fas fa-cart-plus"></i></a> </li>
-                 <li class="Ingresar"><a href="/login"><%= usuario %>&nbsp<i class="far fa-user" style= 'color:white'></i> </a></li>
-                 <li class="Ingresar"><a href="./login">Cerrar</i> </a></li>
+                <li class="carrito" >
+                    <a href="../micarrito"> Mi Carrito <i class="fas fa-cart-plus"></i>&nbsp
+                    <a> <p class="cantidadcarro" style="color:aliceblue; background-color:  #7209B7;
+                        border-radius:15px; padding-left: 2px; padding-right: 2px; font-size:small;"> 0 </p> 
+                    </a>
+                </a>
+                 </li>
+                 <li class="Ingresar"><a href="/login"><%= usuario %>&nbsp<i class="far fa-user" style= 'color:white'></i> </a>&nbsp</li>
+                 <li class="Ingresar"><a href="/admin/consolaadmin">Consola</i> </a></li>
+                <li class="Ingresar"><a href="./login">Cerrar</i> </a></li>
             </ul>
-       
+                <%} else { %>                               
+                <ul>
+                    <li class="carrito" >
+                        <a href="../micarrito"> Mi Carrito <i class="fas fa-cart-plus"></i>&nbsp 
+                        <a><p class="cantidadcarro" style="color:aliceblue; background-color:  #7209B7;
+                            border-radius:15px; padding-left: 2px; padding-right: 2px; font-size:small;"> 0 </p> </a>
+                    </a>
+                     </li>
+                     <li class="Ingresar"><a href="/login"><%= usuario %>&nbsp<i class="far fa-user" style= 'color:white'></i> </a>&nbsp</li>
+                     <li class="Ingresar"><a href="./login">Cerrar</i> </a></li>
+                </ul>
+                <%} %>
         <% } else { %>
             <ul>
-                <li class="carrito"><a href="Carrito"> Mi Carrito <i class="fas fa-cart-plus"></i></a> </li>
-                 <li class="Ingresar"><a href="./login">Ingresar <i class="far fa-user"></i> </a></li>
+                <li class="carrito" >
+                    <a href="../micarrito"> Mi Carrito <i class="fas fa-cart-plus"></i>&nbsp
+                    <a style= "border-radius:10px "> <p class="cantidadcarro" style="color:aliceblue; background-color:  #7209B7;
+                    border-radius:15px; padding-left: 2px; padding-right: 2px; font-size:small;"> 0 </p> 
+                    </a>
+                </a>
+                 </li>
+                 <li class="Ingresar">
+                     <a href="./login">Ingresar <i class="far fa-user"></i> </a>
+                    </li>
             </ul>
             
         <% } %>
