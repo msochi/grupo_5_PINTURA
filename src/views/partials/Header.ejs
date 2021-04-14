@@ -19,7 +19,7 @@
                  </li>
                  <li class="Ingresar"><a href="/login"><%= usuario %>&nbsp<i class="far fa-user" style= 'color:white'></i> </a>&nbsp</li>
                  <li class="Ingresar"><a href="/admin/consolaadmin">Consola</i> </a></li>
-                <li class="Ingresar"><a href="./login">Cerrar</i> </a></li>
+                <li class="Ingresar"><a href="/login/logout">Cerrar</i> </a></li>
             </ul>
                 <%} else { %>                               
                 <ul>
@@ -30,7 +30,7 @@
                     </a>
                      </li>
                      <li class="Ingresar"><a href="/login"><%= usuario %>&nbsp<i class="far fa-user" style= 'color:white'></i> </a>&nbsp</li>
-                     <li class="Ingresar"><a href="./login">Cerrar</i> </a></li>
+                     <li class="Ingresar"><a href="/login/logout" >Cerrar</i> </a></li>
                 </ul>
                 <%} %>
         <% } else { %>
@@ -56,4 +56,5 @@
         <a href="/plp/herramientas">HERRAMIENTAS Y ACCESORIOS</a>
         
     </div>
+    <script src ='/js/logout.js' type="text/javascript"></script>
 </header>

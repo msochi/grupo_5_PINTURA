@@ -7,6 +7,7 @@ const usuarioLogueado= require ('../middlewares/usuarioLogueado');
 
 
 router.get ("/", loginController.login); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
+router.get ("/logout", loginController.logout); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 router.post ("/", loginUser, usuarioLogueado,loginController.checkUsuario); 
 
 // rutas amdin

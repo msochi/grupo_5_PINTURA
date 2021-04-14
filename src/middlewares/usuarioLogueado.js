@@ -2,6 +2,7 @@ const db = require("../database/models")
 module.exports = function (req, res, next) {
     if (typeof req.session.usuario != 'undefined') {
         res.locals.usuario = req.session.usuario
+        console.log(res.locals.usuario);
         next()
         // locals solo sirve para las vistas.
     }else if (typeof req.cookies.recordarme != 'undefined') {

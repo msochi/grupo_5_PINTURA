@@ -58,9 +58,10 @@ module.exports ={
                             dni:req.body.dni,
                             direccion: req.body.street,
                             id_localidad: req.body.id_localidad,
-                            codigo_Postal: req.body.codigo_Postal,
+                            codigoPostal: req.body.codigo_Postal,
                             id_provincia:req.body.id_provincia,
                             telefono: req.body.phone,
+                            tipo: 0
                         })
                    // fs.writeFileSync(path.join(__dirname, '../database/usuarios.json'), JSON.stringify(usuarios))
                    req.session.usuario = usuario.email;
