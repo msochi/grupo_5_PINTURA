@@ -15,6 +15,11 @@ module.exports = {
     res.render("login");
   },
 
+  logout: function (req, res) {
+    res.clearCookie('connect.sid');
+    res.redirect('/');
+  },
+
   checkUsuario: async function (req, res) {
     let errors= validationResult(req); // tengo que pasar validationResults con el objeto que tenga esos errores.De esta forma me guardo todo en un variable (errors).
      
