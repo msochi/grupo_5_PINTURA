@@ -91,8 +91,6 @@ section {
 }
 
 
-
-
 .Pago{
     padding-top: 2%;
     width: 50%;
@@ -167,6 +165,23 @@ section {
 .volver:hover {
     transform: scale(1.2);
 } 
+
+.price {
+    border-radius: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    font-size: medium ;
+    text-decoration: none;
+    color: #f72585;
+}
+
+img {
+    width: 30%;
+    
+}
 
 
 
@@ -290,6 +305,13 @@ footer.redesSociales a{
         justify-content: space-between;
     
     
+    }
+
+    .CamposSeleccionadosmp{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     .DatosCliente .campoChico{
         border-radius: 5px;

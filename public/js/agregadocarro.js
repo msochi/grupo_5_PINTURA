@@ -60,6 +60,7 @@ var totalOrden = 0;
      totalOrden += val;
  }
  document.getElementById("monto").innerHTML= "$ "+totalOrden;
+ document.getElementById("totalCompra").href= "/checkout?totalOrden="+totalOrden;
  console.log(totalOrden);
 
 
