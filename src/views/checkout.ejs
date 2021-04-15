@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/Checkout.css">
     <script src="https://kit.fontawesome.com/720e4c8677.js" crossorigin="anonymous"></script>
-    
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <script type="text/javascript" src="js/mp.js" defer></script>
 
     <title>Pint@me</title>
 </head>
@@ -63,10 +64,30 @@
                     </div>    
                 </div>    
                 <button type="submit" class="Pagar" name="Comprar">PAGAR</button>
+                <div class="preview">
+                    <div class="price"><h3>Monto a pagar: $ <%= price %></h1></div>
+                </div>
+        </div>
+        <h3>Si queres, podes pagar con Mercado Pago:</h3>
+        <div class="CamposSeleccionadosmp">
+            <div id="Container100"></div>
+            <img src="/images/mercadopago.png" alt="">
         </div>    
     </div><br>
     <a href="/" class="volver">Volver</a> 
 </section>
+<script>
+    var id = "<%= id %>";
+    var script = document.createElement("script");
+    // The source domain must be completed according to the site for which you are integrating.
+    // For example: for Argentina ".com.ar" or for Brazil ".com.br".
+    script.src = "https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js";
+    script.type = "text/javascript";
+    console.log(id);
+    script.dataset.preferenceId = id;
+    document.getElementById("Container100").innerHTML = "";
+    document.querySelector("#Container100").appendChild(script);
+  </script>
 <%- include('partials/Footer.ejs') %>  
 
 </body>
