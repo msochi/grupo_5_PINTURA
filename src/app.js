@@ -38,6 +38,13 @@ app.use(express.json());
 app.use(session({secret:'El microchip esta en el enchufe'}));
 app.use ( verSession );
 app.use (middlewareusuarioLogueado);
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
 // Para usar ejs  agregamos estas líneas de código para configurar el proyecto e indicar que usamos como motor de vistas a ejs. "view engine"  lo tenemos que pasar siempre independientemente del motor de vistas que vayamos a utilizas (ej: ejs)
 app.set ("view engine" , "ejs");
@@ -69,13 +76,7 @@ app.use ('/search', searchRouter);
 app.use("/apis/productos", productosRouter);
 app.use("/apis/usuarios", usuariosRouter); // agrego la ruta de la Api para productos.
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-});
+
 
 //app.listen (3000, function () {console.log ("El Servidor esta corriendo")});
 app.listen(port, ()=> console.log ('Server Listen to port: ${port}'));
