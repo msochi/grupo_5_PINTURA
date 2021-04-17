@@ -27,7 +27,11 @@ module.exports ={
                 total: usuarios.length,
                 url:"/apis/usuarios/"
             },
-            data: usuarios
+            data: {
+                users: usuarios 
+             }
+            
+            //data: usuarios
 
         };
         
@@ -61,7 +65,10 @@ module.exports ={
                      total: usuarios.length,
                      url:"/apis/usuarios/"
                  },
-                 data: usuarios
+                 data: {
+                    users: usuarios 
+                 }
+                 //  data: usuarios
      
              };
              

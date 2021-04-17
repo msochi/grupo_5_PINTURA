@@ -29,9 +29,11 @@ module.exports ={
                 total: productos.length,
                 url:"/apis/productos/"
             },
-            data: productos
+            data: {
+                products: productos
+           // data: productos
 
-        };
+        }};
         
       
         res.json({respuesta})
