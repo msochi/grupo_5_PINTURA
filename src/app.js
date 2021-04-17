@@ -25,7 +25,11 @@ const crearUsuarioRouter = require   ('./routes/crearUsuarioRouter');
 const modificarUsuarioRouter = require ('./routes/modificarUsuarioRouter');
 const recuperoPassRouter = require ('./routes/recuperoPassRouter');
 const searchRouter = require ('./routes/searchRouter');
+const productosRouter= require("./routes/apis/productosRouter"); //agrego las rutas para poder disponibilizar los endpoints de cada ruta.
 //const registroValidacion = require ('../middlewares/registroValidacion');
+const usuariosRouter= require("./routes/apis/usuariosRouter"); 
+
+
 
 app.use(cookieParser());
 app.use(methodOverride('_method'));
@@ -62,6 +66,8 @@ app.use ('/crearUsuario', crearUsuarioRouter);
 app.use ('/modificarUsuario', modificarUsuarioRouter);
 app.use ('/recupero', recuperoPassRouter);
 app.use ('/search', searchRouter);
+app.use("/apis/productos", productosRouter);
+app.use("/apis/usuarios", usuariosRouter); // agrego la ruta de la Api para productos.
 
 
 
