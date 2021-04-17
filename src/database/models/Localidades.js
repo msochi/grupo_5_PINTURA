@@ -39,12 +39,6 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'id',
         } )
     }
-    //FUNCIONA json
-    Localidades.associate = function (models){ 
-        Localidades.belongsTo(models.Clientes, {
-            as: 'clientes',
-            foreignKey: 'id',
-        } )
-    }
+
     return Localidades
 }
