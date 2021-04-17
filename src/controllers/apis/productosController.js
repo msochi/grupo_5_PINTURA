@@ -67,8 +67,12 @@ module.exports ={
                      total: productos.length,
                      url:"/apis/productos/"
                  },
-                 data: productos
-     
+                 data: productos,
+                 count: productos.length,
+                 countByType: {
+                     CONSOLA: 6,
+                     PERIFERICO:1
+                    }
              };
              
            

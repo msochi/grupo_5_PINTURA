@@ -28,7 +28,8 @@ module.exports ={
                 url:"/apis/usuarios/"
             },
             data: {
-                users: usuarios 
+                users: usuarios,
+                count: usuarios.length
              }
             
             //data: usuarios
