@@ -36,7 +36,7 @@ module.exports ={
         }};
         
       
-        res.json({respuesta})
+        res.json(respuesta)
     })
 
        
@@ -72,7 +72,7 @@ module.exports ={
              };
              
            
-             res.json({respuesta})
+             res.json(respuesta)
          })
      
             
