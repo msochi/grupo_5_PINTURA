@@ -86,6 +86,13 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'id_clientes',
         } )
     }
-
+ //FUNCIONA json
+    Clientes.associate = function (models){ 
+        Clientes.hasMany(models.Localidades, {
+            as: 'localidades',
+            foreignKey: 'id',
+        } )
+    }
+    
     return Clientes
 }
