@@ -71,7 +71,7 @@ buscarUsuario:  async function (req,res){
           //return res.json(cliente.id) ;                
           res.redirect ('/admin/mostrarusuario/'+cliente.id)
           } 
-      )    
+      ).catch(function(e){res.send("User no encontrado")} )   
 },
 mostrarUsuario: async function (req, res) {
   console.log(req.query)

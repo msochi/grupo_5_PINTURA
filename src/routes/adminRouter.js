@@ -8,6 +8,7 @@ const loginUser = require ('../middlewares/loginUser');
 const multerRegistro = require ('../middlewares/multerRegistro');
 const registroValidacion = require ('../middlewares/registroValidacion');
 const usuarioLogueado = require('../middlewares/usuarioLogueado');
+const validacionAdmin = require('../middlewares/validacionAdmin');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -23,12 +24,12 @@ var upload = multer({ storage: storage });
 
 
 
-router.get ("/", adminController.adminLogin); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
-router.get ("/consolaadmin",usuarioLogueado, adminController.adminLogin2);
-router.post ("/", loginUser, adminController.UsuarioAdmin);
-router.get("/buscarusuario", adminController.buscarUsuario);
-router.get ("/mostrarusuario/:id", adminController.mostrarUsuario);
-router.post("/modificarusuario/:id",multerRegistro.any(),registroValidacion, adminController.actualizacion);
+// router.get ("/", adminController.adminLogin); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
+router.get ("/consolaadmin",usuarioLogueado, validacionAdmin, adminController.adminLogin2);
+// router.post ("/", loginUser, adminController.UsuarioAdmin);
+router.get("/buscarusuario", validacionAdmin, adminController.buscarUsuario);
+router.get ("/mostrarusuario/:id", validacionAdmin, adminController.mostrarUsuario);
+router.post("/modificarusuario/:id",multerRegistro.any(),registroValidacion, validacionAdmin,  adminController.actualizacion);
 
 ///// MODIFICAR PRODUCTO
 router.get("/buscarproducto", adminController.buscarProducto);

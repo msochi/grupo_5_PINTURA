@@ -5,7 +5,7 @@ const session = require ('express-session'); // Instalo y requiero session (midd
 const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser"); //Cookies
 
-let port = process.env.PORT || 3001;
+let port = process.env.PORT || 3000;
 
 
 
