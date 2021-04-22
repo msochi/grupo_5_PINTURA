@@ -8,7 +8,7 @@ module.exports ={
     list: function(req,res){
        // return res.json (req.body)
         console.log ('Estoy viendo API detalle de producto')
-    
+        var countTipos= {};
          db.Productos.findAll({           
            include: [
                {association: 'marcas'},
@@ -21,8 +21,17 @@ module.exports ={
             console.log(productos)
             for (let i = 0; i < productos.length; i++) {
               productos[i].setDataValue("endpoint","/apis/productos/"+productos[i].id)
-                
+             
+              if(countTipos.hasOwnProperty(productos[i].tipo.tipo)) {
+                  countTipos[productos[i].tipo.tipo]++
+              } 
+              else {
+                countTipos[productos[i].tipo.tipo]=1;
+
+              }
+             
             }
+            console.log(countTipos)  ;
         let respuesta= {
             meta: {
                 status: 200,
@@ -30,7 +39,9 @@ module.exports ={
                 url:"/apis/productos/"
             },
             data: {
-                products: productos
+                countTipos: countTipos,
+                products: productos,
+                count: productos.length,
            // data: productos
 
         }};
