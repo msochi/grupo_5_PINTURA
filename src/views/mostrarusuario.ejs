@@ -28,7 +28,7 @@
                 <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small> <br>
 
                 <label for="pass">Contraseña</label><br>
-                <input type="password" id='pass' name="pass" value="<%= (typeof old != 'undefined' && !errors.pass) ? old.pass : '' %>" placeholder="Tú clave"> <br>
+                <input type="password" id='pass' name="pass" value="<%= (typeof old != 'undefined' && !errors.pass) ? old.pass : "" %>" placeholder="Tú clave"> <br>
                 <small class="text-danger" style="color: red"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small> <br>
                   
                 <label for="imagenProducto">Carga tu imagen o avatar</label> <br>

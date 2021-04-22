@@ -37,6 +37,7 @@ module.exports = {
                
                 if(bcrypt.compareSync(req.body.pass, usuario.pass)) {
                     req.session.usuario = usuario.email;
+                    req.session.blanco = usuario.id;
                              
                 return  res.redirect ('/');
                 }
