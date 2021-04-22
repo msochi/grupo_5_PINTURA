@@ -5,7 +5,7 @@ const session = require ('express-session'); // Instalo y requiero session (midd
 const methodOverride = require('method-override');
 const cookieParser = require("cookie-parser"); //Cookies
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 3001;
 
 
 
@@ -38,6 +38,14 @@ app.use(express.json());
 app.use(session({secret:'El microchip esta en el enchufe'}));
 app.use ( verSession );
 app.use (middlewareusuarioLogueado);
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
 // Para usar ejs  agregamos estas líneas de código para configurar el proyecto e indicar que usamos como motor de vistas a ejs. "view engine"  lo tenemos que pasar siempre independientemente del motor de vistas que vayamos a utilizas (ej: ejs)
 app.set ("view engine" , "ejs");
