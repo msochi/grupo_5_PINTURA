@@ -16,6 +16,7 @@ module.exports = {
   },
 
   logout: function (req, res) {
+   
     res.clearCookie('connect.sid');
     res.redirect('/');
   },

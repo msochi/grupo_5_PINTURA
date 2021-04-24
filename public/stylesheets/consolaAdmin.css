@@ -186,13 +186,15 @@ div.Busquedas {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    margin-top: 60px;  
+    margin-top: 100px;  
 }
 div.form-familias{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
     margin: auto;
+    padding-bottom: 10px;
+    padding-bottom: 10px;
     width: 50%;
     border: 3px solid #F72585;
     padding: 10px;
@@ -250,7 +252,7 @@ div.familias .mundos .cargaProducto{
     background-size: 100% 100%;
     background-position: center;
     width: 500px;
-    height: 35vh;
+    height: 20vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
@@ -267,7 +269,7 @@ div.familias .mundos .Dashboard{
     background-size: 100% 100%;
     background-position: center;
     width: 500px;
-    height: 35vh;
+    height: 20vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
@@ -278,12 +280,12 @@ div.familias .mundos .Dashboard{
     border: gray 2px;
     box-shadow:4px 4px 2px gray;
 }
-div.familias .mundos .modificarProducto{
+div.familias .mundos .DashboardPagos{
     background-color: rgba(102, 63, 207, 0.822) ;
     background-size: 100% 100%;
     background-position: center;
     width: 500px;
-    height: 35vh;
+    height: 20vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
@@ -306,7 +308,14 @@ div.familias .mundos .modificarProducto{
 /*=========
 FOOTER
 =========*/
-
+footer{
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;    
+    color: white;
+    text-align: center;
+}
 footer.footer{
     display: flex;
     flex-wrap: wrap;
@@ -314,9 +323,7 @@ footer.footer{
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    padding-bottom: 10px;
-    min-width: 554px;
-   
+      
     left: 0;
     bottom: 0;  
     text-align: center;

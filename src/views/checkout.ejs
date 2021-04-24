@@ -76,6 +76,31 @@
     </div><br>
     <a href="/" class="volver">Volver</a> 
 </section>
+<footer class="footer" style="position: fixed; 
+left: 0;
+bottom: 0;
+width: 100%;    
+color: white;
+text-align: center;">
+    <div class="credenciales">
+        <ul>
+            <li> <a href="#"> Quienes Somos</a> </li>
+            <li> <a href="#">Pedidos Especiales </a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>    
+    </div>
+    <div class="logo-footer">
+        <a href="/" class="logo"><img src="/images/logos/Pintamev2.png" alt="" ></a> 
+    </div>
+    <div class="redesSociales">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+       
+    </div>
+ </footer>
+
+
 <script>
     var id = "<%= id %>";
     var script = document.createElement("script");
@@ -88,6 +113,6 @@
     document.getElementById("Container100").innerHTML = "";
     document.querySelector("#Container100").appendChild(script);
   </script>
-<%- include('partials/Footer.ejs') %>  
+
 
 </body>
