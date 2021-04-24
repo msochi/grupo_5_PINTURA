@@ -3,6 +3,7 @@
     padding:0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    
        
 }
 
@@ -117,6 +118,15 @@ text-align: center;
  .Header ul li a:hover{
     color: gold;
  }
+ p.cantidadcarro{
+    font-size:10px;
+    color:aliceblue;
+    background-color:  #7209B7;
+    border-radius:15px;
+    padding-left: 2px;
+    padding-right: 2px; 
+    font-size:small;
+}
 /*============
     MENU
  ==========*/
@@ -145,4 +155,48 @@ text-align: center;
  .MenuHorizontal a:hover{
     background-color: #F72585;
     transform: scale(1.1);
+}
+
+@media (max-width: 375px){
+    .Header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        width: 100%;
+    }
+
+    .Header ul{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-size: 0px;
+        height:40px;
+        max-width:100%;
+       
+      }
+    .Header ul li {
+        margin-top: 2px;
+        list-style: none;
+        float: left;
+        font-size: 10px;
+        flex-wrap: wrap;   
+        margin:1%; 
+        padding-left: 1%;  
+        padding-right: 8%;
+    }
+    
+
+    p.cantidadcarro{
+        font-size:10px;
+        color:aliceblue;
+        background-color:  #7209B7;
+        border-radius:15px;
+        padding-left: 2px;
+        padding-right: 2px; 
+        font-size:8px;
+    }
+
 }
