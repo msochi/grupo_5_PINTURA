@@ -1319,6 +1319,7 @@ footer.footer{
     flex-wrap: wrap;
     color: #F72585;  
     align-items: flex-start;
+  
    
 }
 footer.footer ul li {
@@ -1327,6 +1328,8 @@ footer.footer ul li {
     margin-top: 5%;
     font-size: 10px;
     font-weight: normal;
+    text-align: left;
+   
     
     
    
