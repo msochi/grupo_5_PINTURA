@@ -15,8 +15,7 @@ module.exports = {
     res.render("login");
   },
 
-  logout: function (req, res) {
-   
+  logout: function (req, res) {   
     res.clearCookie('connect.sid');
     res.redirect('/');
   },
@@ -70,3 +69,4 @@ module.exports = {
 }
    
 
+//
