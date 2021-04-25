@@ -80,7 +80,61 @@ module.exports ={
             
          
              },
-
+             provincia: function(req,res){
+                // return res.json (req.body)
+                 console.log ('Estoy viendo API detalle de Usuarios')
+             
+                  db.Provincias.findOne({
+                      where: { id: req.params.id }           
+                    }).then(function(provincia){
+                     console.log(provincia)
+                 let respuesta= {
+                     meta: {
+                         status: 200,
+                         url:"/apis/usuarios/provincia"
+                     },
+                     data: {
+                        provincia: provincia 
+                     }
+                     //  data: usuarios
+         
+                 };
+                 
+               
+                 res.json({respuesta})
+             })
+         
+                
+             
+                 },
+                 localidad: function(req,res){
+                    // return res.json (req.body)
+                     console.log ('Estoy viendo API detalle de Usuarios')
+                 
+                      db.Localidades.findOne({
+                          where: { id: req.params.id }           
+                        }).then(function(localidad){
+                         console.log(localidad)
+                     let respuesta= {
+                         meta: {
+                             status: 200,
+                             url:"/apis/usuarios/localidad"
+                         },
+                         data: {
+                            localidad: localidad 
+                         }
+                         //  data: usuarios
+             
+                     };
+                     
+                   
+                     res.json({respuesta})
+                 })
+             
+                    
+                 
+                     },
+    
 
 
     }
