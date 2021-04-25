@@ -6,5 +6,7 @@ const usuariosController = require ('../../controllers/apis/usuariosController')
 router.get ("/", usuariosController.lista); // aca tengo que combinar ruta y controlador. Solo pongo la referencia en el segundo parámetro. Modularizamos la funcionalidad por un laso y la ruta por otro.
 //router.get ('/buscarproducto', pdpController.buscarproducto);
 router.get ('/:id', usuariosController.detalleUsuario);
+router.get ('/provincia/:id', usuariosController.provincia);
+router.get ('/localidad/:id', usuariosController.localidad);
 
 module.exports = router;
