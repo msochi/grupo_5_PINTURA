@@ -150,7 +150,7 @@ text-align: center;
 CONTENEDOR
 ========*/
 
-.contenedor{
+.contenedorconsola{
     display: flex;
     flex-wrap: wrap;
     margin-top: 0;
@@ -166,7 +166,7 @@ FAMILIAS
 ============*/
 
 
-div.familias {
+div.consolita {
     display: flex;
     flex-wrap: wrap;
     margin-top: 0px;
@@ -188,7 +188,7 @@ div.Busquedas {
     text-align: center;
     margin-top: 100px;  
 }
-div.form-familias{
+div.form-consola{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
@@ -201,7 +201,7 @@ div.form-familias{
     background-color:#F72585;
     
 }
-div.form-familias2{
+div.form-consola2{
     background-color:#e625f7;;
     display: flex;
     flex-wrap: wrap;
@@ -211,7 +211,7 @@ div.form-familias2{
     border: 3px solid #e625f7;
     padding: 10px;
 }
-div.familias .mundos{
+div.familiasconsola .secciones{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -219,7 +219,7 @@ div.familias .mundos{
     margin-top: 10px;
     
     }
-div.familias .mundos a{
+div.familiasconsola .secciones a{
     color: white;
     text-decoration: none;
     margin: auto;
@@ -232,22 +232,8 @@ div.familias .mundos a{
     text-shadow: 4px 4px 2px #1b1919
 
 }
-div.familias .mundos .usuario{
-    background-color:#F72585; ;
-    background-size: 100% 100%;
-    width: 500px;
-    height: 35vh;
-    border-radius: 5px;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    margin: 2%;
-    display: flex;
-    flex-wrap: wrap;
-    border: gray 2px;
-    box-shadow:4px 4px 2px gray;
-}
-div.familias .mundos .cargaProducto{
+
+div.familiasconsola .secciones .cargaProducto{
     background-color:  #B5179E;
     background-size: 100% 100%;
     background-position: center;
@@ -263,7 +249,7 @@ div.familias .mundos .cargaProducto{
     border: gray 2px;
     box-shadow:4px 4px 2px gray;
 }
-div.familias .mundos .Dashboard{
+div.familiasconsola .secciones .Dashboard{
     background-color: rgba(192, 71, 145, 0.822) ;
     background-size: 100% 100%;
     background-size: 100% 100%;
@@ -280,7 +266,7 @@ div.familias .mundos .Dashboard{
     border: gray 2px;
     box-shadow:4px 4px 2px gray;
 }
-div.familias .mundos .DashboardPagos{
+div.familiasconsola .secciones .DashboardPagos{
     background-color: rgba(102, 63, 207, 0.822) ;
     background-size: 100% 100%;
     background-position: center;
@@ -297,11 +283,11 @@ div.familias .mundos .DashboardPagos{
     box-shadow:4px 4px 2px gray;
 }
 
-.mundos a:hover{
+.secciones a:hover{
     transform: scale(1.1);
           
 }
-.mundos {
+.secciones {
     padding: 0px;
 }
 
@@ -309,7 +295,7 @@ div.familias .mundos .DashboardPagos{
 FOOTER
 =========*/
 footer{
-    /* position: fixed; */
+   
     left: 0;
     bottom: 0;
     width: 100%;    
@@ -322,8 +308,7 @@ footer.footer{
     background-color: #292525;
     width: 100%;
     justify-content: space-around;
-    align-items: center;
-      
+    align-items: center;      
     left: 0;
     bottom: 0;  
     text-align: center;
@@ -332,10 +317,8 @@ footer.credenciales{
     display: flex;
     flex-wrap: wrap;
     color: #F72585;
-    width: 350px;
-    
-   
-}
+    width: 350px;    
+   }
 footer ul li {
     color: #F72585;
     list-style-type: none;
@@ -416,4 +399,147 @@ footer.redesSociales a{
     .fa-facebook-square {
         font-size: 20px;
     }
+}
+@media (max-width: 375px){
+
+.consolaAdministrador{
+    width:375px;
+    height:1000px;
+}
+
+/*============
+FAMILIAS
+============*/
+
+
+div.consolita {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;  
+}
+div.Busquedas {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;  
+}
+div.form-consola{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;  
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 50%;
+    border: 3px solid #F72585;
+    padding: 10px;
+    background-color:#F72585;
+    width: 100%;
+    margin-top: 10%;   
+}
+label {
+    margin-bottom:4%;
+}
+div.form-consola2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;  
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 50%;
+    border: 3px solid  #e625f7;
+    padding: 10px;
+    background-color:  #e625f7;
+    width: 100%;
+    margin-top: 10%;
+}
+div.familiasconsola .secciones{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+    
+    }
+div.familiasconsola .secciones a{
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    justify-content: space-between;
+    vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-shadow: 4px 4px 2px #1b1919
+
+}
+
+div.familiasconsola .secciones .cargaProducto{
+    background-color:  #B5179E;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 320px;
+    height: 15vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 2px gray;
+}
+div.familiasconsola .secciones .Dashboard{
+    background-color: rgba(192, 71, 145, 0.822) ;
+    background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 320px;
+    height: 15vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 2px gray;
+}
+div.familiasconsola .secciones .DashboardPagos{
+    background-color: rgba(102, 63, 207, 0.822) ;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 320px;
+    height: 15vh;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border: gray 2px;
+    box-shadow:4px 4px 2px gray;
+}
+
+.secciones a:hover{
+    transform: scale(1.1);
+          
+}
+.secciones {
+    padding: 0px;
+}
 }

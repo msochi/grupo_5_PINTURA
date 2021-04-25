@@ -642,9 +642,7 @@ footer.redesSociales a{
     body {
         size: 100%;
     }
-    
-    
-    .cabecera {
+    /* .cabecera {
     background: #F72585;   
     display: flex;
     flex-wrap: wrap;
@@ -652,14 +650,14 @@ footer.redesSociales a{
     align-items: center;
     justify-items: center;
     max-width: 375px;
-    height: 10px;
+    height: 10%;
     overflow: hidden;
     position: fixed;
     z-index: 1020;
     text-align: center;
     
     
-    }
+    } */
     
     .cabecera .logo{
         width: 40%;
@@ -675,7 +673,7 @@ footer.redesSociales a{
         justify-items: center;
         box-sizing: border-box;
         }
-     .cabecera .busqueda{
+     /* .cabecera .busqueda{
         display: flex; 
         width: 100%;
         height: 10px;
@@ -688,7 +686,7 @@ footer.redesSociales a{
         box-shadow: 0px 4px 4px rgba(61, 60, 60, 0.733);
         font-size: 10px;
                  
-     }
+     } */
      .cabecera .busqueda:hover, .busqueda:active{
          background-color: rgb(116, 189, 221);
          color: #f72585;
@@ -1351,6 +1349,13 @@ footer.logo-footer {
    width:20%;
     
 }
+footer .logo-footer a img{
+    color: #F72585;
+     size: 20px;
+   
+     width:30%;
+      
+  }
 footer.footer.logo-footer img{
     color: #F72585;
    size: 20px;

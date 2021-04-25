@@ -32,7 +32,9 @@ main {
 h1 {
     text-align: center;
     color: #7209B7;
-    padding-bottom: 20px;
+    padding-bottom: 24px;
+    text-decoration: underline;
+    
 }
 
 .menuMasTachos {
@@ -67,6 +69,8 @@ h1 {
     padding-left: 30px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(199, 190, 190);
+    border-radius: 2%;
 }
 
 .menuMasTachos aside h4 {
@@ -188,74 +192,7 @@ div.productosPlp{
         transform: scale(1.1);
     }
 
-/*=========
-FOOTER
-=========*/
-
-footer{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #292525;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-    padding-bottom: 10px;
-  
-   }
-footer.credenciales{
-    display: flex;
-    flex-wrap: wrap;
-    color: #F72585;
-    width: 350px;
-    
-   
-}
-footer ul li {
-    color: #F72585;
-    list-style-type: none;
-    margin-top: 10%;
-    font-size: 14px;
-    font-weight: normal;
-    
-   
-}
-footer a{
-    text-decoration: none;
-    color: #F72585;
-    width: 350px;
-}
-
-footer ul li:hover{
-    transform: scale(1.1);
-}
-
-footer.logo-footer img{
-    color: #F72585;
-    width: 70%;
-
-    
-}
-footer.redesSociales{
-    color: #F72585;
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-}
-footer.redesSociales a{
-   
-    font-size: 40px;
-}
-
- .fa-youtube, .fa-instagram-square{
-    font-size: 40px;
-    margin-right: 40px;
-}
-.fa-facebook-square {
-    font-size: 40px;
-}
-
-@media (max-width: 1072px) {
+/* @media (max-width: 1072px) {
     main {
         margin-top: 152px;
     }
@@ -269,4 +206,349 @@ footer.redesSociales a{
     main {
         margin-top: 216px;
     }
+} */
+
+
+@media (max-width: 375px){
+    *{
+        
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        max-width: 375px;
+           
+    }
+    body {
+        size: 100%;
+    }
+    
+    
+    /* .cabecera {
+    background: #F72585;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    max-width: 375px;
+    height: 10%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1020;
+    text-align: center;
+    
+    
+    } */
+    
+    .cabecera .logo{
+        width: 40%;
+        align-items: center;
+        justify-items: center;
+        margin: 2%;
+        max-width: 375px;
+    }
+    .opcionesHeader {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        justify-items: center;
+        box-sizing: border-box;
+        
+        }
+     .cabecera .busqueda{
+        display: flex; 
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        border-color: gray;
+        background: whitesmoke;
+        align-content: stretch;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 4px rgba(61, 60, 60, 0.733);
+        font-size: 10px;
+                 
+     }
+     .cabecera .busqueda:hover, .busqueda:active{
+         background-color: rgb(116, 189, 221);
+         color: #f72585;
+     }
+    #Lupa{
+        color: #F72585;
+        display: flex;
+        height:15px;
+    }
+     .cabecera div button {        
+            height: 30px;
+            width: 25px;
+            margin-left: -10%;
+            border-color: none;
+            border: none;
+            color: #F72585;
+            background-color: transparent;
+            outline-style: none;
+          }
+    
+    .cabecera div button:hover {           
+            height: 30px;
+            width: 25px;
+            border-color: none;
+            border: none;
+            color: #F72585;
+            outline-style: none;
+            transform: scale(2);              
+          }      
+    
+    .cabecera div button a::after {      
+        height: 30px;
+        width: 25px;
+        margin-left: -30px;
+        border: none;
+        background-color: transparent;
+        border-color: transparent;
+        outline-style: none;    
+        }
+       
+    .Header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        width: 100%;
+
+
+    }
+    .Header ul{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        /* justify-content: center; */
+        font-size: 10px;
+        height:40px;
+        width:100%;       
+      }
+      
+    .Header ul li {
+        margin-top: 2px;
+        list-style: none;
+        float: left;
+        font-size: 10px;
+        flex-wrap: wrap;      
+    }
+    
+    .Header ul li:hover{
+        color: gold;
+    }
+     .Header a {
+         text-decoration: none;
+         color: white;
+         display: block;
+         font-size: 10px;
+         
+         
+       }
+     .Header ul li a:hover{
+        color: gold;
+     }
+
+     p.cantidadcarro{
+         font-size:10px;
+         color:aliceblue;
+         background-color:  #7209B7;
+         border-radius:15px;
+         padding-left: 2px;
+         padding-right: 2px; 
+         font-size:6px;
+     }
+    /*============
+        MENU
+     ==========*/
+    
+    
+    .MenuHorizontal{
+           background: #B5179E;   
+           display: flex;
+           flex-wrap: wrap;
+           width: 100%;
+           justify-content: space-around;
+        
+    }
+     
+     .MenuHorizontal a{
+        list-style: none;
+        float: left;
+        align-items: center;
+        color: white;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        font-size: 10px;;
+         
+     }
+     .MenuHorizontal a:hover{
+        background-color: #F72585;
+        transform: scale(1.1);
+    }
+.menutachos{
+    display: none;
+}
+.banner{
+margin-top: 15%;
+}
+
+h1{
+    font-size: 20px;
+}
+
+aside form{
+    display: none;
+    background-color:white;
+}
+.menuMasTachos aside {
+    display: none;
+    background-color:white;
+}
+
+div.productosPlp{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    
+    }
+    div.productosPlp a{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        height: 340px;
+        text-align: center;
+        justify-content: center;
+        border-style: solid;
+        border-color: rgb(199, 197, 197);
+        border-radius: 10px;
+        margin: 1%;
+        text-decoration: none;
+    }
+    div.productosPlp img{
+        width: 150px;
+        height: 150px;
+        display: block;
+        border-radius: 10px;
+        justify-content:center;
+        margin-left: 20%;
+        margin-right: 20%;
+       
+      
+    }
+    div.productosPlp p{
+        width: 100%;
+
+
+    }
+    div.productosPlp .precio{
+        color: #F72585;
+        font-size: 30px;
+        font-weight: bold;   
+    }
+    
+    .productosPlp a:hover{
+        transform: scale(1.1);
+    }
+
+
+
+
+
+
+
+
+/*=========
+FOOTER
+=========*/
+footer{
+   
+    left: 0;
+    bottom: 0;      
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+footer.footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #292525;
+    max-width: 375px;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    
+   }
+   footer.credenciales{
+    display: flex;
+    flex-wrap: wrap;
+    color: #F72585;  
+    align-items: flex-start;     
+}
+
+footer.footer ul li {
+    color: #F72585;
+    list-style-type: none;
+    margin-top: 5%;
+    font-size: 10px;
+    font-weight: normal;
+    text-align: left;
+}
+
+footer.footer a{
+    text-decoration: none;
+    color: #F72585;
+   
+}
+
+footer.footer ul li:hover{
+    transform: scale(1.1);
+}
+
+footer .logo-footer a img{
+  color: #F72585;
+   size: 20px;
+ 
+   width:50%;
+    
+}
+footer .logo-footer {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+
+footer.footer.redesSociales{
+    color: #F72585;
+    display: flex;   
+    font-size: 12px;   
+    align-items: center; 
+}
+footer.footer.redesSociales a{
+   
+    font-size: 18px;
+}
+
+footer.fa-youtube, .fa-instagram-square, .fa-facebook-square{
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
+
 }
