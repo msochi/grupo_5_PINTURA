@@ -518,6 +518,112 @@ footer.redesSociales a{
     font-size: 40px;
 }
 
+@media (max-width: 375px){
+    *{
+        
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        max-width: 375px;
+           
+    }
+  
+    .mostrarCarro{
+        display:inline-flex;
+        flex-wrap: wrap;
+    }
+.fotoProd h2{
+    font-size:6px;
+}
+.sku h2{
+    font-size:8px;
+}
+.descripcion h2{
+    font-size:8px;
+}
+.cantidad h2{
+    font-size:8px;
+}
+.preciounidad h2{
+    font-size:8px;
+}
+.preciofinal h2{
+    font-size:8px;
+}
+    .forItem{
+        font-size:8px;
+        }        
+    .forDetalle{
+    font-size:8px;
+    
+    }
+    .forUnidades h3{
+        margin-left: 14px;
+        font-size:8px;
+        width: 100%;
+    }
+    .forUnidades input{
+        font-size:8px;
+    }
+    button.adicionar  {
+        font-size:4px;
+        background-color: none;
+        padding-left:0;
+        padding-right:0%;
+        display:none;  
+        }
+     button.restar  {
+            font-size:4px;
+            background-color: none;
+            padding-left:0;
+            padding-right:0%;
+            display:none;  
+            }
+                
+
+    .forPrecio {
+        font-size:8px;
+        
+    }
+    .forPrecio h3{
+        font-size:8px;
+        margin-left: 20px;
+        width: 100%;
+        
+    }
+    .forTotalcompra {
+        font-size:8px;  
+        margin-left: 8%; 
+        width: 55px;     
+    }
+    .forTotalcompra input {
+        font-size:8px;   
+        box-sizing:content-box; 
+        margin-left: 3%;
+
+    }
+    .forTotalcompra h3{
+        font-size:8px;        
+    }
+    .forTotalcompra .TT{
+        font-size:8px;        
+    }
+.remover{
+    font-size: 6px;
+    margin-left: -2%;
+}
+.formaDePago h3{
+    font-size:12px;
+    display:none;
+}
+.formaDePago img{
+   display:none;
+}
+}
+
+
+
 @media (max-width: 1072px) {
     main {
         margin-top: 152px;
