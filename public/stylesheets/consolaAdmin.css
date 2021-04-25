@@ -188,6 +188,7 @@ div.Busquedas {
     text-align: center;
     margin-top: 100px;  
 }
+
 div.form-consola{
     display: flex;
     flex-wrap: wrap;
@@ -211,13 +212,18 @@ div.form-consola2{
     border: 3px solid #e625f7;
     padding: 10px;
 }
+div.familiasconsola{
+width: 100%;
+
+}
 div.familiasconsola .secciones{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
     margin-top: 10px;
-    
+  
+  
     }
 div.familiasconsola .secciones a{
     color: white;
@@ -227,7 +233,7 @@ div.familiasconsola .secciones a{
     vertical-align: middle;
     display: flex;
     flex-wrap: wrap;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 400;
     text-shadow: 4px 4px 2px #1b1919
 
@@ -237,8 +243,8 @@ div.familiasconsola .secciones .cargaProducto{
     background-color:  #B5179E;
     background-size: 100% 100%;
     background-position: center;
-    width: 500px;
-    height: 20vh;
+    width: 350px;
+    height: 15vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
@@ -254,8 +260,8 @@ div.familiasconsola .secciones .Dashboard{
     background-size: 100% 100%;
     background-size: 100% 100%;
     background-position: center;
-    width: 500px;
-    height: 20vh;
+    width: 350px;
+    height: 15vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
@@ -270,8 +276,8 @@ div.familiasconsola .secciones .DashboardPagos{
     background-color: rgba(102, 63, 207, 0.822) ;
     background-size: 100% 100%;
     background-position: center;
-    width: 500px;
-    height: 20vh;
+    width: 350px;
+    height: 15vh;
     border-radius: 5px;
     text-align: center;
     align-content: center;
