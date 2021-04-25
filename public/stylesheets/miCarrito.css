@@ -390,7 +390,7 @@ hr {
     width:40%;
 }
 .formaDePago {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;  
@@ -401,10 +401,14 @@ height: 80%;
 width: 40%;
 }
 
-
+article .finalCarrito{
+height: 40%;
+padding-bottom:  50%;
+}
 .botonera{
 display: flex;
 width: 100%;
+height: 40%;
 justify-content: space-between;
 
 }
@@ -451,7 +455,7 @@ justify-content: space-between;
 FOOTER
 =========*/
 
-footer.footer{
+footer.footercarrito{
     display: flex;
     flex-wrap: wrap;
     background-color: #292525;

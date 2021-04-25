@@ -2,23 +2,23 @@
 <html lang="en">
     <%- include('partials/Head.ejs') %>
 
-<body>
+<body class="consolaAdministrador">
    <%- include ('partials/Header.ejs')%>
    
   
     
-    <section class="contenedor">
-        <div class="familias" style="margin-top: 10%">
+    <section class="contenedorconsola">
+        <div class="consolita" style="margin-top: 10%">
             <div class="Busquedas">
             <form action="/admin/buscarusuario" method="get">
-                <div class="form-familias">
+                <div class="form-consola">
                     <label for="email"><H5 style="color:aliceblue">PARA ACTUALIZAR UN EMAIL DE USUARIO INGRESALO ACA</H5></label> <br>
                     <input class="email" type="email" name="email" placeholder="Ingrese email a buscar" autofocus>           
                     <button class="buscar">Buscar</button>
                 </div>
             </form>
             <form action="/admin/buscarproducto" method="get">
-                <div class="form-familias2">
+                <div class="form-consola2">
                     <label for="skuconsola"><H5 style="color:aliceblue">INGRESA EL NUMERO DE SKU A MODIFICAR O PROMOCIONAR</H5></label> <br>
                     <input class="skuconsola" type="sku" name="sku" placeholder="Ingrese email a buscar" autofocus>           
                     <button class="buscar">Buscar</button>
@@ -26,8 +26,8 @@
             </form>
         </div>
         </div>
-        <div class="familias">
-            <section class="mundos">
+        <div class="familiasconsola">
+            <section class="secciones">
                <a href="cargaProducto" class="cargaProducto">CARGAR PRODUCTO</a>
                <a href="https://dashboard-pintame.herokuapp.com/" class="Dashboard">DASHBOARD</a>
                <a href="https://realtime-payments-dash.herokuapp.com/allpayments" class="DashboardPagos">PAGOS</a>
